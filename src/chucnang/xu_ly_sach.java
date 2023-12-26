@@ -22,12 +22,12 @@ public class xu_ly_sach {
         try {
             DefaultComboBoxModel model = new DefaultComboBoxModel();
             model = (DefaultComboBoxModel) jComboBox.getModel();
-            model.setRowCount(0);
+            model.removeAllElements();
             
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery("SELECT * FROM personalinfo");
             while (rs.next()) {
-                model.addRow(new Object[] {
+                model.addElement(new Object[] {
                         rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString("cccd"),
                         rs.getString(7)
                 });
