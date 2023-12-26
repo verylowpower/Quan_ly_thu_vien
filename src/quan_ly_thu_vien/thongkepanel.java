@@ -11,12 +11,12 @@ import javax.swing.JPanel;
  *
  * @author vitancuc
  */
-public class jThongke extends javax.swing.JPanel {
+public class thongkepanel extends javax.swing.JPanel {
 
     /**
      * Creates new form jThongke
      */
-    public jThongke() {
+    public thongkepanel() {
         initComponents();
     }
     void setColor(JPanel panel) {  //đổi màu

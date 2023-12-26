@@ -6,17 +6,23 @@ package quan_ly_thu_vien;
 
 import java.awt.Color;
 import javax.swing.JPanel;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
+import javax.swing.JFormattedTextField.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  *
  * @author vitancuc
  */
-public class jdocgia extends javax.swing.JPanel {
-
+public class phieumuonpanel extends javax.swing.JPanel {
     /**
-     * Creates new form jdocgia
+     * Creates new form jYeucautra
      */
-    public jdocgia() {
+    public phieumuonpanel() {
         initComponents();
     }
     void setColor(JPanel panel) {  //đổi màu
@@ -26,7 +32,7 @@ public class jdocgia extends javax.swing.JPanel {
     void resetColor(JPanel panel) { //reset về màu background
         panel.setBackground(new Color(232,214,200));
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,14 +45,10 @@ public class jdocgia extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         exit = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        timkiemTextField = new javax.swing.JLabel();
         txtusername5 = new javax.swing.JTextField();
-        txtusername6 = new javax.swing.JTextField();
-        txtusername7 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtusername8 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(843, 627));
 
@@ -95,13 +97,9 @@ public class jdocgia extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(125, 99, 87));
-        jLabel2.setText("Mã độc giả");
-
-        jLabel3.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(125, 99, 87));
-        jLabel3.setText("Tên độc giả");
+        timkiemTextField.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
+        timkiemTextField.setText("Tìm kiếm");
 
         txtusername5.setFont(txtusername5.getFont().deriveFont(txtusername5.getFont().getSize()+2f));
         txtusername5.setForeground(new java.awt.Color(137, 110, 89));
@@ -114,90 +112,58 @@ public class jdocgia extends javax.swing.JPanel {
             }
         });
 
-        txtusername6.setFont(txtusername6.getFont().deriveFont(txtusername6.getFont().getSize()+2f));
-        txtusername6.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername6.setBorder(null);
-        txtusername6.setDragEnabled(true);
-        txtusername6.setName(""); // NOI18N
-
-        txtusername7.setFont(txtusername7.getFont().deriveFont(txtusername7.getFont().getSize()+2f));
-        txtusername7.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername7.setBorder(null);
-        txtusername7.setDragEnabled(true);
-        txtusername7.setName(""); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(125, 99, 87));
-        jLabel4.setText("Địa chỉ");
-
-        txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
-        txtusername8.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername8.setBorder(null);
-        txtusername8.setDragEnabled(true);
-        txtusername8.setName(""); // NOI18N
-
-        jLabel6.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(125, 99, 87));
-        jLabel6.setText("Số điện thoại");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(timkiemTextField)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(88, 88, 88)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6))
-                .addGap(26, 26, 26)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtusername6)
-                    .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(98, 98, 98))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtusername5))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1161, Short.MAX_VALUE))
                 .addContainerGap())
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtusername6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(483, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1173, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -229,14 +195,21 @@ public class jdocgia extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JPanel exit;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel timkiemTextField;
     private javax.swing.JTextField txtusername5;
-    private javax.swing.JTextField txtusername6;
-    private javax.swing.JTextField txtusername7;
-    private javax.swing.JTextField txtusername8;
     // End of variables declaration//GEN-END:variables
+//
+//    private static class datePicker {
+//
+//        public datePicker() {
+//        UtilDateModel model = new UtilDateModel();
+//        JDatePanelImpl datePanel = new JDatePanelImpl(model);
+//        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel);
+// 
+//        frame.add(datePicker);
+//        }
+//    }
 }
