@@ -6,13 +6,19 @@ package quan_ly_thu_vien;
 
 import java.awt.Color;
 import javax.swing.JPanel;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
+import javax.swing.JFormattedTextField.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  *
  * @author vitancuc
  */
 public class jYeucautra extends javax.swing.JPanel {
-
     /**
      * Creates new form jYeucautra
      */
@@ -26,7 +32,7 @@ public class jYeucautra extends javax.swing.JPanel {
     void resetColor(JPanel panel) { //reset về màu background
         panel.setBackground(new Color(232,214,200));
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -272,4 +278,15 @@ public class jYeucautra extends javax.swing.JPanel {
     private javax.swing.JTextField txtusername5;
     private javax.swing.JTextField txtusername9;
     // End of variables declaration//GEN-END:variables
+//
+//    private static class datePicker {
+//
+//        public datePicker() {
+//        UtilDateModel model = new UtilDateModel();
+//        JDatePanelImpl datePanel = new JDatePanelImpl(model);
+//        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel);
+// 
+//        frame.add(datePicker);
+//        }
+//    }
 }
