@@ -18,18 +18,17 @@ import javax.swing.table.DefaultTableModel;
  * @author quann
  */
 public class xu_ly_sach {
-    public void updateTable(javax.swing.JComboBox jComboBox) {
+    public void updateTacgia(javax.swing.JComboBox jComboBox) {
         try {
             DefaultComboBoxModel model = new DefaultComboBoxModel();
             model = (DefaultComboBoxModel) jComboBox.getModel();
             model.removeAllElements();
             
             Statement stat = connectionClass.getStatement();
-            ResultSet rs = stat.executeQuery("SELECT * FROM sach");
+            ResultSet rs = stat.executeQuery("SELECT * FROM tacgia");
             while (rs.next()) {
                 model.addElement(new Object[] {
-                        rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString("cccd"),
-                        rs.getString(7)
+                        rs.getString("tentacgia")
                 });
 
             }
