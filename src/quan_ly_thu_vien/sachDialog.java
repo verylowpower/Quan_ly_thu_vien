@@ -20,7 +20,7 @@ public class sachDialog extends javax.swing.JDialog {
     public sachDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
         super(parent, modal);
         initComponents();
-        xuLySach.getTacgia(tacgiaComboBox);
+        xuLySach.getComboBoxElements(tacgiaComboBox, nxbComboBox, theloaiComboBox);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -195,7 +195,7 @@ public class sachDialog extends javax.swing.JDialog {
 
         tacgiaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tác giả"}));
 
-        theloaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại"}));
+        theloaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại" }));
 
         nxbComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhà xuất bản"}));
 

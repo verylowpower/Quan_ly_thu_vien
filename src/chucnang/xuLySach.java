@@ -19,23 +19,42 @@ import javax.swing.table.DefaultTableModel;
  * @author quann
  */
 public class xuLySach {
-    public static void getComboBoxElements(javax.swing.JComboBox jComboBox){
+    public static void getComboBoxElements(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2){
         try {
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery("SELECT * FROM tacgia");
             while (rs.next()) {
                 jComboBox.addItem(rs.getString("tentacgia"));
             }
+            rs = stat.executeQuery("SELECT * FROM nha_xuat_ban");
+            while(rs.next()){
+                jComboBox1.addItem(rs.getString("ten_nxb"));
+            }
+            rs = stat.executeQuery("SELECT * FROM theloai");
+            while(rs.next()){
+                jComboBox2.addItem(rs.getString("tentheloai"));
+            }
         } catch (Exception e) {
         }
     }
-    private void add() {
+    private void add(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2, String tenSach, String namXb){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
                             "insert into sach(ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia)"
                                     + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ResultSet rs = connectionClass.getStatement().executeQuery("SELECT * FROM tacgia WHERE tentacgia = '"+jComboBox.getSelectedItem().toString()+"'");
+            rs.next();
+            int idTacGia = rs.getInt("ma_tacgia");
+            rs = connectionClass.getStatement().executeQuery("Select * from theloai WHERE tentheloai = '"+jComboBox2.getSelectedItem() +"'");
+            rs.next();
+            int idTheLoai = rs.getInt("ma_theloai");
+            rs = connectionClass.getStatement().executeQuery("Select * from nha_xuat_ban WHERE tennxb = '"+jComboBox1.getSelectedItem() +"'");
+            rs.next();
+            int idNxb = rs.getInt("ma_nxb");
+            ps.setString(1, tenSach);
+            ps.setString(2, namXb);
             // ps.setInt(1, Integer.parseInt(idTextField2.getText()));
             // ps.setString(2, fullnameTextField2.getText());
             // if (jRadioButton1.isSelected()) {
