@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author quann
  */
-public class xu_ly_sach {
+public class xuLySach {
     public void updateTacgia(javax.swing.JComboBox jComboBox) {
         try {
             DefaultComboBoxModel model = new DefaultComboBoxModel();
