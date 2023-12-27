@@ -19,25 +19,15 @@ import javax.swing.table.DefaultTableModel;
  * @author quann
  */
 public class xuLySach {
-    public static ArrayList getTacgia() {
-        ArrayList<String> list = new ArrayList();
+    public static void getTacgia(javax.swing.JComboBox jComboBox){
         try {
-            // DefaultComboBoxModel model = new DefaultComboBoxModel();
-            // model = (DefaultComboBoxModel) jComboBox.getModel();
-            // model.removeAllElements();
-            
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery("SELECT * FROM tacgia");
             while (rs.next()) {
-                // model.addElement(new Object[] {
-                //         rs.getString("tentacgia")
-                // });
-                // System.out.println(rs.getString("tentacgia"));
-                list.add(rs.getString("tentacgia"));
+                jComboBox.addItem(rs.getString("tentacgia"));
             }
         } catch (Exception e) {
         }
-        return list;
     }
     private void add() {
         try {

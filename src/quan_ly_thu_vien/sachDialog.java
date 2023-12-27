@@ -20,15 +20,7 @@ public class sachDialog extends javax.swing.JDialog {
     public sachDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
         super(parent, modal);
         initComponents();
-        updateTacgia();
-    }
-    private void updateTacgia(){
-        ArrayList<String> list = new ArrayList();
-        list = xuLySach.getTacgia();
-        for (int i = 0; i < list.size(); i++){
-            tacgiaComboBox.addItem(list.get(i));
-        }
-        tacgiaComboBox.remove(1);
+        xuLySach.getTacgia(tacgiaComboBox);
     }
     /**
      * This method is called from within the constructor to initialize the form.
