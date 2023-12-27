@@ -315,12 +315,12 @@ public class sachDialog extends javax.swing.JDialog {
 
     private void exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseEntered
         // TODO add your handling code here:
-        setColor(exit); //màu thay đôi khi di chuột vào
+//        setColor(exit); //màu thay đôi khi di chuột vào
     }//GEN-LAST:event_exitMouseEntered
 
     private void exitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseExited
         // TODO add your handling code here:
-        resetColor(exit); //reset lại màu khi chuột đi ra
+//        resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
