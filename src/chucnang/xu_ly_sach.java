@@ -25,7 +25,7 @@ public class xu_ly_sach {
             model.removeAllElements();
             
             Statement stat = connectionClass.getStatement();
-            ResultSet rs = stat.executeQuery("SELECT * FROM personalinfo");
+            ResultSet rs = stat.executeQuery("SELECT * FROM sach");
             while (rs.next()) {
                 model.addElement(new Object[] {
                         rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString("cccd"),
