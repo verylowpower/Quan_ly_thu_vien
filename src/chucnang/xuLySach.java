@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  * @author quann
  */
 public class xuLySach {
-    public static void getTacgia(javax.swing.JComboBox jComboBox){
+    public static void getComboBoxElements(javax.swing.JComboBox jComboBox){
         try {
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery("SELECT * FROM tacgia");
