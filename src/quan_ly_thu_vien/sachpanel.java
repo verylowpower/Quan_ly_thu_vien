@@ -115,6 +115,11 @@ public class sachpanel extends javax.swing.JPanel {
         themButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         themButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         themButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        themButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -126,7 +131,7 @@ public class sachpanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(timkiemTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 1068, Short.MAX_VALUE))
+                        .addComponent(timkiemTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 866, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -180,6 +185,12 @@ public class sachpanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
+
+    private void themButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButton1ActionPerformed
+        // TODO add your handling code here:
+        new sachDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        
+    }//GEN-LAST:event_themButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -50,7 +50,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="timkiemTextField" pref="1068" max="32767" attributes="0"/>
+                          <Component id="timkiemTextField" pref="866" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -210,6 +210,9 @@
               <Image iconType="3" name="/icon/Home form/button7.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="themButton1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

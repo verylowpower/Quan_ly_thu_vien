@@ -18,6 +18,8 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        addpanel();
+        hidePanel();
         /*
         Component [] componets = this.getContentPane().getComponents();
         
@@ -30,10 +32,10 @@ public class Home extends javax.swing.JFrame {
     private void hidePanel(){
         sach.setVisible(false);
     }
-    private void showpanel(){
+    private void addpanel(){
         sach = new sachpanel();
-        bg.add(sach);
-        sach.setSize(1167, 657);
+        backbonePanel.add(sach);
+        sach.setSize(965, 657);
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
@@ -305,7 +307,8 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        showpanel();
+        hidePanel();
+        sach.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
