@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package quan_ly_thu_vien;
+import chucnang.xuLySach;
 
+import java.util.ArrayList;
+
+import javax.swing.DefaultComboBoxModel;
 /**
  *
  * @author quann
@@ -16,8 +20,20 @@ public class sachDialog extends javax.swing.JDialog {
     public sachDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
         super(parent, modal);
         initComponents();
+        updateTacgia();
     }
-
+    private void updateTacgia(){
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        model = (DefaultComboBoxModel) tacgiaComboBox.getModel();
+        model.removeAllElements();
+        ArrayList<String> list = new ArrayList();
+        list = xuLySach.getTacgia();
+        for (int i = 0; i < list.size(); i++){
+            model.addElement(new Object[] {
+                    list.get(i)
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -18,22 +19,25 @@ import javax.swing.table.DefaultTableModel;
  * @author quann
  */
 public class xuLySach {
-    public void updateTacgia(javax.swing.JComboBox jComboBox) {
+    public static ArrayList getTacgia() {
+        ArrayList<String> list = new ArrayList();
         try {
-            DefaultComboBoxModel model = new DefaultComboBoxModel();
-            model = (DefaultComboBoxModel) jComboBox.getModel();
-            model.removeAllElements();
+            // DefaultComboBoxModel model = new DefaultComboBoxModel();
+            // model = (DefaultComboBoxModel) jComboBox.getModel();
+            // model.removeAllElements();
             
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery("SELECT * FROM tacgia");
             while (rs.next()) {
-                model.addElement(new Object[] {
-                        rs.getString("tentacgia")
-                });
-
+                // model.addElement(new Object[] {
+                //         rs.getString("tentacgia")
+                // });
+                // System.out.println(rs.getString("tentacgia"));
+                list.add(rs.getString("tentacgia"));
             }
         } catch (Exception e) {
         }
+        return list;
     }
     private void add() {
         try {
