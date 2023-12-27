@@ -23,16 +23,12 @@ public class sachDialog extends javax.swing.JDialog {
         updateTacgia();
     }
     private void updateTacgia(){
-        DefaultComboBoxModel model = new DefaultComboBoxModel();
-        model = (DefaultComboBoxModel) tacgiaComboBox.getModel();
-        model.removeAllElements();
         ArrayList<String> list = new ArrayList();
         list = xuLySach.getTacgia();
         for (int i = 0; i < list.size(); i++){
-            model.addElement(new Object[] {
-                    list.get(i)
-            });
+            tacgiaComboBox.addItem(list.get(i));
         }
+        tacgiaComboBox.remove(1);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -205,11 +201,11 @@ public class sachDialog extends javax.swing.JDialog {
             }
         });
 
-        tacgiaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tác giả", " " }));
+        tacgiaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tác giả"}));
 
-        theloaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại" }));
+        theloaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại"}));
 
-        nxbComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhà xuất bản", "" }));
+        nxbComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhà xuất bản"}));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
