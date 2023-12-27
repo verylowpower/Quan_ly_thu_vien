@@ -55,33 +55,9 @@ public class xuLySach {
             int idNxb = rs.getInt("ma_nxb");
             ps.setString(1, tenSach);
             ps.setString(2, namXb);
-            // ps.setInt(1, Integer.parseInt(idTextField2.getText()));
-            // ps.setString(2, fullnameTextField2.getText());
-            // if (jRadioButton1.isSelected()) {
-            //     ps.setString(3, "Nam");
-            // } else if (jRadioButton2.isSelected()) {
-            //     ps.setString(3, "Nữ");
-            // }
-            // ps.setString(4,
-            //         String.valueOf(
-            //                 dobYearCombo.getSelectedItem().toString() + "/" + dobMonthCombo.getSelectedItem().toString()
-            //                         + "/" + dobDayCombo.getSelectedItem().toString()));
-            // ps.setString(5, jTextField12.getText());
-            // ps.setString(6, jTextField11.getText());
-            // ps.setString(8, jTextField1.getText());
-            // ps.setBytes(7, img.toByteArray());
-            // ps.setString(9, jTextField2.getText());
-            // ps.setString(10, jTextField9.getText());
-            // ps.setString(11, jTextField10.getText());
-            // if (jRadioButton3.isSelected()) {
-            //     ps.setInt(12, 1);
-            // } else {
-            //     ps.setInt(12, 0);
-            // }
-            // ps.setString(13, jTextField4.getText());
-            // ps.setString(14, jComboBox1.getSelectedItem().toString());
-            // ps.setString(15, jTextField3.getText());
-            // ps.setString(16, jTextField13.getText());
+            ps.setInt(3, idNxb);
+            ps.setInt(4, idTheLoai);
+            ps.setInt(5, idTacGia);
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
