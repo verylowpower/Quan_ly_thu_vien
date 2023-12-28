@@ -4,6 +4,7 @@
  */
 package quan_ly_thu_vien;
 
+import chucnang.xuLySach;
 import javax.swing.JPanel;
 
 /**
@@ -17,6 +18,7 @@ public class sachpanel extends javax.swing.JPanel {
      */
     public sachpanel() {
         initComponents();
+        xuLySach.updateTable(jTable1);
     }
 
     /**
