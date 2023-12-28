@@ -19,12 +19,15 @@ public class sachDialog extends javax.swing.JDialog {
     /**
      * Creates new form sachDialog
      */
+    javax.swing.JTable jTable;
     boolean editingEnabled;
     public sachDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
         xuLySach.getComboBoxElements(tacgiaComboBox, nxbComboBox, theloaiComboBox);
         this.editingEnabled = editingEnabled;
+        this.jTable = jTable;
+        if(editingEnabled) {xuLySach.select(masachTextField, tensachTextField, namxuatbanTextField, nxbComboBox,tacgiaComboBox,theloaiComboBox, jTable);}
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -329,8 +332,10 @@ public class sachDialog extends javax.swing.JDialog {
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
-        if(editingEnabled) {
+        if(editingEnabled == false) {
             xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), tensachTextField.getText());
+        } else{
+            xuLySach.edit(Integer.parseInt(masachTextField.getText()), jTable, tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText());
         }
     }//GEN-LAST:event_luuButtonActionPerformed
 
