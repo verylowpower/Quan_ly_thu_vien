@@ -37,7 +37,7 @@ public class xuLySach {
         } catch (Exception e) {
         }
     }
-    private void add(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2, String tenSach, String namXb){
+    public static void add(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2, String tenSach, String namXb){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
