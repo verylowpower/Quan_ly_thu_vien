@@ -13,6 +13,7 @@ import java.awt.Color;
  */
 public class Home extends javax.swing.JFrame {
     sachpanel sach = null;
+    docgiapanel docgia = null;
     /**
      * Creates new form Home
      */
@@ -31,11 +32,16 @@ public class Home extends javax.swing.JFrame {
     }
     private void hidePanel(){
         sach.setVisible(false);
+        docgia.setVisible(false);
     }
     private void addpanel(){
         sach = new sachpanel();
         backbonePanel.add(sach);
         sach.setSize(965, 657);
+        
+        docgia = new docgiapanel();
+        backbonePanel.add(docgia);
+        docgia.setSize(965, 657);
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
@@ -114,6 +120,11 @@ public class Home extends javax.swing.JFrame {
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("UTM BryantLG", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(125, 99, 87));
@@ -310,6 +321,12 @@ public class Home extends javax.swing.JFrame {
         hidePanel();
         sach.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        hidePanel();
+        docgia.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
