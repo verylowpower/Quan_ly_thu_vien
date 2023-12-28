@@ -26,15 +26,12 @@ public class xuLySach {
             model.setRowCount(0);
             
             Statement stat = connectionClass.getStatement();
-            ResultSet rs = stat.executeQuery("SELECT * FROM sach");
+            ResultSet rs = stat.executeQuery("select  ma_sach, ten_sach, nam_xb ,tacgia.tentacgia, nha_xuat_ban.ten_nxb, theloai.tentheloai  from sach"+ 
+            " LEFT JOIN tacgia ON sach.ma_tacgia = tacgia.ma_tacgia LEFT JOIN nha_xuat_ban ON sach.ma_nxb = nha_xuat_ban.ma_nxb LEFT JOIN theloai ON sach.ma_theloai = theloai.ma_theloai");
             while (rs.next()) {
-                // ResultSet tenNxb = connectionClass.getStatement().executeQuery("Select * FROM nha_xuat_ban where ma_nxb = "+ rs.getString("ma_nxb")); tenNxb.next();
-                // ResultSet tenTheloai = connectionClass.getStatement().executeQuery("Select * FROM theloai where ma_theloai = "+ rs.getString("ma_theloai")); tenTheloai.next();
-                // ResultSet tenTacgia = connectionClass.getStatement().executeQuery("Select * FROM tacgia where ma_tacgia = "+ rs.getString("ma_tacgia")); tenTacgia.next();
-                // model.addRow(new Object[] {
-                //         rs.getInt("ma_sach"), rs.getString("ten_sach"), rs.getString("nam_xb"), rs.getString("ma_nxb"), rs.getString("ma_theloai"), rs.getString("ma_tacgia") 
-                // });
-                System.out.println(rs.getString("ma_sach") + rs.getString("ten_sach")+ rs.getString("nam_xb") + rs.getString("ma_nxb"));
+                model.addRow(new Object[] {
+                        rs.getInt("ma_sach"), rs.getString("ten_sach"), rs.getString("nam_xb"), rs.getString("ten_nxb"), rs.getString("tentheloai"), rs.getString("tentacgia") 
+                });
             }
         } catch (Exception e) {
         }
