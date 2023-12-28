@@ -43,6 +43,7 @@ public class thuthupanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        themButton1 = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -106,6 +107,20 @@ public class thuthupanel extends javax.swing.JPanel {
             }
         });
 
+        themButton1.setBackground(new java.awt.Color(232, 214, 200));
+        themButton1.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        themButton1.setForeground(new java.awt.Color(125, 99, 87));
+        themButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        themButton1.setText("Thêm");
+        themButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        themButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        themButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        themButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -126,6 +141,10 @@ public class thuthupanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(txtusername8)
                 .addContainerGap())
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGap(481, 481, 481)
+                .addComponent(themButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,8 +158,10 @@ public class thuthupanel extends javax.swing.JPanel {
                     .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(themButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -177,6 +198,12 @@ public class thuthupanel extends javax.swing.JPanel {
         resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
 
+    private void themButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButton1ActionPerformed
+        // TODO add your handling code here:
+        new sachDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+
+    }//GEN-LAST:event_themButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
@@ -184,6 +211,7 @@ public class thuthupanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton themButton1;
     private javax.swing.JLabel timkiemTextField;
     private javax.swing.JTextField txtusername8;
     // End of variables declaration//GEN-END:variables
