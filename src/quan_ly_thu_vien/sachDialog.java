@@ -342,7 +342,7 @@ public class sachDialog extends javax.swing.JDialog {
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
-        xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, );
+        xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), tensachTextField.getText());
     }//GEN-LAST:event_luuButtonActionPerformed
 
     /**
