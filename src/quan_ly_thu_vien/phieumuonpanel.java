@@ -46,6 +46,9 @@ public class phieumuonpanel extends javax.swing.JPanel {
         txtusername5 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        themButton = new javax.swing.JButton();
+        xoaButton = new javax.swing.JButton();
+        suaButton = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(843, 627));
 
@@ -111,16 +114,58 @@ public class phieumuonpanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã phiếu", "Tên sách", "Người mượn", "Ngày mượn", "Ngày trả"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        themButton.setBackground(new java.awt.Color(232, 214, 200));
+        themButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        themButton.setForeground(new java.awt.Color(125, 99, 87));
+        themButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        themButton.setText("Thêm");
+        themButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        themButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        themButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        themButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themButtonActionPerformed(evt);
+            }
+        });
+
+        xoaButton.setBackground(new java.awt.Color(232, 214, 200));
+        xoaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        xoaButton.setForeground(new java.awt.Color(125, 99, 87));
+        xoaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        xoaButton.setText("Xóa");
+        xoaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        xoaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        xoaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        xoaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xoaButtonActionPerformed(evt);
+            }
+        });
+
+        suaButton.setBackground(new java.awt.Color(232, 214, 200));
+        suaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        suaButton.setForeground(new java.awt.Color(125, 99, 87));
+        suaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        suaButton.setText("Sửa");
+        suaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        suaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        suaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        suaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suaButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -130,13 +175,19 @@ public class phieumuonpanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(timkiemTextField)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtusername5))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1161, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(172, 172, 172)
+                        .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         bgLayout.setVerticalGroup(
@@ -148,19 +199,24 @@ public class phieumuonpanel extends javax.swing.JPanel {
                     .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1173, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -188,6 +244,19 @@ public class phieumuonpanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtusername5ActionPerformed
 
+    private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
+        // TODO add your handling code here:
+        new sachDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
+    }//GEN-LAST:event_themButtonActionPerformed
+
+    private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xoaButtonActionPerformed
+
+    private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_suaButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
@@ -195,8 +264,11 @@ public class phieumuonpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton suaButton;
+    private javax.swing.JButton themButton;
     private javax.swing.JLabel timkiemTextField;
     private javax.swing.JTextField txtusername5;
+    private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 //
 //    private static class datePicker {

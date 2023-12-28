@@ -43,7 +43,9 @@ public class docgiapanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        themButton1 = new javax.swing.JButton();
+        themButton = new javax.swing.JButton();
+        xoaButton = new javax.swing.JButton();
+        suaButton = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(843, 627));
 
@@ -115,17 +117,45 @@ public class docgiapanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        themButton1.setBackground(new java.awt.Color(232, 214, 200));
-        themButton1.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        themButton1.setForeground(new java.awt.Color(125, 99, 87));
-        themButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        themButton1.setText("Thêm");
-        themButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        themButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        themButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        themButton1.addActionListener(new java.awt.event.ActionListener() {
+        themButton.setBackground(new java.awt.Color(232, 214, 200));
+        themButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        themButton.setForeground(new java.awt.Color(125, 99, 87));
+        themButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        themButton.setText("Thêm");
+        themButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        themButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        themButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        themButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                themButton1ActionPerformed(evt);
+                themButtonActionPerformed(evt);
+            }
+        });
+
+        xoaButton.setBackground(new java.awt.Color(232, 214, 200));
+        xoaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        xoaButton.setForeground(new java.awt.Color(125, 99, 87));
+        xoaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        xoaButton.setText("Xóa");
+        xoaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        xoaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        xoaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        xoaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xoaButtonActionPerformed(evt);
+            }
+        });
+
+        suaButton.setBackground(new java.awt.Color(232, 214, 200));
+        suaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        suaButton.setForeground(new java.awt.Color(125, 99, 87));
+        suaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        suaButton.setText("Sửa");
+        suaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        suaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        suaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        suaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suaButtonActionPerformed(evt);
             }
         });
 
@@ -141,15 +171,17 @@ public class docgiapanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(0, 983, Short.MAX_VALUE)
+                                .addGap(0, 781, Short.MAX_VALUE)
                                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(timkiemTextField)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(168, 168, 168)
+                        .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(320, 320, 320)
-                .addComponent(themButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,22 +191,25 @@ public class docgiapanel extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(themButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -198,9 +233,17 @@ public class docgiapanel extends javax.swing.JPanel {
         resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
 
-    private void themButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButton1ActionPerformed
+    private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_themButton1ActionPerformed
+    }//GEN-LAST:event_themButtonActionPerformed
+
+    private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xoaButtonActionPerformed
+
+    private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_suaButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -210,7 +253,9 @@ public class docgiapanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton themButton1;
+    private javax.swing.JButton suaButton;
+    private javax.swing.JButton themButton;
     private javax.swing.JTextField timkiemTextField;
+    private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 }

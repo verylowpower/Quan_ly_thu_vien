@@ -43,7 +43,9 @@ public class thuthupanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        themButton1 = new javax.swing.JButton();
+        themButton = new javax.swing.JButton();
+        xoaButton = new javax.swing.JButton();
+        suaButton = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -107,17 +109,45 @@ public class thuthupanel extends javax.swing.JPanel {
             }
         });
 
-        themButton1.setBackground(new java.awt.Color(232, 214, 200));
-        themButton1.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        themButton1.setForeground(new java.awt.Color(125, 99, 87));
-        themButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        themButton1.setText("Thêm");
-        themButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        themButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        themButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        themButton1.addActionListener(new java.awt.event.ActionListener() {
+        themButton.setBackground(new java.awt.Color(232, 214, 200));
+        themButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        themButton.setForeground(new java.awt.Color(125, 99, 87));
+        themButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        themButton.setText("Thêm");
+        themButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        themButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        themButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        themButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                themButton1ActionPerformed(evt);
+                themButtonActionPerformed(evt);
+            }
+        });
+
+        xoaButton.setBackground(new java.awt.Color(232, 214, 200));
+        xoaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        xoaButton.setForeground(new java.awt.Color(125, 99, 87));
+        xoaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        xoaButton.setText("Xóa");
+        xoaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        xoaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        xoaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        xoaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xoaButtonActionPerformed(evt);
+            }
+        });
+
+        suaButton.setBackground(new java.awt.Color(232, 214, 200));
+        suaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        suaButton.setForeground(new java.awt.Color(125, 99, 87));
+        suaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        suaButton.setText("Sửa");
+        suaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        suaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        suaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        suaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suaButtonActionPerformed(evt);
             }
         });
 
@@ -132,19 +162,23 @@ public class thuthupanel extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(779, 779, 779)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(15, 15, 15))
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(timkiemTextField)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtusername8)
                 .addContainerGap())
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(481, 481, 481)
-                .addComponent(themButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177)
+                .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,22 +187,25 @@ public class thuthupanel extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(themButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1173, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,9 +235,17 @@ public class thuthupanel extends javax.swing.JPanel {
         resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
 
-    private void themButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButton1ActionPerformed
+    private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_themButton1ActionPerformed
+    }//GEN-LAST:event_themButtonActionPerformed
+
+    private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xoaButtonActionPerformed
+
+    private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_suaButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -209,8 +254,10 @@ public class thuthupanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton themButton1;
+    private javax.swing.JButton suaButton;
+    private javax.swing.JButton themButton;
     private javax.swing.JLabel timkiemTextField;
     private javax.swing.JTextField txtusername8;
+    private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,7 +10,7 @@ import javax.swing.JPanel;
  *
  * @author lehuy
  */
-public class docgiaDialog extends javax.swing.JPanel {
+public class docgiaDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form docgiaDialog
@@ -41,7 +41,6 @@ public class docgiaDialog extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         luuButton = new javax.swing.JButton();
-        xoaButton = new javax.swing.JButton();
 
         jButton11.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jButton11.setForeground(new java.awt.Color(125, 99, 87));
@@ -143,19 +142,6 @@ public class docgiaDialog extends javax.swing.JPanel {
         luuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         luuButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
 
-        xoaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        xoaButton.setForeground(new java.awt.Color(125, 99, 87));
-        xoaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        xoaButton.setText("Xóa");
-        xoaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        xoaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        xoaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        xoaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xoaButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -166,10 +152,9 @@ public class docgiaDialog extends javax.swing.JPanel {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(bgLayout.createSequentialGroup()
@@ -181,7 +166,7 @@ public class docgiaDialog extends javax.swing.JPanel {
                                             .addComponent(sodienthoaiTextField)))
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addGap(57, 57, 57)
-                                        .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))
+                                        .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,9 +199,7 @@ public class docgiaDialog extends javax.swing.JPanel {
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sodienthoaiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -256,10 +239,6 @@ public class docgiaDialog extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_manguoimuonTextFieldActionPerformed
 
-    private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_xoaButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
@@ -275,7 +254,6 @@ public class docgiaDialog extends javax.swing.JPanel {
     private javax.swing.JTextField manguoimuonTextField;
     private javax.swing.JTextField sodienthoaiTextField;
     private javax.swing.JTextField tennguoimuonTextField;
-    private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 
     private void setColor(JPanel exit) {

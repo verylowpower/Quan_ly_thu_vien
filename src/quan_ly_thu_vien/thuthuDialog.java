@@ -10,7 +10,7 @@ import javax.swing.JPanel;
  *
  * @author lehuy
  */
-public class thuthuDialog extends javax.swing.JPanel {
+public class thuthuDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form thuthuDialog
@@ -42,7 +42,6 @@ public class thuthuDialog extends javax.swing.JPanel {
         txtusername7 = new javax.swing.JTextField();
         txtusername9 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        xoaButton = new javax.swing.JButton();
         luuButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
@@ -137,19 +136,6 @@ public class thuthuDialog extends javax.swing.JPanel {
             }
         });
 
-        xoaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        xoaButton.setForeground(new java.awt.Color(125, 99, 87));
-        xoaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        xoaButton.setText("Xóa");
-        xoaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        xoaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        xoaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        xoaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xoaButtonActionPerformed(evt);
-            }
-        });
-
         luuButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         luuButton.setForeground(new java.awt.Color(125, 99, 87));
         luuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
@@ -213,12 +199,10 @@ public class thuthuDialog extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel5)))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))))
                         .addGap(418, 418, 418)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -259,10 +243,8 @@ public class thuthuDialog extends javax.swing.JPanel {
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -299,10 +281,6 @@ public class thuthuDialog extends javax.swing.JPanel {
         System.exit(0); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_xoaButtonActionPerformed
-
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_luuButtonActionPerformed
@@ -329,7 +307,6 @@ public class thuthuDialog extends javax.swing.JPanel {
     private javax.swing.JTextField txtusername5;
     private javax.swing.JTextField txtusername7;
     private javax.swing.JTextField txtusername9;
-    private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 
     private void setColor(JPanel exit) {

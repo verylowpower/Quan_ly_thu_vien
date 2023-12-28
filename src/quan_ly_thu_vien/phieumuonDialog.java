@@ -8,7 +8,7 @@ package quan_ly_thu_vien;
  *
  * @author lehuy
  */
-public class phieumuonDialog extends javax.swing.JPanel {
+public class phieumuonDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form phieumuonDialog
@@ -36,7 +36,6 @@ public class phieumuonDialog extends javax.swing.JPanel {
         txtusername6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        xoaButton = new javax.swing.JButton();
         luuButton = new javax.swing.JButton();
         jComboBox3 = new javax.swing.JComboBox<>();
         jComboBox4 = new javax.swing.JComboBox<>();
@@ -93,19 +92,6 @@ public class phieumuonDialog extends javax.swing.JPanel {
             }
         });
 
-        xoaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        xoaButton.setForeground(new java.awt.Color(125, 99, 87));
-        xoaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        xoaButton.setText("Xóa");
-        xoaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        xoaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        xoaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        xoaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xoaButtonActionPerformed(evt);
-            }
-        });
-
         luuButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         luuButton.setForeground(new java.awt.Color(125, 99, 87));
         luuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
@@ -142,10 +128,7 @@ public class phieumuonDialog extends javax.swing.JPanel {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(luuButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(85, 85, 85)
@@ -197,10 +180,8 @@ public class phieumuonDialog extends javax.swing.JPanel {
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -213,7 +194,7 @@ public class phieumuonDialog extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -221,10 +202,6 @@ public class phieumuonDialog extends javax.swing.JPanel {
         // TODO add your handling code here:
         System.exit(0); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
@@ -247,6 +224,5 @@ public class phieumuonDialog extends javax.swing.JPanel {
     private javax.swing.JTextField txtusername4;
     private javax.swing.JTextField txtusername5;
     private javax.swing.JTextField txtusername6;
-    private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 }
