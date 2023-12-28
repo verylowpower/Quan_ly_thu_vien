@@ -4,13 +4,22 @@
  */
 package chucnang;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -65,13 +74,13 @@ public class xuLySach {
 
     // Chay query them vao database
     public static void add(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1,
-            javax.swing.JComboBox jComboBox2, String tenSach, String namXb) {
+            javax.swing.JComboBox jComboBox2, String tenSach, String namXb, ByteArrayOutputStream img){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
-                            "insert into sach(ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia)"
-                                    + "values(?, ?, ?, ?, ?)");
+                            "insert into sach(ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia, anhSach)"
+                                    + "values(?, ?, ?, ?, ?, ?)");
             ResultSet rs = connectionClass.getStatement().executeQuery(
                     "SELECT * FROM tacgia WHERE tentacgia = '" + jComboBox.getSelectedItem().toString() + "'");
             rs.next();
@@ -89,6 +98,7 @@ public class xuLySach {
             ps.setInt(3, idNxb);
             ps.setInt(4, idTheLoai);
             ps.setInt(5, idTacGia);
+            ps.setBytes(6, img.toByteArray());
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -96,7 +106,7 @@ public class xuLySach {
     }
 
     public static void edit(int maSach, javax.swing.JTable jTable, javax.swing.JComboBox tacgiaComboBox,
-            javax.swing.JComboBox nxbComboBox, javax.swing.JComboBox theloaiComboBox, String tenSach, String namXb) {
+            javax.swing.JComboBox nxbComboBox, javax.swing.JComboBox theloaiComboBox, String tenSach, String namXb, ByteArrayOutputStream img) {
         try {
             ResultSet rs = connectionClass.getStatement().executeQuery(
                     "SELECT * FROM tacgia WHERE tentacgia = '" + tacgiaComboBox.getSelectedItem().toString() + "'");
@@ -111,13 +121,14 @@ public class xuLySach {
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ? where ma_sach = '"+ maSach +"'");
+                    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ?, anhSach = ? where ma_sach = '"+ maSach +"'");
             ps.setInt(1, maSach);
             ps.setString(2, tenSach);
             ps.setString(3, namXb);
             ps.setInt(4, idNxb);
             ps.setInt(5, idTheLoai);
             ps.setInt(6, idTacGia);
+            ps.setBytes(7, img.toByteArray());
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -127,11 +138,11 @@ public class xuLySach {
     public static void select(javax.swing.JTextField masachTextField, javax.swing.JTextField tensachTextField,
             javax.swing.JTextField namTextField,
             javax.swing.JComboBox nxbComboBox, javax.swing.JComboBox tacgiaComboBox, javax.swing.JComboBox theloaiComboBox,
-            javax.swing.JTable jTable) {
+            javax.swing.JTable jTable, javax.swing.JLabel pictureLabel) {
         try {
             masachTextField.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "select  ma_sach, ten_sach, nam_xb ,tacgia.tentacgia, nha_xuat_ban.ten_nxb, theloai.tentheloai  from sach"
+                    "select  ma_sach, ten_sach, nam_xb, anhSach, tacgia.tentacgia, nha_xuat_ban.ten_nxb, theloai.tentheloai  from sach"
                             +
                             " LEFT JOIN tacgia ON sach.ma_tacgia = tacgia.ma_tacgia LEFT JOIN nha_xuat_ban ON sach.ma_nxb = nha_xuat_ban.ma_nxb"
                             +
@@ -142,6 +153,10 @@ public class xuLySach {
             nxbComboBox.setSelectedItem(rs.getString("ten_nxb"));
             tacgiaComboBox.setSelectedItem(rs.getString("tentacgia"));
             theloaiComboBox.setSelectedItem(rs.getString("tentheloai"));
+            if(rs.getBytes("anhSach") != null){
+                ImageIcon img = new ImageIcon(new ImageIcon(rs.getBytes("anhSach")).getImage());
+                pictureLabel.setIcon(new javax.swing.ImageIcon(img.getImage().getScaledInstance(pictureLabel.getWidth(), pictureLabel.getHeight(), Image.SCALE_SMOOTH)));
+            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
@@ -155,5 +170,20 @@ public class xuLySach {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
+    }
+    public static ByteArrayOutputStream getImg(javax.swing.JLabel pictureLabel){
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.showOpenDialog(null);
+
+        ByteArrayOutputStream temp = new ByteArrayOutputStream();
+        try {
+            BufferedImage im = ImageIO.read(fileChooser.getSelectedFile());
+            temp = new ByteArrayOutputStream();
+            ImageIO.write(im, "png", temp);
+            pictureLabel.setIcon(new javax.swing.ImageIcon(im.getScaledInstance(pictureLabel.getWidth(), pictureLabel.getHeight(), java.awt.Image.SCALE_SMOOTH)));
+        } catch (IOException ex) {
+            javax.swing.JOptionPane.showMessageDialog(null, "No File Selected");
+        }
+        return temp;
     }
 }

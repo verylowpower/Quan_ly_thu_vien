@@ -5,7 +5,7 @@
 package quan_ly_thu_vien;
 import chucnang.xuLySach;
 import java.awt.Color;
-
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
@@ -21,13 +21,15 @@ public class sachDialog extends javax.swing.JDialog {
      */
     javax.swing.JTable jTable;
     boolean editingEnabled;
+    ByteArrayOutputStream img;
+
     public sachDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
         xuLySach.getComboBoxElements(tacgiaComboBox, nxbComboBox, theloaiComboBox);
         this.editingEnabled = editingEnabled;
         this.jTable = jTable;
-        if(editingEnabled) {xuLySach.select(masachTextField, tensachTextField, namxuatbanTextField, nxbComboBox,tacgiaComboBox,theloaiComboBox, jTable);}
+        if(editingEnabled) {xuLySach.select(masachTextField, tensachTextField, namxuatbanTextField, nxbComboBox,tacgiaComboBox,theloaiComboBox, jTable, pictureLabel);}
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,7 +53,7 @@ public class sachDialog extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        pictureLabel = new javax.swing.JLabel();
         themanhButton = new javax.swing.JButton();
         luuButton = new javax.swing.JButton();
         tacgiaComboBox = new javax.swing.JComboBox<>();
@@ -142,7 +144,7 @@ public class sachDialog extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        pictureLabel.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -150,14 +152,14 @@ public class sachDialog extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                .addComponent(pictureLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                .addComponent(pictureLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -328,14 +330,15 @@ public class sachDialog extends javax.swing.JDialog {
 
     private void themanhButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themanhButtonActionPerformed
         // TODO add your handling code here:
+        img = xuLySach.getImg(pictureLabel);
     }//GEN-LAST:event_themanhButtonActionPerformed
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
         if(editingEnabled == false) {
-            xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), tensachTextField.getText());
+            xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), tensachTextField.getText(), img);
         } else{
-            xuLySach.edit(Integer.parseInt(masachTextField.getText()), jTable, tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText());
+            xuLySach.edit(Integer.parseInt(masachTextField.getText()), jTable, tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
         }
     }//GEN-LAST:event_luuButtonActionPerformed
 
@@ -346,7 +349,6 @@ public class sachDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JPanel exit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -359,6 +361,7 @@ public class sachDialog extends javax.swing.JDialog {
     private javax.swing.JTextField masachTextField;
     private javax.swing.JTextField namxuatbanTextField;
     private javax.swing.JComboBox<String> nxbComboBox;
+    private javax.swing.JLabel pictureLabel;
     private javax.swing.JComboBox<String> tacgiaComboBox;
     private javax.swing.JTextField tensachTextField;
     private javax.swing.JComboBox<String> theloaiComboBox;
