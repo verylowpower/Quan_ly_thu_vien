@@ -200,7 +200,6 @@ public class docgiapanel extends javax.swing.JPanel {
 
     private void themButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButton1ActionPerformed
         // TODO add your handling code here:
-        new sachDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
     }//GEN-LAST:event_themButton1ActionPerformed
 
 

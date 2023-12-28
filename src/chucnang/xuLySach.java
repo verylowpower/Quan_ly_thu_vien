@@ -19,6 +19,10 @@ import javax.swing.table.DefaultTableModel;
  * @author quann
  */
 public class xuLySach {
+    public static void updateTable(){
+        
+    }
+    //Them phan tu tu database vao comboBox cua sachDialog
     public static void getComboBoxElements(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2){
         try {
             Statement stat = connectionClass.getStatement();
@@ -37,6 +41,7 @@ public class xuLySach {
         } catch (Exception e) {
         }
     }
+    // Chay query them vao database 
     public static void add(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2, String tenSach, String namXb){
         try {
             Connection conn = connectionClass.getConnection();
