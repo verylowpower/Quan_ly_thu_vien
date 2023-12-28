@@ -239,6 +239,7 @@ public class sachpanel extends javax.swing.JPanel {
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
         new sachDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
+        xuLySach.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
 
 

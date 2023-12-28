@@ -69,7 +69,7 @@ public class xuLySach {
             rs = connectionClass.getStatement().executeQuery("Select * from theloai WHERE tentheloai = '"+jComboBox2.getSelectedItem() +"'");
             rs.next();
             int idTheLoai = rs.getInt("ma_theloai");
-            rs = connectionClass.getStatement().executeQuery("Select * from nha_xuat_ban WHERE tennxb = '"+jComboBox1.getSelectedItem() +"'");
+            rs = connectionClass.getStatement().executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '"+jComboBox1.getSelectedItem() +"'");
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
             ps.setString(1, tenSach);
