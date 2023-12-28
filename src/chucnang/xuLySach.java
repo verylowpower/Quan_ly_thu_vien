@@ -43,7 +43,7 @@ public class xuLySach {
             final PreparedStatement ps = conn
                     .prepareStatement(
                             "insert into sach(ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia)"
-                                    + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                                    + "values(?, ?, ?, ?, ?)");
             ResultSet rs = connectionClass.getStatement().executeQuery("SELECT * FROM tacgia WHERE tentacgia = '"+jComboBox.getSelectedItem().toString()+"'");
             rs.next();
             int idTacGia = rs.getInt("ma_tacgia");
