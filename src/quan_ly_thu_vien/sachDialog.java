@@ -48,7 +48,6 @@ public class sachDialog extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         themanhButton = new javax.swing.JButton();
-        xoabutton = new javax.swing.JButton();
         luuButton = new javax.swing.JButton();
         tacgiaComboBox = new javax.swing.JComboBox<>();
         theloaiComboBox = new javax.swing.JComboBox<>();
@@ -170,19 +169,6 @@ public class sachDialog extends javax.swing.JDialog {
             }
         });
 
-        xoabutton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        xoabutton.setForeground(new java.awt.Color(125, 99, 87));
-        xoabutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        xoabutton.setText("Xóa");
-        xoabutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        xoabutton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        xoabutton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        xoabutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xoabuttonActionPerformed(evt);
-            }
-        });
-
         luuButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         luuButton.setForeground(new java.awt.Color(125, 99, 87));
         luuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
@@ -245,7 +231,6 @@ public class sachDialog extends javax.swing.JDialog {
                         .addGap(272, 272, 272))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(xoabutton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -294,10 +279,8 @@ public class sachDialog extends javax.swing.JDialog {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(theloaiComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(xoabutton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -342,10 +325,6 @@ public class sachDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_themanhButtonActionPerformed
 
-    private void xoabuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoabuttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_xoabuttonActionPerformed
-
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
         xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), tensachTextField.getText());
@@ -375,6 +354,5 @@ public class sachDialog extends javax.swing.JDialog {
     private javax.swing.JTextField tensachTextField;
     private javax.swing.JComboBox<String> theloaiComboBox;
     private javax.swing.JButton themanhButton;
-    private javax.swing.JButton xoabutton;
     // End of variables declaration//GEN-END:variables
 }
