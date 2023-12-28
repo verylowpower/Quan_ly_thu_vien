@@ -15,7 +15,8 @@ public class thuthuDialog extends javax.swing.JDialog {
     /**
      * Creates new form thuthuDialog
      */
-    public thuthuDialog() {
+    public thuthuDialog(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 

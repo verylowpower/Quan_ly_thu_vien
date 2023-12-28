@@ -15,8 +15,10 @@ public class docgiaDialog extends javax.swing.JDialog {
     /**
      * Creates new form docgiaDialog
      */
-    public docgiaDialog() {
+    public docgiaDialog(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
+        
     }
 
     /**

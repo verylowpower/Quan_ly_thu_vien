@@ -13,7 +13,8 @@ public class phieumuonDialog extends javax.swing.JDialog {
     /**
      * Creates new form phieumuonDialog
      */
-    public phieumuonDialog() {
+    public phieumuonDialog(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
