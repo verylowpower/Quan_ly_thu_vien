@@ -4,7 +4,11 @@
  */
 package quan_ly_thu_vien;
 
+import chucnang.ComponentPrinter;
 import chucnang.xuLySach;
+
+import java.awt.Component;
+
 import javax.swing.JPanel;
 
 /**
