@@ -5,20 +5,22 @@
 package quan_ly_thu_vien;
 
 import javax.swing.JPanel;
+import chucnang.xuLyDocGia;
 
 /**
  *
- * @author lehuy
+ * @author TuanNguyen
  */
 public class docgiaDialog extends javax.swing.JDialog {
 
-    /**
-     * Creates new form docgiaDialog
-     */
-    public docgiaDialog(java.awt.Frame parent, boolean modal) {
+    javax.swing.JTable jTable;
+    boolean editingEnabled;
+    
+    public docgiaDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
-        
+        this.editingEnabled = editingEnabled;
+        this.jTable = jTable;
     }
 
     /**
@@ -36,13 +38,15 @@ public class docgiaDialog extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         manguoimuonTextField = new javax.swing.JTextField();
-        diachiTextField = new javax.swing.JTextField();
+        ngaysinhTextField = new javax.swing.JTextField();
         tennguoimuonTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         sodienthoaiTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         luuButton = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        gioitinhTextField1 = new javax.swing.JTextField();
 
         jButton11.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jButton11.setForeground(new java.awt.Color(125, 99, 87));
@@ -101,11 +105,11 @@ public class docgiaDialog extends javax.swing.JDialog {
             }
         });
 
-        diachiTextField.setFont(diachiTextField.getFont().deriveFont(diachiTextField.getFont().getSize()+2f));
-        diachiTextField.setForeground(new java.awt.Color(137, 110, 89));
-        diachiTextField.setBorder(null);
-        diachiTextField.setDragEnabled(true);
-        diachiTextField.setName(""); // NOI18N
+        ngaysinhTextField.setFont(ngaysinhTextField.getFont().deriveFont(ngaysinhTextField.getFont().getSize()+2f));
+        ngaysinhTextField.setForeground(new java.awt.Color(137, 110, 89));
+        ngaysinhTextField.setBorder(null);
+        ngaysinhTextField.setDragEnabled(true);
+        ngaysinhTextField.setName(""); // NOI18N
 
         tennguoimuonTextField.setFont(tennguoimuonTextField.getFont().deriveFont(tennguoimuonTextField.getFont().getSize()+2f));
         tennguoimuonTextField.setForeground(new java.awt.Color(137, 110, 89));
@@ -115,7 +119,7 @@ public class docgiaDialog extends javax.swing.JDialog {
 
         jLabel4.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(125, 99, 87));
-        jLabel4.setText("Địa chỉ");
+        jLabel4.setText("Ngày sinh");
 
         sodienthoaiTextField.setFont(sodienthoaiTextField.getFont().deriveFont(sodienthoaiTextField.getFont().getSize()+2f));
         sodienthoaiTextField.setForeground(new java.awt.Color(137, 110, 89));
@@ -144,38 +148,42 @@ public class docgiaDialog extends javax.swing.JDialog {
         luuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         luuButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
 
+        jLabel7.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(125, 99, 87));
+        jLabel7.setText("Giới tính");
+
+        gioitinhTextField1.setFont(gioitinhTextField1.getFont().deriveFont(gioitinhTextField1.getFont().getSize()+2f));
+        gioitinhTextField1.setForeground(new java.awt.Color(137, 110, 89));
+        gioitinhTextField1.setBorder(null);
+        gioitinhTextField1.setDragEnabled(true);
+        gioitinhTextField1.setName(""); // NOI18N
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tennguoimuonTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                                            .addComponent(manguoimuonTextField)
-                                            .addComponent(diachiTextField)
-                                            .addComponent(sodienthoaiTextField)))
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addGap(57, 57, 57)
-                                        .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tennguoimuonTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(manguoimuonTextField)
+                            .addComponent(ngaysinhTextField)
+                            .addComponent(sodienthoaiTextField)
+                            .addComponent(luuButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(gioitinhTextField1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,27 +201,35 @@ public class docgiaDialog extends javax.swing.JDialog {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tennguoimuonTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ngaysinhTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(diachiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(gioitinhTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sodienthoaiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -229,12 +245,12 @@ public class docgiaDialog extends javax.swing.JDialog {
 
     private void exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseEntered
         // TODO add your handling code here:
-        setColor(exit); //màu thay đôi khi di chuột vào
+        //setColor(exit); //màu thay đôi khi di chuột vào
     }//GEN-LAST:event_exitMouseEntered
 
     private void exitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseExited
         // TODO add your handling code here:
-        resetColor(exit); //reset lại màu khi chuột đi ra
+        //resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
 
     private void manguoimuonTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manguoimuonTextFieldActionPerformed
@@ -244,25 +260,21 @@ public class docgiaDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JTextField diachiTextField;
     private javax.swing.JPanel exit;
+    private javax.swing.JTextField gioitinhTextField1;
     private javax.swing.JButton jButton11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton luuButton;
     private javax.swing.JTextField manguoimuonTextField;
+    private javax.swing.JTextField ngaysinhTextField;
     private javax.swing.JTextField sodienthoaiTextField;
     private javax.swing.JTextField tennguoimuonTextField;
     // End of variables declaration//GEN-END:variables
 
-    private void setColor(JPanel exit) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
-    private void resetColor(JPanel exit) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

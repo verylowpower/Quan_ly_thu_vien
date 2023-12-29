@@ -18,8 +18,6 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
-        
-        
     }
  
     void setColor(JPanel panel) {  //đổi màu
@@ -125,16 +123,22 @@ public class login extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/login form/line.png"))); // NOI18N
 
+        txtusername.setBackground(new java.awt.Color(232, 214, 200));
         txtusername.setFont(txtusername.getFont().deriveFont(txtusername.getFont().getSize()+2f));
-        txtusername.setForeground(new java.awt.Color(137, 110, 89));
+        txtusername.setForeground(new java.awt.Color(132, 98, 83));
         txtusername.setBorder(null);
+        txtusername.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtusername.setDragEnabled(true);
         txtusername.setName(""); // NOI18N
+        txtusername.setOpaque(true);
 
+        txtpassword.setBackground(new java.awt.Color(232, 214, 200));
         txtpassword.setFont(txtpassword.getFont().deriveFont(txtpassword.getFont().getSize()+2f));
-        txtpassword.setForeground(new java.awt.Color(137, 110, 89));
+        txtpassword.setForeground(new java.awt.Color(132, 98, 83));
         txtpassword.setBorder(null);
         txtpassword.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtpassword.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtpassword.setOpaque(true);
 
         jButton1.setFont(new java.awt.Font("UTM BryantLG", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(125, 99, 87));
