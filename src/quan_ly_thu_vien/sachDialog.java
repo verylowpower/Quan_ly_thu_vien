@@ -119,6 +119,7 @@ public class sachDialog extends javax.swing.JDialog {
         masachTextField.setBorder(null);
         masachTextField.setDragEnabled(true);
         masachTextField.setName(""); // NOI18N
+        masachTextField.setOpaque(true);
 
         jLabel6.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(125, 99, 87));
@@ -289,7 +290,7 @@ public class sachDialog extends javax.swing.JDialog {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(theloaiComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -339,7 +340,7 @@ public class sachDialog extends javax.swing.JDialog {
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
         if(editingEnabled == false) {
-            xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), tensachTextField.getText(), img);
+            xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
         } else{
             xuLySach.edit(Integer.parseInt(masachTextField.getText()), jTable, tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
         }
