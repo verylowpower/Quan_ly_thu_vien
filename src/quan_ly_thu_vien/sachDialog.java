@@ -189,11 +189,11 @@ public class sachDialog extends javax.swing.JDialog {
             }
         });
 
-        tacgiaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tác giả", " " }));
+        tacgiaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tác giả" }));
 
         theloaiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại" }));
 
-        nxbComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhà xuất bản", "" }));
+        nxbComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhà xuất bản" }));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
