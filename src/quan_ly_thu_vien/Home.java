@@ -14,6 +14,7 @@ import java.awt.Color;
 public class Home extends javax.swing.JFrame {
     sachpanel sach = null;
     docgiapanel docgia = null;
+    thuthupanel thuthu = null;
     /**
      * Creates new form Home
      */
@@ -33,6 +34,7 @@ public class Home extends javax.swing.JFrame {
     private void hidePanel(){
         sach.setVisible(false);
         docgia.setVisible(false);
+        thuthu.setVisible(false);
     }
     private void addpanel(){
         sach = new sachpanel();
@@ -42,6 +44,10 @@ public class Home extends javax.swing.JFrame {
         docgia = new docgiapanel();
         backbonePanel.add(docgia);
         docgia.setSize(965, 657);
+        
+        thuthu = new thuthupanel();
+        backbonePanel.add(thuthu);
+        thuthu.setSize(965, 657);
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
@@ -366,6 +372,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        hidePanel();
+        thuthu.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
