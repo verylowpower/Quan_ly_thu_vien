@@ -3,9 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package quan_ly_thu_vien;
+import chucnang.xuLySach;
 import chucnang.xuLyThuthu;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.RowFilter;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -18,8 +23,18 @@ public class thuthupanel extends javax.swing.JPanel {
      */
     public thuthupanel() {
         initComponents();
+//        TableSorter(jTable1);
         xuLyThuthu.updateTable(jTable1);
+        
     }
+//    private TableRowSorter TableSorter(javax.swing.JTable jTable) {
+//        TableModel myModel = (TableModel) jTable.getModel();
+//        TableRowSorter sorter = new TableRowSorter(myModel);
+//        sorter.setRowFilter(RowFilter.regexFilter(".*foo.*"));
+//        JTable table = new JTable(myModel);
+//        table.setRowSorter(sorter);
+//        return sorter;
+//    }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
     }
@@ -83,6 +98,11 @@ public class thuthupanel extends javax.swing.JPanel {
         txtusername8.setBorder(null);
         txtusername8.setDragEnabled(true);
         txtusername8.setName(""); // NOI18N
+        txtusername8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtusername8MouseClicked(evt);
+            }
+        });
 
         timkiemTextField.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
@@ -199,7 +219,7 @@ public class thuthupanel extends javax.swing.JPanel {
                     .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -249,6 +269,10 @@ public class thuthupanel extends javax.swing.JPanel {
         new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
         xuLyThuthu.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
+
+    private void txtusername8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtusername8MouseClicked
+        xuLySach.TableFilter(txtusername8, jTable1);
+    }//GEN-LAST:event_txtusername8MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
