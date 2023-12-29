@@ -236,6 +236,7 @@ public class thuthupanel extends javax.swing.JPanel {
     }//GEN-LAST:event_exitMouseExited
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
+        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_themButtonActionPerformed
 

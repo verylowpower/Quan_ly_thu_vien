@@ -1,11 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package quan_ly_thu_vien;
-
-import javax.swing.JPanel;
-
 /**
  *
  * @author lehuy
@@ -13,11 +10,13 @@ import javax.swing.JPanel;
 public class thuthuDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form thuthuDialog
+     * Creates new form thuthuDialo
      */
-    public thuthuDialog(java.awt.Frame parent, boolean modal) {
+    javax.swing.JTable jTable;
+    public thuthuDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
         super(parent, modal);
         initComponents();
+        this.jTable = jTable;
     }
 
     /**
@@ -29,7 +28,6 @@ public class thuthuDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         bg = new javax.swing.JPanel();
         exit = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -49,6 +47,9 @@ public class thuthuDialog extends javax.swing.JDialog {
         jComboBox3 = new javax.swing.JComboBox<>();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -156,10 +157,8 @@ public class thuthuDialog extends javax.swing.JDialog {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Năm", " " }));
 
-        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Nam");
 
-        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Nữ");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
@@ -248,18 +247,18 @@ public class thuthuDialog extends javax.swing.JDialog {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
@@ -286,10 +285,51 @@ public class thuthuDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_luuButtonActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(thuthuDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(thuthuDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(thuthuDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(thuthuDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the dialog */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                thuthuDialog dialog = new thuthuDialog(new javax.swing.JFrame(), true);
+//                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+//                    @Override
+//                    public void windowClosing(java.awt.event.WindowEvent e) {
+//                        System.exit(0);
+//                    }
+//                });
+//                dialog.setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel exit;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -309,6 +349,4 @@ public class thuthuDialog extends javax.swing.JDialog {
     private javax.swing.JTextField txtusername7;
     private javax.swing.JTextField txtusername9;
     // End of variables declaration//GEN-END:variables
-
-    
 }
