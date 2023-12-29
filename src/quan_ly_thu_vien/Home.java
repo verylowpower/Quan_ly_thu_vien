@@ -15,6 +15,12 @@ public class Home extends javax.swing.JFrame {
     sachpanel sach = null;
     docgiapanel docgia = null;
     thuthupanel thuthu = null;
+    tacgiapanel tacgia = null;
+    phieumuonpanel phieumuon = null;
+    nhaxuatbanpanel nxb = null;
+    caidatpanel caidat = null;
+    theloaipanel theloai = null;
+    thongkepanel thongke = null;
     /**
      * Creates new form Home
      */
@@ -35,6 +41,13 @@ public class Home extends javax.swing.JFrame {
         sach.setVisible(false);
         docgia.setVisible(false);
         thuthu.setVisible(false);
+        theloai.setVisible(false);
+        tacgia.setVisible(false);
+        phieumuon.setVisible(false);
+        nxb.setVisible(false);
+        thongke.setVisible(false);
+        caidat.setVisible(false);
+        
     }
     private void addpanel(){
         sach = new sachpanel();
@@ -48,6 +61,30 @@ public class Home extends javax.swing.JFrame {
         thuthu = new thuthupanel();
         backbonePanel.add(thuthu);
         thuthu.setSize(965, 657);
+        
+        theloai = new theloaipanel();
+        backbonePanel.add(theloai);
+        theloai.setSize(965, 657);
+        
+        phieumuon = new phieumuonpanel();
+        backbonePanel.add(phieumuon);
+        phieumuon.setSize(965, 657);
+        
+        nxb = new nhaxuatbanpanel();
+        backbonePanel.add(nxb);
+        nxb.setSize(965, 657);
+        
+        caidat = new caidatpanel();
+        backbonePanel.add(caidat);
+        caidat.setSize(965, 657);
+        
+        thongke = new thongkepanel();
+        backbonePanel.add(thongke);
+        thongke.setSize(965, 657);
+        
+        tacgia = new tacgiapanel();
+        backbonePanel.add(tacgia);
+        tacgia.setSize(965, 657);
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
@@ -109,6 +146,11 @@ public class Home extends javax.swing.JFrame {
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(125, 99, 87));
@@ -160,6 +202,11 @@ public class Home extends javax.swing.JFrame {
         jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jButton9.setForeground(new java.awt.Color(125, 99, 87));
@@ -176,6 +223,11 @@ public class Home extends javax.swing.JFrame {
         jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jButton11.setForeground(new java.awt.Color(125, 99, 87));
@@ -379,10 +431,14 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        hidePanel();
+        thongke.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        hidePanel();
+        caidat.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -399,7 +455,27 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        hidePanel();
+        theloai.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        hidePanel();
+        tacgia.setVisible(true);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        hidePanel();
+        nxb.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        hidePanel();
+        phieumuon.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
