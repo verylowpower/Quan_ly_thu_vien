@@ -269,6 +269,7 @@ public class docgiaDialog extends javax.swing.JDialog {
                     } else {
                         xuLyDocGia.edit(Integer.parseInt(manguoimuonTextField.getText()), jTable, tennguoimuonTextField.getText(), ngaysinhTextField.getText(), gioitinhTextField.getText(), sodienthoaiTextField.getText());
                     }
+                this.dispose();
     }//GEN-LAST:event_luuButtonActionPerformed
 
     /**

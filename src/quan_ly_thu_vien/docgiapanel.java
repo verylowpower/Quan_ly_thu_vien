@@ -238,6 +238,7 @@ public class docgiapanel extends javax.swing.JPanel {
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         // TODO add your handling code here:
         new docgiaDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
+        xuLyDocGia.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
