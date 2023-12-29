@@ -4,6 +4,8 @@
  */
 package quan_ly_thu_vien;
 import chucnang.xuLySach;
+import chucnang.ComponentPrinter;
+
 import java.awt.Color;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -59,6 +61,7 @@ public class sachDialog extends javax.swing.JDialog {
         tacgiaComboBox = new javax.swing.JComboBox<>();
         theloaiComboBox = new javax.swing.JComboBox<>();
         nxbComboBox = new javax.swing.JComboBox<>();
+        luuButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -195,6 +198,19 @@ public class sachDialog extends javax.swing.JDialog {
 
         nxbComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhà xuất bản" }));
 
+        luuButton1.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        luuButton1.setForeground(new java.awt.Color(125, 99, 87));
+        luuButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        luuButton1.setText("Test");
+        luuButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        luuButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        luuButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        luuButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                luuButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -237,9 +253,12 @@ public class sachDialog extends javax.swing.JDialog {
                             .addComponent(themanhButton, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(272, 272, 272))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(luuButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(273, 273, 273))))
@@ -287,7 +306,9 @@ public class sachDialog extends javax.swing.JDialog {
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(theloaiComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(luuButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -342,6 +363,11 @@ public class sachDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_luuButtonActionPerformed
 
+    private void luuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButton1ActionPerformed
+        // TODO add your handling code here:
+        new ComponentPrinter(bg);
+    }//GEN-LAST:event_luuButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -358,6 +384,7 @@ public class sachDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton luuButton;
+    private javax.swing.JButton luuButton1;
     private javax.swing.JTextField masachTextField;
     private javax.swing.JTextField namxuatbanTextField;
     private javax.swing.JComboBox<String> nxbComboBox;

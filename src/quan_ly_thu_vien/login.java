@@ -18,8 +18,7 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
-        txtusername.setBackground(new java.awt.Color(0,0,0,1));  //đưa cái jtextfield thành trong suốt Mã RGB là 0,0,0(đen) rồi set giá trị thành trong suốt (1)
-        txtpassword.setBackground(new java.awt.Color(0,0,0,1));
+        
         
     }
  
