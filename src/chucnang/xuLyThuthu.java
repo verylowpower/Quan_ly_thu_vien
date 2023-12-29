@@ -109,4 +109,15 @@ public class xuLyThuthu {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
     }
+    
+    public static void delete(javax.swing.JTable jTable1) {
+        try {
+            Connection conn = connectionClass.getConnection();
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM nhanvien WHERE ma_nv = ?");
+            ps.setInt(1, Integer.parseInt(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString()));
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
+        }
+    }
 }

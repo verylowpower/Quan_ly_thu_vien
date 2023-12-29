@@ -238,11 +238,11 @@ public class thuthupanel extends javax.swing.JPanel {
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        // TODO add your handling code here:
+        xuLyThuthu.delete(jTable1);
+        xuLyThuthu.updateTable(jTable1);
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
