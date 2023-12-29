@@ -7,6 +7,7 @@ import chucnang.xuLySach;
 import chucnang.ComponentPrinter;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
@@ -365,7 +366,8 @@ public class sachDialog extends javax.swing.JDialog {
 
     private void luuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButton1ActionPerformed
         // TODO add your handling code here:
-        new ComponentPrinter(bg);
+        Component draft = bg;
+        new ComponentPrinter(draft).printComponent();
     }//GEN-LAST:event_luuButton1ActionPerformed
 
     /**
