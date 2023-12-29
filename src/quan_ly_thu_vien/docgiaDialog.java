@@ -1,10 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package quan_ly_thu_vien;
-
-import javax.swing.JPanel;
 import chucnang.xuLyDocGia;
 
 /**
@@ -13,14 +11,19 @@ import chucnang.xuLyDocGia;
  */
 public class docgiaDialog extends javax.swing.JDialog {
 
+    /**
+     * Creates new form NewJDialog
+     */
     javax.swing.JTable jTable;
     boolean editingEnabled;
-    
     public docgiaDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
-        this.editingEnabled = editingEnabled;
         this.jTable = jTable;
+        this.editingEnabled = editingEnabled;
+        if(editingEnabled) {
+            xuLyDocGia.select(manguoimuonTextField, tennguoimuonTextField, ngaysinhTextField, gioitinhTextField, sodienthoaiTextField, jTable);
+        }
     }
 
     /**
@@ -32,7 +35,6 @@ public class docgiaDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton11 = new javax.swing.JButton();
         bg = new javax.swing.JPanel();
         exit = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -46,15 +48,10 @@ public class docgiaDialog extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         luuButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        gioitinhTextField1 = new javax.swing.JTextField();
+        gioitinhTextField = new javax.swing.JTextField();
 
-        jButton11.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(125, 99, 87));
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        jButton11.setText("Lưu");
-        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton11.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -147,16 +144,21 @@ public class docgiaDialog extends javax.swing.JDialog {
         luuButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         luuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         luuButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        luuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                luuButtonActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(125, 99, 87));
         jLabel7.setText("Giới tính");
 
-        gioitinhTextField1.setFont(gioitinhTextField1.getFont().deriveFont(gioitinhTextField1.getFont().getSize()+2f));
-        gioitinhTextField1.setForeground(new java.awt.Color(137, 110, 89));
-        gioitinhTextField1.setBorder(null);
-        gioitinhTextField1.setDragEnabled(true);
-        gioitinhTextField1.setName(""); // NOI18N
+        gioitinhTextField.setFont(gioitinhTextField.getFont().deriveFont(gioitinhTextField.getFont().getSize()+2f));
+        gioitinhTextField.setForeground(new java.awt.Color(137, 110, 89));
+        gioitinhTextField.setBorder(null);
+        gioitinhTextField.setDragEnabled(true);
+        gioitinhTextField.setName(""); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -179,7 +181,7 @@ public class docgiaDialog extends javax.swing.JDialog {
                             .addComponent(ngaysinhTextField)
                             .addComponent(sodienthoaiTextField)
                             .addComponent(luuButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(gioitinhTextField1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(gioitinhTextField, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +213,7 @@ public class docgiaDialog extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gioitinhTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(gioitinhTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -231,12 +233,10 @@ public class docgiaDialog extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
         );
-    }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-        System.exit(0); //nút thoát cho chữ X
-    }//GEN-LAST:event_jLabel5MouseClicked
+        setSize(new java.awt.Dimension(400, 321));
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         // TODO add your handling code here:
@@ -257,12 +257,28 @@ public class docgiaDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_manguoimuonTextFieldActionPerformed
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        this.dispose(); //nút thoát cho chữ X
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
+        // TODO add your handling code here:
+                if(editingEnabled == false) {
+                        xuLyDocGia.add(tennguoimuonTextField.getText(), ngaysinhTextField.getText(), gioitinhTextField.getText(), sodienthoaiTextField.getText());
+                    } else {
+                        xuLyDocGia.edit(Integer.parseInt(manguoimuonTextField.getText()), jTable, tennguoimuonTextField.getText(), ngaysinhTextField.getText(), gioitinhTextField.getText(), sodienthoaiTextField.getText());
+                    }
+    }//GEN-LAST:event_luuButtonActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JPanel exit;
-    private javax.swing.JTextField gioitinhTextField1;
-    private javax.swing.JButton jButton11;
+    private javax.swing.JTextField gioitinhTextField;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -275,6 +291,4 @@ public class docgiaDialog extends javax.swing.JDialog {
     private javax.swing.JTextField sodienthoaiTextField;
     private javax.swing.JTextField tennguoimuonTextField;
     // End of variables declaration//GEN-END:variables
-
-
 }
