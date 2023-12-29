@@ -97,6 +97,11 @@ public class sachpanel extends javax.swing.JPanel {
         timkiemTextField.setBorder(null);
         timkiemTextField.setDragEnabled(true);
         timkiemTextField.setName(""); // NOI18N
+        timkiemTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                timkiemTextFieldKeyReleased(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -200,11 +205,11 @@ public class sachpanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -243,6 +248,11 @@ public class sachpanel extends javax.swing.JPanel {
         new sachDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
         xuLySach.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
+
+    private void timkiemTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_timkiemTextFieldKeyReleased
+        // TODO add your handling code here:
+        xuLySach.TableFilter(timkiemTextField, jTable1);
+    }//GEN-LAST:event_timkiemTextFieldKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
