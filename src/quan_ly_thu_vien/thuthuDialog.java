@@ -310,11 +310,5 @@ public class thuthuDialog extends javax.swing.JDialog {
     private javax.swing.JTextField txtusername9;
     // End of variables declaration//GEN-END:variables
 
-    private void setColor(JPanel exit) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void resetColor(JPanel exit) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }

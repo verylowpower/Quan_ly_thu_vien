@@ -245,12 +245,12 @@ public class docgiaDialog extends javax.swing.JDialog {
 
     private void exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseEntered
         // TODO add your handling code here:
-        setColor(exit); //màu thay đôi khi di chuột vào
+        //setColor(exit); //màu thay đôi khi di chuột vào
     }//GEN-LAST:event_exitMouseEntered
 
     private void exitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseExited
         // TODO add your handling code here:
-        resetColor(exit); //reset lại màu khi chuột đi ra
+        //resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
 
     private void manguoimuonTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manguoimuonTextFieldActionPerformed
@@ -276,11 +276,5 @@ public class docgiaDialog extends javax.swing.JDialog {
     private javax.swing.JTextField tennguoimuonTextField;
     // End of variables declaration//GEN-END:variables
 
-    private void setColor(JPanel exit) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
-    private void resetColor(JPanel exit) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
