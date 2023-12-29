@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package quan_ly_thu_vien;
-
+import chucnang.xuLyThuthu;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -18,6 +18,7 @@ public class thuthupanel extends javax.swing.JPanel {
      */
     public thuthupanel() {
         initComponents();
+        xuLyThuthu.updateTable(jTable1);
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));

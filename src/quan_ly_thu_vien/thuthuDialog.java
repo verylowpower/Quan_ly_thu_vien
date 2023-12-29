@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package quan_ly_thu_vien;
+import chucnang.xuLyDocGia;
+import chucnang.xuLyThuthu;
 /**
  *
  * @author lehuy
@@ -152,11 +154,11 @@ public class thuthuDialog extends javax.swing.JDialog {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày", "1", "2", "3", "4", "5", "6", "7", " " }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tháng", " " }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tháng", "1", "2", "3", "4", "5", "6", "7", "8", " " }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Năm", " " }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Năm", "2023" }));
 
         jRadioButton1.setText("Nam");
 
@@ -245,7 +247,7 @@ public class thuthuDialog extends javax.swing.JDialog {
                     .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,7 +286,9 @@ public class thuthuDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
-        // TODO add your handling code here:
+        xuLyThuthu.add(txtusername4.getText(), jComboBox3, jComboBox2, jComboBox1, jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
+        this.dispose();
+// TODO add your handling code here:
     }//GEN-LAST:event_luuButtonActionPerformed
 
     /**
