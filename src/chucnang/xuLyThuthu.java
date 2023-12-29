@@ -61,4 +61,52 @@ public class xuLyThuthu {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
     }
+    
+    public static void select(javax.swing.JTextField txtusername5, javax.swing.JTextField txtusername4,
+        javax.swing.JRadioButton JRadioButton1, javax.swing.JRadioButton JRadioButton2, 
+        javax.swing.JTextField txtusername9, javax.swing.JTextField txtusername7, javax.swing.JTable jTable) {
+    try {
+        txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+            ResultSet rs = connectionClass.getStatement().executeQuery(
+                    "select ma_nv, hoten, gioi_tinh, dia_chi, sdt from nhanvien");
+            rs.next();
+            txtusername5.setText(rs.getString("ma_nv"));
+            txtusername4.setText(rs.getString("hoten"));
+            if(rs.getString("gender") != null){
+                if((rs.getString("gender")).equals("Nam")){
+                    JRadioButton1.setSelected(true);
+                } else if(rs.getString("gender").equals("Nữ")){
+                    JRadioButton2.setSelected(true);
+                }
+            }
+            txtusername9.setText(rs.getString("dia_chi"));
+            txtusername7.setText(rs.getString("sdt"));
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
+        }
+    }
+    
+    public static void edit(int ma_nv, javax.swing.JTable jTable,String tenNV, 
+            javax.swing.JComboBox JComboBox1, javax.swing.JComboBox JComboBox2, javax.swing.JComboBox JComboBox3,
+            javax.swing.JRadioButton JRadioButton1, javax.swing.JRadioButton JRadioButton2, 
+            String diaChi, String sdt) {
+        try {
+            PreparedStatement ps = connectionClass.getConnection().prepareStatement(
+                    "Update nhanvien set ma_nv = ?, hoten = ?, ngay_sinh = ?, gioi_tinh = ?, dia_chi = ?, sdt = ? where ma_nv = '"+ ma_nv +"'");
+            ps.setInt(1, ma_nv);
+            ps.setString(2, tenNV);
+            ps.setString(3, String.valueOf(JComboBox1.getSelectedItem().toString() + "/" + JComboBox2.getSelectedItem().toString()
+                + "/" + JComboBox3.getSelectedItem().toString()));
+            if(JRadioButton1.isSelected()){
+                ps.setString(4, "Nam");
+            } else if(JRadioButton2.isSelected()){ 
+                ps.setString(4, "Nữ");
+            }
+            ps.setString(5, diaChi);
+            ps.setString(6, sdt);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
+        }
+    }
 }

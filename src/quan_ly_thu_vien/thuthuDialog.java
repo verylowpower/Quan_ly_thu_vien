@@ -49,6 +49,7 @@ public class thuthuDialog extends javax.swing.JDialog {
         jComboBox3 = new javax.swing.JComboBox<>();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+        ThemButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -144,7 +145,7 @@ public class thuthuDialog extends javax.swing.JDialog {
         luuButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         luuButton.setForeground(new java.awt.Color(125, 99, 87));
         luuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        luuButton.setText("Lưu");
+        luuButton.setText("Lưu thay đổi");
         luuButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         luuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         luuButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
@@ -163,6 +164,19 @@ public class thuthuDialog extends javax.swing.JDialog {
         jRadioButton1.setText("Nam");
 
         jRadioButton2.setText("Nữ");
+
+        ThemButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        ThemButton.setForeground(new java.awt.Color(125, 99, 87));
+        ThemButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
+        ThemButton.setText("Thêm");
+        ThemButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ThemButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ThemButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        ThemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ThemButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -203,9 +217,11 @@ public class thuthuDialog extends javax.swing.JDialog {
                                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))))
+                                .addComponent(jLabel5))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(ThemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(418, 418, 418)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -246,7 +262,9 @@ public class thuthuDialog extends javax.swing.JDialog {
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ThemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -286,10 +304,14 @@ public class thuthuDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
+        xuLyThuthu.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText(), jComboBox3, jComboBox2, jComboBox1, jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
+        this.dispose();
+    }//GEN-LAST:event_luuButtonActionPerformed
+
+    private void ThemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemButtonActionPerformed
         xuLyThuthu.add(txtusername4.getText(), jComboBox3, jComboBox2, jComboBox1, jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
         this.dispose();
-// TODO add your handling code here:
-    }//GEN-LAST:event_luuButtonActionPerformed
+    }//GEN-LAST:event_ThemButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -335,6 +357,7 @@ public class thuthuDialog extends javax.swing.JDialog {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ThemButton;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel exit;
     private javax.swing.JComboBox<String> jComboBox1;
