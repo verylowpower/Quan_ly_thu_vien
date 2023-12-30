@@ -6,6 +6,7 @@ package quan_ly_thu_vien;
 import chucnang.xuLySach;
 import chucnang.xuLyThuthu;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
@@ -23,18 +24,15 @@ public class thuthupanel extends javax.swing.JPanel {
      */
     public thuthupanel() {
         initComponents();
-//        TableSorter(jTable1);
         xuLyThuthu.updateTable(jTable1);
-        
+        designTable();
     }
-//    private TableRowSorter TableSorter(javax.swing.JTable jTable) {
-//        TableModel myModel = (TableModel) jTable.getModel();
-//        TableRowSorter sorter = new TableRowSorter(myModel);
-//        sorter.setRowFilter(RowFilter.regexFilter(".*foo.*"));
-//        JTable table = new JTable(myModel);
-//        table.setRowSorter(sorter);
-//        return sorter;
-//    }
+    void designTable(){
+        jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 18));
+        jTable1.getTableHeader().setOpaque(false);
+        jTable1.getTableHeader().setBackground(new Color(205, 133, 63));
+        jTable1.getTableHeader().setForeground(Color.white);
+    }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
     }
@@ -108,6 +106,8 @@ public class thuthupanel extends javax.swing.JPanel {
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
         timkiemTextField.setText("Tìm kiếm");
 
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBackground(new java.awt.Color(255, 242, 222));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -119,6 +119,10 @@ public class thuthupanel extends javax.swing.JPanel {
                 "Mã thủ thư", "Tên thủ thư", "Ngày sinh", "Số điện thoại", "Giới tính", "Địa chỉ "
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(255, 242, 222));
+        jTable1.setOpaque(false);
+        jTable1.setRowHeight(25);
+        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTable1);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
