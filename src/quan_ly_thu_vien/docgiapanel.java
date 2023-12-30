@@ -101,6 +101,11 @@ public class docgiapanel extends javax.swing.JPanel {
         timkiemTextField.setBorder(null);
         timkiemTextField.setDragEnabled(true);
         timkiemTextField.setName(""); // NOI18N
+        timkiemTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timkiemTextFieldActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(125, 99, 87));
@@ -243,11 +248,20 @@ public class docgiapanel extends javax.swing.JPanel {
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
         // TODO add your handling code here:
+        xuLyDocGia.delete(jTable1);
+        xuLyDocGia.updateTable(jTable1);
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
         // TODO add your handling code here:
+        new docgiaDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
+        xuLyDocGia.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
+
+    private void timkiemTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timkiemTextFieldActionPerformed
+        // TODO add your handling code here:
+        xuLyDocGia.TableFilter(timkiemTextField, jTable1);
+    }//GEN-LAST:event_timkiemTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

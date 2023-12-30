@@ -9,15 +9,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.regex.PatternSyntaxException;
 
 import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 public class xuLyDocGia {
+    public static void TableFilter(javax.swing.JTextField textFind, javax.swing.JTable jTable) {
+        String text = textFind.getText();
+        TableModel model = (TableModel) jTable.getModel();
+        final TableRowSorter sorter = new TableRowSorter(model);
+        jTable.setRowSorter(sorter);
+        if (text.length() == 0) {
+            sorter.setRowFilter(null);
+        } else {
+            try {
+                sorter.setRowFilter(RowFilter.regexFilter(text));
+            } catch (PatternSyntaxException pse) {
+                System.out.println("Bad regex pattern");
+            }
+        }
+    }
+    
     public static void updateTable(javax.swing.JTable jTable1) {
         try {
             DefaultTableModel model = new DefaultTableModel();
