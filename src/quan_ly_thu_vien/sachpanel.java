@@ -243,6 +243,7 @@ public class sachpanel extends javax.swing.JPanel {
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         // TODO add your handling code here:
         new sachDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
+        xuLySach.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
