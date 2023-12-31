@@ -4,9 +4,6 @@
  */
 package quan_ly_thu_vien;
 
-import java.awt.Color;
-import javax.swing.JPanel;
-
 /**
  *
  * @author vitancuc
@@ -19,13 +16,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
     public nhaxuatbanpanel() {
         initComponents();
     }
-    void setColor(JPanel panel) {  //đổi màu
-        panel.setBackground(new Color(255,223,198));
-    }
-     
-    void resetColor(JPanel panel) { //reset về màu background
-        panel.setBackground(new Color(232,214,200));
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

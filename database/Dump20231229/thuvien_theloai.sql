@@ -26,7 +26,7 @@ CREATE TABLE `theloai` (
   `ma_theloai` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `tentheloai` varchar(255) DEFAULT NULL COMMENT 'Create Time',
   PRIMARY KEY (`ma_theloai`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -3,19 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package quan_ly_thu_vien;
+import chucnang.xulyTacgia;
+
 
 /**
  *
  * @author vitancuc
  */
-public class tacgiaDialog extends javax.swing.JDialog {
+    public class tacgiaDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form tacgiaDialog
+     * Creates new form NewJDialog
      */
-    public tacgiaDialog(java.awt.Frame parent, boolean modal) {
+    javax.swing.JTable jTable;
+    boolean editingEnabled;
+    public tacgiaDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
+        this.jTable = jTable;
+        this.editingEnabled = editingEnabled;
+        if(editingEnabled) {
+            xulyTacgia.select(txtusername5, txtusername4,jTable);
+        }
     }
 
     /**
@@ -37,6 +46,7 @@ public class tacgiaDialog extends javax.swing.JDialog {
         luuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -175,7 +185,8 @@ public class tacgiaDialog extends javax.swing.JDialog {
             .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(361, 256));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked

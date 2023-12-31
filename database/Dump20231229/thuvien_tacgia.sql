@@ -26,7 +26,7 @@ CREATE TABLE `tacgia` (
   `ma_tacgia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `tentacgia` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ma_tacgia`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

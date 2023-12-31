@@ -4,8 +4,8 @@
  */
 package quan_ly_thu_vien;
 
-import java.awt.Color;
-import javax.swing.JPanel;
+import chucnang.xulyTacgia;
+
 
 /**
  *
@@ -18,14 +18,9 @@ public class tacgiapanel extends javax.swing.JPanel {
      */
     public tacgiapanel() {
         initComponents();
+        xulyTacgia.updateTable(jTable1);
     }
-    void setColor(JPanel panel) {  //đổi màu
-        panel.setBackground(new Color(255,223,198));
-    }
-     
-    void resetColor(JPanel panel) { //reset về màu background
-        panel.setBackground(new Color(232,214,200));
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -188,16 +183,21 @@ public class tacgiapanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        new tacgiaDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
+        xulyTacgia.updateTable(jTable1);
         // TODO add your handling code here:
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
         // TODO add your handling code here:
+        xulyTacgia.delete(jTable1); //delete
+        xulyTacgia.updateTable(jTable1);
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
         // TODO add your handling code here:
+        new tacgiaDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
+        xulyTacgia.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
 
 
