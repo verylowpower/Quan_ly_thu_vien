@@ -32,6 +32,7 @@ public class thuthupanel extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(205, 133, 63));
         jTable1.getTableHeader().setForeground(Color.white);
+   
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
