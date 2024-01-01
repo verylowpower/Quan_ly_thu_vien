@@ -6,6 +6,7 @@ package quan_ly_thu_vien;
 
 import chucnang.xuLyNhaXuatBan;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JPanel;
 /**
  *
@@ -19,8 +20,15 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
     public nhaxuatbanpanel() {
         initComponents();
         xuLyNhaXuatBan.updateTable(jTable1);
+        designTable();
     }
-    
+    void designTable(){
+        jTable1.getTableHeader().setFont(new Font("Monospaced", Font.BOLD, 18));
+        jTable1.getTableHeader().setOpaque(false);
+        jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
+        jTable1.getTableHeader().setForeground(new Color(125,99,87));
+   
+    }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
     }

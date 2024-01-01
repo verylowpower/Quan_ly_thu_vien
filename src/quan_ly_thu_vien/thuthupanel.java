@@ -28,10 +28,10 @@ public class thuthupanel extends javax.swing.JPanel {
         designTable();
     }
     void designTable(){
-        jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 18));
+        jTable1.getTableHeader().setFont(new Font("Monospaced", Font.BOLD, 18));
         jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new Color(205, 133, 63));
-        jTable1.getTableHeader().setForeground(Color.white);
+        jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
+        jTable1.getTableHeader().setForeground(new Color(125,99,87));
    
     }
     void setColor(JPanel panel) {  //đổi màu
@@ -293,4 +293,8 @@ public class thuthupanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtusername8;
     private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
+
+    private Color Color(int i, int i0, int i1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -6,8 +6,10 @@ package quan_ly_thu_vien;
 
 import chucnang.ComponentPrinter;
 import chucnang.xuLySach;
+import java.awt.Color;
 
 import java.awt.Component;
+import java.awt.Font;
 
 import javax.swing.JPanel;
 
@@ -23,8 +25,15 @@ public class sachpanel extends javax.swing.JPanel {
     public sachpanel() {
         initComponents();
         xuLySach.updateTable(jTable1);
+        designTable();
     }
-
+    void designTable(){
+        jTable1.getTableHeader().setFont(new Font("Monospaced", Font.BOLD, 18));
+        jTable1.getTableHeader().setOpaque(false);
+        jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
+        jTable1.getTableHeader().setForeground(new Color(125,99,87));
+   
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

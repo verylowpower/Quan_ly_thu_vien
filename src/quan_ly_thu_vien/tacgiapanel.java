@@ -5,6 +5,8 @@
 package quan_ly_thu_vien;
 
 import chucnang.xulyTacgia;
+import java.awt.Color;
+import java.awt.Font;
 
 
 /**
@@ -19,8 +21,14 @@ public class tacgiapanel extends javax.swing.JPanel {
     public tacgiapanel() {
         initComponents();
         xulyTacgia.updateTable(jTable1);
+        designTable();
     }
-   
+    void designTable(){
+        jTable1.getTableHeader().setFont(new Font("Monospaced", Font.BOLD, 18));
+        jTable1.getTableHeader().setOpaque(false);
+        jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
+        jTable1.getTableHeader().setForeground(new Color(125,99,87));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
