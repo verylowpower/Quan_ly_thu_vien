@@ -5,8 +5,12 @@
 package quan_ly_thu_vien;
 
 import java.awt.Color;
-import javax.swing.JPanel;
+import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import javax.swing.JPanel;
+import chucnang.connectionClass;
 /**
  *
  * @author vitancuc
@@ -19,7 +23,7 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
     }
- 
+    
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
     }
@@ -27,8 +31,27 @@ public class login extends javax.swing.JFrame {
     void resetColor(JPanel panel) { //reset về màu background
         panel.setBackground(new Color(232,214,200));
     }
-    
-    
+    public void Login() {
+        try {
+            Statement st = connectionClass.getStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM login");
+            while (rs.next()) {
+                String username = rs.getString(2);
+                String password = rs.getString(3);
+                if (username.equals(txtusername.getText())
+                        && password.equals(String.valueOf(txtpassword.getPassword()))) {
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                            new Home(username).setVisible(true);
+                        }
+                    });
+                    this.dispose();
+                } 
+            }
+        } catch (SQLException e) {
+
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
