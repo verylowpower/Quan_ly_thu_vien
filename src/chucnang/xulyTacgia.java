@@ -86,7 +86,7 @@ public class xulyTacgia {
     public static void edit(int ma_tacgia, javax.swing.JTable jTable,String tentacgia) {
         try {
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update tacgia set ma_tacgia = ?, tentacgia = ? where ma_tacgia = '"+ jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
+                    "Update tacgia set ma_tacgia = ?, tentacgia = ? where ma_tacgia = '"+ ma_tacgia +"'");
             ps.setInt(1, ma_tacgia);
             ps.setString(2, tentacgia);
             ps.executeUpdate();
