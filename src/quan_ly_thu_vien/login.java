@@ -36,8 +36,8 @@ public class login extends javax.swing.JFrame {
             Statement st = connectionClass.getStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM login");
             while (rs.next()) {
-                String username = rs.getString(1);
-                String password = rs.getString(2);
+                String username = rs.getString(2);
+                String password = rs.getString(3);
                 if (username.equals(txtusername.getText())
                         && password.equals(String.valueOf(txtpassword.getPassword()))) {
                     java.awt.EventQueue.invokeLater(new Runnable() {

@@ -28,14 +28,7 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         addpanel();
         hidePanel();
-        /*
-        Component [] componets = this.getContentPane().getComponents();
         
-        for(Component component: componets ){
-            if(componet instanceof JButton){
-                (((JButton) componet).setUI(new BasicButtonUI()));
-            }
-        } */
     }
     private void hidePanel(){
         sach.setVisible(false);
