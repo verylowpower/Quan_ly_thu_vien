@@ -92,14 +92,14 @@ public class xuLySach {
     }
 
     // Chay query them vao database
-    public static void add(javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1,
+    public static void add(int ma_sach, javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1,
             javax.swing.JComboBox jComboBox2, String tenSach, String namXb, ByteArrayOutputStream img){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
-                            "insert into sach(ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia, anhSach)"
-                                    + "values(?, ?, ?, ?, ?, ?)");
+                            "insert into sach(ma_sach, ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia, anhSach)"
+                                    + "values(?, ?, ?, ?, ?, ?, ?)");
             ResultSet rs = connectionClass.getStatement().executeQuery(
                     "SELECT * FROM tacgia WHERE tentacgia = '" + jComboBox.getSelectedItem().toString() + "'");
             rs.next();
@@ -112,12 +112,13 @@ public class xuLySach {
                     .executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '" + jComboBox1.getSelectedItem() + "'");
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
-            ps.setString(1, tenSach);
-            ps.setString(2, namXb);
-            ps.setInt(3, idNxb);
-            ps.setInt(4, idTheLoai);
-            ps.setInt(5, idTacGia);
-            ps.setBytes(6, img.toByteArray());
+            ps.setInt(1, ma_sach);
+            ps.setString(2, tenSach);
+            ps.setString(3, namXb);
+            ps.setInt(4, idNxb);
+            ps.setInt(5, idTheLoai);
+            ps.setInt(6, idTacGia);
+            ps.setBytes(7, img.toByteArray());
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());

@@ -341,10 +341,11 @@ public class sachDialog extends javax.swing.JDialog {
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
         if(editingEnabled == false) {
-            xuLySach.add(tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
+            xuLySach.add(Integer.parseInt(masachTextField.getText()), tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
         } else{
             xuLySach.edit(Integer.parseInt(masachTextField.getText()), jTable, tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
         }
+        this.dispose();
     }//GEN-LAST:event_luuButtonActionPerformed
 
     /**
