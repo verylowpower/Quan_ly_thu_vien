@@ -3,19 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package quan_ly_thu_vien;
+import chucnang.xuLyNhaXuatBan;
 
-/**
- *
- * @author vitancuc
- */
 public class nhaxuatbanDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form nhaxuatbanDialog
      */
-    public nhaxuatbanDialog(java.awt.Frame parent, boolean modal) {
+    
+    javax.swing.JTable jTable;
+    boolean editingEnabled;
+    
+    public nhaxuatbanDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
+        this.jTable = jTable;
+        this.editingEnabled = editingEnabled;
+        if(editingEnabled) {
+            xuLyNhaXuatBan.select(maNXBTextField, tenNXBTextField, diachiNXBTextField, sodienthoaiNXBTextField, jTable);
+        }
     }
 
     /**
@@ -31,16 +37,17 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         exit = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtusername4 = new javax.swing.JTextField();
-        txtusername5 = new javax.swing.JTextField();
+        tenNXBTextField = new javax.swing.JTextField();
+        maNXBTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtusername7 = new javax.swing.JTextField();
-        txtusername9 = new javax.swing.JTextField();
+        sodienthoaiNXBTextField = new javax.swing.JTextField();
+        diachiNXBTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         luuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -80,17 +87,17 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(125, 99, 87));
         jLabel4.setText("Tên NXB");
 
-        txtusername4.setFont(txtusername4.getFont().deriveFont(txtusername4.getFont().getSize()+2f));
-        txtusername4.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername4.setBorder(null);
-        txtusername4.setDragEnabled(true);
-        txtusername4.setName(""); // NOI18N
+        tenNXBTextField.setFont(tenNXBTextField.getFont().deriveFont(tenNXBTextField.getFont().getSize()+2f));
+        tenNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
+        tenNXBTextField.setBorder(null);
+        tenNXBTextField.setDragEnabled(true);
+        tenNXBTextField.setName(""); // NOI18N
 
-        txtusername5.setFont(txtusername5.getFont().deriveFont(txtusername5.getFont().getSize()+2f));
-        txtusername5.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername5.setBorder(null);
-        txtusername5.setDragEnabled(true);
-        txtusername5.setName(""); // NOI18N
+        maNXBTextField.setFont(maNXBTextField.getFont().deriveFont(maNXBTextField.getFont().getSize()+2f));
+        maNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
+        maNXBTextField.setBorder(null);
+        maNXBTextField.setDragEnabled(true);
+        maNXBTextField.setName(""); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(125, 99, 87));
@@ -100,17 +107,17 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         jLabel8.setForeground(new java.awt.Color(125, 99, 87));
         jLabel8.setText("Địa chỉ");
 
-        txtusername7.setFont(txtusername7.getFont().deriveFont(txtusername7.getFont().getSize()+2f));
-        txtusername7.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername7.setBorder(null);
-        txtusername7.setDragEnabled(true);
-        txtusername7.setName(""); // NOI18N
+        sodienthoaiNXBTextField.setFont(sodienthoaiNXBTextField.getFont().deriveFont(sodienthoaiNXBTextField.getFont().getSize()+2f));
+        sodienthoaiNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
+        sodienthoaiNXBTextField.setBorder(null);
+        sodienthoaiNXBTextField.setDragEnabled(true);
+        sodienthoaiNXBTextField.setName(""); // NOI18N
 
-        txtusername9.setFont(txtusername9.getFont().deriveFont(txtusername9.getFont().getSize()+2f));
-        txtusername9.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername9.setBorder(null);
-        txtusername9.setDragEnabled(true);
-        txtusername9.setName(""); // NOI18N
+        diachiNXBTextField.setFont(diachiNXBTextField.getFont().deriveFont(diachiNXBTextField.getFont().getSize()+2f));
+        diachiNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
+        diachiNXBTextField.setBorder(null);
+        diachiNXBTextField.setDragEnabled(true);
+        diachiNXBTextField.setName(""); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(132, 98, 83));
@@ -153,10 +160,10 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtusername5)
-                                    .addComponent(txtusername4)
-                                    .addComponent(txtusername9)
-                                    .addComponent(txtusername7)))
+                                    .addComponent(maNXBTextField)
+                                    .addComponent(tenNXBTextField)
+                                    .addComponent(diachiNXBTextField)
+                                    .addComponent(sodienthoaiNXBTextField)))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -177,19 +184,19 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
                 .addGap(33, 33, 33)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(maNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtusername4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tenNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtusername9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(diachiNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sodienthoaiNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
@@ -206,7 +213,8 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
             .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(388, 380));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
@@ -226,57 +234,24 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        System.exit(0); //nút thoát cho chữ X
+        this.dispose(); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
+        if(editingEnabled == false) {
+            xuLyNhaXuatBan.add(tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
+        } else {
+            xuLyNhaXuatBan.edit(Integer.parseInt(maNXBTextField.getText()), jTable, tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
+        }
+        this.dispose();
     }//GEN-LAST:event_luuButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(nhaxuatbanDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(nhaxuatbanDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(nhaxuatbanDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(nhaxuatbanDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                nhaxuatbanDialog dialog = new nhaxuatbanDialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JTextField diachiNXBTextField;
     private javax.swing.JPanel exit;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -284,9 +259,8 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JButton luuButton;
-    private javax.swing.JTextField txtusername4;
-    private javax.swing.JTextField txtusername5;
-    private javax.swing.JTextField txtusername7;
-    private javax.swing.JTextField txtusername9;
+    private javax.swing.JTextField maNXBTextField;
+    private javax.swing.JTextField sodienthoaiNXBTextField;
+    private javax.swing.JTextField tenNXBTextField;
     // End of variables declaration//GEN-END:variables
 }

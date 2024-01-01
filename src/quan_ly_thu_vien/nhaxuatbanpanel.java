@@ -4,6 +4,9 @@
  */
 package quan_ly_thu_vien;
 
+import chucnang.xuLyNhaXuatBan;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author vitancuc
@@ -15,6 +18,15 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
      */
     public nhaxuatbanpanel() {
         initComponents();
+        xuLyNhaXuatBan.updateTable(jTable1);
+    }
+    
+    void setColor(JPanel panel) {  //đổi màu
+        panel.setBackground(new Color(255,223,198));
+    }
+     
+    void resetColor(JPanel panel) { //reset về màu background
+        panel.setBackground(new Color(232,214,200));
     }
     
 
@@ -29,7 +41,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
 
         bg = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        txtusername8 = new javax.swing.JTextField();
+        timkiemNXBTextField = new javax.swing.JTextField();
         timkiemTextField = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -49,11 +61,16 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
             }
         });
 
-        txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
-        txtusername8.setForeground(new java.awt.Color(137, 110, 89));
-        txtusername8.setBorder(null);
-        txtusername8.setDragEnabled(true);
-        txtusername8.setName(""); // NOI18N
+        timkiemNXBTextField.setFont(timkiemNXBTextField.getFont().deriveFont(timkiemNXBTextField.getFont().getSize()+2f));
+        timkiemNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
+        timkiemNXBTextField.setBorder(null);
+        timkiemNXBTextField.setDragEnabled(true);
+        timkiemNXBTextField.setName(""); // NOI18N
+        timkiemNXBTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timkiemNXBTextFieldActionPerformed(evt);
+            }
+        });
 
         timkiemTextField.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
@@ -138,7 +155,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(timkiemTextField)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtusername8)))
+                                .addComponent(timkiemNXBTextField)))
                         .addContainerGap())))
         );
         bgLayout.setVerticalGroup(
@@ -148,7 +165,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(timkiemNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,17 +195,26 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
-        // TODO add your handling code here:
+        new nhaxuatbanDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
+        xuLyNhaXuatBan.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
         // TODO add your handling code here:
+        xuLyNhaXuatBan.delete(jTable1);
+        xuLyNhaXuatBan.updateTable(jTable1);
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
         // TODO add your handling code here:
+        new nhaxuatbanDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
+        xuLyNhaXuatBan.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
+
+    private void timkiemNXBTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timkiemNXBTextFieldActionPerformed
+        // TODO add your handling code here:
+        xuLyNhaXuatBan.TableFilter(timkiemNXBTextField, jTable1);
+    }//GEN-LAST:event_timkiemNXBTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -198,8 +224,8 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JButton suaButton;
     private javax.swing.JButton themButton;
+    private javax.swing.JTextField timkiemNXBTextField;
     private javax.swing.JLabel timkiemTextField;
-    private javax.swing.JTextField txtusername8;
     private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 }
