@@ -196,10 +196,11 @@
                   <Font name="Monospaced" size="16" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="4">
+                  <Table columnCount="6" rowCount="4">
                     <Column editable="true" title="M&#xe3; phi&#x1ebf;u" type="java.lang.Object"/>
                     <Column editable="true" title="T&#xea;n s&#xe1;ch" type="java.lang.Object"/>
                     <Column editable="true" title="Ng&#x1b0;&#x1edd;i m&#x1b0;&#x1ee3;n" type="java.lang.Object"/>
+                    <Column editable="true" title="Th&#x1ee7; th&#x1b0;" type="java.lang.Object"/>
                     <Column editable="true" title="Ng&#xe0;y m&#x1b0;&#x1ee3;n" type="java.lang.Object"/>
                     <Column editable="true" title="Ng&#xe0;y tr&#x1ea3;" type="java.lang.Object"/>
                   </Table>

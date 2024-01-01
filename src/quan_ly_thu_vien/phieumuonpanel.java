@@ -126,13 +126,13 @@ public class phieumuonpanel extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Mã phiếu", "Tên sách", "Người mượn", "Ngày mượn", "Ngày trả"
+                "Mã phiếu", "Tên sách", "Người mượn", "Thủ thư", "Ngày mượn", "Ngày trả"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
