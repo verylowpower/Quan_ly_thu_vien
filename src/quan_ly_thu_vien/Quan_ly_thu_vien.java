@@ -15,7 +15,7 @@ public class Quan_ly_thu_vien {
      */
     public static void main(String[] args) {
         connectionClass.ConnectDB();
-        new Home().setVisible(true);
+        new login().setVisible(true);
     }
     
 }
