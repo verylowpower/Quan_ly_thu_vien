@@ -217,7 +217,7 @@ public class phieumuonDialog extends javax.swing.JDialog {
         } else{
             xulyphieumuon.edit(Integer.parseInt(txtusername5.getText()), jTable,txtusername4.getText(),txtusername6.getText(), jComboBox3,jComboBox4,jComboBox5,jComboBox6);
     }//GEN-LAST:event_luuButtonActionPerformed
-
+}
     /**
      * @param args the command line arguments
      */

@@ -42,7 +42,7 @@ public class login extends javax.swing.JFrame {
                         && password.equals(String.valueOf(txtpassword.getPassword()))) {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                            new Home(username).setVisible(true);
+                            new Home().setVisible(true);
                         }
                     });
                     this.dispose();

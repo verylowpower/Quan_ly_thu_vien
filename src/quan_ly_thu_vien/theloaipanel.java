@@ -3,23 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package quan_ly_thu_vien;
-
-
-
+import chucnang.xuLyTheloai;
 /**
  *
  * @author vitancuc
  */
 public class theloaipanel extends javax.swing.JPanel {
-
     /**
      * Creates new form theloaipanel
      */
     public theloaipanel() {
         initComponents();
+        xuLyTheloai.updateTable(jTable1);
     }
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -181,15 +177,17 @@ public class theloaipanel extends javax.swing.JPanel {
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
-        // TODO add your handling code here:
+        xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        // TODO add your handling code here:
+        xuLyTheloai.delete(jTable1);
+        xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
-        // TODO add your handling code here:
+        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
 
 
