@@ -12,24 +12,24 @@ import javax.swing.JTable;
  *
  * @author ADMIN
  */
-public class phieumuonDialo extends javax.swing.JDialog {
+public class phieumuonDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form phieumuonDialo
      */
     javax.swing.JTable jTable;
     boolean editingEnabled;
-    public phieumuonDialo(java.awt.Frame parent, boolean modal) {
+    public phieumuonDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.jTable = jTable;
         initComponents();
     }
 
-    phieumuonDialo(JFrame jFrame, boolean b, JTable jTable1) {
+    phieumuonDialog(JFrame jFrame, boolean b, JTable jTable1) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    phieumuonDialo(JFrame jFrame, boolean b, JTable jTable1, boolean b0) {
+    phieumuonDialog(JFrame jFrame, boolean b, JTable jTable1, boolean b0) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

@@ -258,7 +258,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         // TODO add your handling code here:
-        new phieumuonDialo(new javax.swing.JFrame(), true).setVisible(true);
+        new phieumuonDialog(new javax.swing.JFrame(), true).setVisible(true);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
