@@ -211,6 +211,12 @@ import chucnang.xulyTacgia;
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
+        if(editingEnabled == false) {
+                        xulyTacgia.add(txtusername4.getText());
+                    } else {
+                        xulyTacgia.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText());
+                    }
+                this.dispose();
     }//GEN-LAST:event_luuButtonActionPerformed
 
     /**

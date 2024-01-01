@@ -183,12 +183,9 @@ public class tacgiapanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-<<<<<<< HEAD
+
         new tacgiaDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
         xulyTacgia.updateTable(jTable1);
-=======
-        new tacgiaDialog(new javax.swing.JFrame(), true).setVisible(true);
->>>>>>> 8a91d525666877f8e34131942711ad9ac5769e94
         // TODO add your handling code here:
     }//GEN-LAST:event_themButtonActionPerformed
 
