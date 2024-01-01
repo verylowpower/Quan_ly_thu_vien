@@ -25,7 +25,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
         designTable();
     }
     void designTable(){
-        jTable1.getTableHeader().setFont(new Font("Monospaced", Font.BOLD, 18));
+        jTable1.getTableHeader().setFont(new Font("Monospace", Font.BOLD, 18));
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
         jTable1.getTableHeader().setForeground(new Color(125,99,87));
@@ -110,6 +110,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
         timkiemTextField.setText("Tìm kiếm");
 
+        txtusername5.setBackground(new java.awt.Color(239, 239, 239));
         txtusername5.setFont(txtusername5.getFont().deriveFont(txtusername5.getFont().getSize()+2f));
         txtusername5.setForeground(new java.awt.Color(137, 110, 89));
         txtusername5.setBorder(null);
@@ -121,6 +122,8 @@ public class phieumuonpanel extends javax.swing.JPanel {
             }
         });
 
+        jTable1.setBackground(new java.awt.Color(255, 242, 222));
+        jTable1.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},

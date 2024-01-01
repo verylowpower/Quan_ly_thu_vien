@@ -28,7 +28,7 @@ public class sachpanel extends javax.swing.JPanel {
         designTable();
     }
     void designTable(){
-        jTable1.getTableHeader().setFont(new Font("Monospaced", Font.BOLD, 18));
+        jTable1.getTableHeader().setFont(new Font("Monospace", Font.BOLD, 18));
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
         jTable1.getTableHeader().setForeground(new Color(125,99,87));
@@ -105,6 +105,7 @@ public class sachpanel extends javax.swing.JPanel {
         jLabel8.setForeground(new java.awt.Color(125, 99, 87));
         jLabel8.setText("Tìm kiếm");
 
+        timkiemTextField.setBackground(new java.awt.Color(239, 239, 239));
         timkiemTextField.setFont(timkiemTextField.getFont().deriveFont(timkiemTextField.getFont().getSize()+2f));
         timkiemTextField.setForeground(new java.awt.Color(137, 110, 89));
         timkiemTextField.setBorder(null);
@@ -118,7 +119,8 @@ public class sachpanel extends javax.swing.JPanel {
 
         jScrollPane1.setBackground(new java.awt.Color(232, 214, 200));
 
-        jTable1.setBackground(new java.awt.Color(232, 214, 200));
+        jTable1.setBackground(new java.awt.Color(255, 242, 222));
+        jTable1.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
