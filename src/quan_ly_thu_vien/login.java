@@ -34,10 +34,10 @@ public class login extends javax.swing.JFrame {
     public void Login() {
         try {
             Statement st = connectionClass.getStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM login");
+            ResultSet rs = st.executeQuery("SELECT * FROM nhanvien");
             while (rs.next()) {
-                String username = rs.getString(2);
-                String password = rs.getString(3);
+                String username = rs.getString(8);
+                String password = rs.getString(9);
                 if (username.equals(txtusername.getText())
                         && password.equals(String.valueOf(txtpassword.getPassword()))) {
                     java.awt.EventQueue.invokeLater(new Runnable() {
