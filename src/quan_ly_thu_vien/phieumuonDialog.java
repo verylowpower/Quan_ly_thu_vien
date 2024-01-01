@@ -4,6 +4,9 @@
  */
 package quan_ly_thu_vien;
 import chucnang.xulyphieumuon;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
 
 /**
  *
@@ -12,7 +15,7 @@ import chucnang.xulyphieumuon;
 public class phieumuonDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form phieumuonDialog
+     * Creates new form phieumuonDialo
      */
     javax.swing.JTable jTable;
     boolean editingEnabled;
@@ -20,6 +23,14 @@ public class phieumuonDialog extends javax.swing.JDialog {
         super(parent, modal);
         this.jTable = jTable;
         initComponents();
+    }
+
+    phieumuonDialog(JFrame jFrame, boolean b, JTable jTable1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    phieumuonDialog(JFrame jFrame, boolean b, JTable jTable1, boolean b0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -48,6 +59,7 @@ public class phieumuonDialog extends javax.swing.JDialog {
         jComboBox6 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -195,11 +207,15 @@ public class phieumuonDialog extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -217,11 +233,7 @@ public class phieumuonDialog extends javax.swing.JDialog {
         } else{
             xulyphieumuon.edit(Integer.parseInt(txtusername5.getText()), jTable,txtusername4.getText(),txtusername6.getText(), jComboBox3,jComboBox4,jComboBox5,jComboBox6);
     }//GEN-LAST:event_luuButtonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;

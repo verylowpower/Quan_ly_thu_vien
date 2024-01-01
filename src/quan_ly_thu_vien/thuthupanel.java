@@ -28,10 +28,10 @@ public class thuthupanel extends javax.swing.JPanel {
         designTable();
     }
     void designTable(){
-        jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 18));
+        jTable1.getTableHeader().setFont(new Font("Monospace", Font.BOLD, 18));
         jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new Color(205, 133, 63));
-        jTable1.getTableHeader().setForeground(Color.white);
+        jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
+        jTable1.getTableHeader().setForeground(new Color(125,99,87));
    
     }
     void setColor(JPanel panel) {  //đổi màu
@@ -92,6 +92,7 @@ public class thuthupanel extends javax.swing.JPanel {
             .addGap(0, 37, Short.MAX_VALUE)
         );
 
+        txtusername8.setBackground(new java.awt.Color(239, 239, 239));
         txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
         txtusername8.setForeground(new java.awt.Color(137, 110, 89));
         txtusername8.setBorder(null);
@@ -109,6 +110,8 @@ public class thuthupanel extends javax.swing.JPanel {
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBackground(new java.awt.Color(255, 242, 222));
+        jTable1.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(125, 99, 87));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -293,4 +296,8 @@ public class thuthupanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtusername8;
     private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
+
+    private Color Color(int i, int i0, int i1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

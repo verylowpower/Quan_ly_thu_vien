@@ -34,15 +34,15 @@ public class login extends javax.swing.JFrame {
     public void Login() {
         try {
             Statement st = connectionClass.getStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM login");
+            ResultSet rs = st.executeQuery("SELECT * FROM nhanvien");
             while (rs.next()) {
-                String username = rs.getString(2);
-                String password = rs.getString(3);
+                String username = rs.getString(8);
+                String password = rs.getString(9);
                 if (username.equals(txtusername.getText())
                         && password.equals(String.valueOf(txtpassword.getPassword()))) {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                            new Home(username).setVisible(true);
+                            new Home().setVisible(true);
                         }
                     });
                     this.dispose();
@@ -170,6 +170,11 @@ public class login extends javax.swing.JFrame {
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Login_bgLayout = new javax.swing.GroupLayout(Login_bg);
         Login_bg.setLayout(Login_bgLayout);
@@ -273,6 +278,11 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Login();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     

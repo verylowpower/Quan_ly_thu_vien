@@ -3,23 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package quan_ly_thu_vien;
-
-
-
+import chucnang.xuLyTheloai;
+import java.awt.Color;
+import java.awt.Font;
 /**
  *
  * @author vitancuc
  */
 public class theloaipanel extends javax.swing.JPanel {
-
     /**
      * Creates new form theloaipanel
      */
     public theloaipanel() {
         initComponents();
+        xuLyTheloai.updateTable(jTable1);
+        designTable();
     }
-    
-
+    void designTable(){
+        jTable1.getTableHeader().setFont(new Font("Monospace", Font.BOLD, 18));
+        jTable1.getTableHeader().setOpaque(false);
+        jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
+        jTable1.getTableHeader().setForeground(new Color(125,99,87));
+   
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +48,7 @@ public class theloaipanel extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
 
+        txtusername8.setBackground(new java.awt.Color(239, 239, 239));
         txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
         txtusername8.setForeground(new java.awt.Color(137, 110, 89));
         txtusername8.setBorder(null);
@@ -52,6 +59,8 @@ public class theloaipanel extends javax.swing.JPanel {
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
         timkiemTextField.setText("Tìm kiếm");
 
+        jTable1.setBackground(new java.awt.Color(255, 242, 222));
+        jTable1.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -181,15 +190,17 @@ public class theloaipanel extends javax.swing.JPanel {
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
-        // TODO add your handling code here:
+        xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        // TODO add your handling code here:
+        xuLyTheloai.delete(jTable1);
+        xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
-        // TODO add your handling code here:
+        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
 
 

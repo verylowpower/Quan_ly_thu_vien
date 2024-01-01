@@ -58,12 +58,12 @@
                               <Component id="timkiemTextField" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jScrollPane1" alignment="0" pref="953" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="0" pref="831" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="themButton" min="-2" pref="194" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                           <Component id="suaButton" min="-2" pref="194" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="xoaButton" min="-2" pref="194" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -80,7 +80,7 @@
                       <Component id="timkiemTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="456" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -150,6 +150,9 @@
         </Container>
         <Component class="javax.swing.JTextField" name="timkiemTextField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ef" green="ef" red="ef" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
               <FontInfo relative="true">
                 <Font component="timkiemTextField" property="font" relativeSize="true" size="2"/>
@@ -188,6 +191,13 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
+                <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="de" green="f2" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Monospaced" size="16" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="4">
                     <Column editable="true" title="M&#xe3; ng&#x1b0;&#x1edd;i m&#x1b0;&#x1ee3;n" type="java.lang.Object"/>

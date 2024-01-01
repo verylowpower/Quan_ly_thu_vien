@@ -28,14 +28,7 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         addpanel();
         hidePanel();
-        /*
-        Component [] componets = this.getContentPane().getComponents();
         
-        for(Component component: componets ){
-            if(componet instanceof JButton){
-                (((JButton) componet).setUI(new BasicButtonUI()));
-            }
-        } */
     }
     private void hidePanel(){
         sach.setVisible(false);
@@ -155,7 +148,7 @@ public class Home extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(125, 99, 87));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        jButton4.setText("Cài đặt");
+        jButton4.setText("Đăng xuất");
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
@@ -437,8 +430,8 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        hidePanel();
-        caidat.setVisible(true);
+        this.dispose();
+        new login().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
