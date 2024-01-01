@@ -5,6 +5,8 @@
 package quan_ly_thu_vien;
 
 import chucnang.xulyTacgia;
+import java.awt.Color;
+import java.awt.Font;
 
 
 /**
@@ -19,8 +21,14 @@ public class tacgiapanel extends javax.swing.JPanel {
     public tacgiapanel() {
         initComponents();
         xulyTacgia.updateTable(jTable1);
+        designTable();
     }
-   
+    void designTable(){
+        jTable1.getTableHeader().setFont(new Font("Monospace", Font.BOLD, 18));
+        jTable1.getTableHeader().setOpaque(false);
+        jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
+        jTable1.getTableHeader().setForeground(new Color(125,99,87));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +61,7 @@ public class tacgiapanel extends javax.swing.JPanel {
             }
         });
 
+        txtusername8.setBackground(new java.awt.Color(239, 239, 239));
         txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
         txtusername8.setForeground(new java.awt.Color(137, 110, 89));
         txtusername8.setBorder(null);
@@ -63,6 +72,8 @@ public class tacgiapanel extends javax.swing.JPanel {
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
         timkiemTextField.setText("Tìm kiếm");
 
+        jTable1.setBackground(new java.awt.Color(255, 242, 222));
+        jTable1.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -74,6 +85,7 @@ public class tacgiapanel extends javax.swing.JPanel {
                 "Mã tác giả", "Tên tác giả"
             }
         ));
+        jTable1.setToolTipText("");
         jScrollPane1.setViewportView(jTable1);
 
         themButton.setBackground(new java.awt.Color(232, 214, 200));
