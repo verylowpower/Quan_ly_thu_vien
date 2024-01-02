@@ -261,6 +261,8 @@ public class sachpanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         xuLySach.delete(jTable1); //delete
         xuLySach.updateTable(jTable1);
+        // Component c = bg;
+        // new ComponentPrinter(c).printComponent();
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
