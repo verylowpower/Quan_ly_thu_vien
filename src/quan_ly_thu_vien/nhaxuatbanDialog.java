@@ -239,8 +239,12 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
+        String maNXB = new String();
+        if(maNXBTextField.getText().equals("")){
+            maNXB = null;
+        }
         if(editingEnabled == false) {
-            xuLyNhaXuatBan.add(tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
+            xuLyNhaXuatBan.add(maNXB, tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
         } else {
             xuLyNhaXuatBan.edit(Integer.parseInt(maNXBTextField.getText()), jTable, tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
         }

@@ -259,6 +259,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="masachTextField">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
               <FontInfo relative="true">
                 <Font component="masachTextField" property="font" relativeSize="true" size="2"/>

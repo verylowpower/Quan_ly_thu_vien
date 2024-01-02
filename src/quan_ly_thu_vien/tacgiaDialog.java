@@ -211,8 +211,12 @@ import chucnang.xulyTacgia;
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
+        String matacgia = new String();
+        if (txtusername5.getText() == ""){
+            matacgia = null;
+        }
         if(editingEnabled == false) {
-                        xulyTacgia.add(txtusername4.getText());
+                        xulyTacgia.add(txtusername4.getText(), matacgia);
                     } else {
                         xulyTacgia.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText());
                     }

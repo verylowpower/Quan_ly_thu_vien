@@ -63,17 +63,22 @@ public class xuLyNhaXuatBan {
     }
 
     // Chay query them vao database
-    public static void add(String ten_nxb, String diachi, String sdt_nxb){
+    public static void add(String maNXB, String ten_nxb, String diachi, String sdt_nxb){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
-                            "insert into nha_xuat_ban(ten_nxb, diachi, sdt_nxb)"
-                                    + "values(?, ?, ?)");
+                            "insert into nha_xuat_ban(ten_nxb, diachi, sdt_nxb, ma_nxb)"
+                                    + "values(?, ?, ?, ?)");
             
             ps.setString(1, ten_nxb);
             ps.setString(2, diachi);
             ps.setString(3, sdt_nxb);
+            if(maNXB == null){
+                ps.setString(4, maNXB);
+            } else{
+                ps.setInt(4, Integer.parseInt(maNXB));
+            }
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());

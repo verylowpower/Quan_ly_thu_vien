@@ -32,6 +32,7 @@ public class sachDialog extends javax.swing.JDialog {
         xuLySach.getComboBoxElements(tacgiaComboBox, nxbComboBox, theloaiComboBox);
         this.editingEnabled = editingEnabled;
         this.jTable = jTable;
+        masachTextField.setEditable(editingEnabled);
         if(editingEnabled) {xuLySach.select(masachTextField, tensachTextField, namxuatbanTextField, nxbComboBox,tacgiaComboBox,theloaiComboBox, jTable, pictureLabel);}
     }
     /**
@@ -114,6 +115,7 @@ public class sachDialog extends javax.swing.JDialog {
         tensachTextField.setDragEnabled(true);
         tensachTextField.setName(""); // NOI18N
 
+        masachTextField.setEditable(false);
         masachTextField.setFont(masachTextField.getFont().deriveFont(masachTextField.getFont().getSize()+2f));
         masachTextField.setForeground(new java.awt.Color(137, 110, 89));
         masachTextField.setBorder(null);
@@ -291,7 +293,7 @@ public class sachDialog extends javax.swing.JDialog {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(theloaiComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

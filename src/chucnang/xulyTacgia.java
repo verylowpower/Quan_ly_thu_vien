@@ -54,14 +54,19 @@ public class xulyTacgia {
         } catch (Exception e) {
         }
     }
-    public static void add(String tentacgia){
+    public static void add(String tentacgia, String matacgia){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
-                            "insert into tacgia(tentacgia)"
-                                    + "values(?)");
+                            "insert into tacgia(tentacgia, ma_tacgia)"
+                                    + "values(?, ?)");
             ps.setString(1, tentacgia);
+            if(matacgia != null){
+                ps.setInt(2, Integer.parseInt(matacgia));
+            } else{
+                ps.setString(2, null);
+            }
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
