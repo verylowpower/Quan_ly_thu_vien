@@ -115,7 +115,7 @@ public class theloaiDialog extends javax.swing.JDialog {
         luuButton1.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         luuButton1.setForeground(new java.awt.Color(125, 99, 87));
         luuButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        luuButton1.setText("Lưu");
+        luuButton1.setText("sua");
         luuButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         luuButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         luuButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N

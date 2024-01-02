@@ -189,7 +189,7 @@ public class theloaipanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        new theloaiDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
         xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
@@ -199,7 +199,7 @@ public class theloaipanel extends javax.swing.JPanel {
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
-        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        new theloaiDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
         xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
 

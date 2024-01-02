@@ -92,7 +92,7 @@ public class xuLySach {
     }
 
     // Chay query them vao database
-    public static void add(int ma_sach, javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1,
+    public static void add(String ma_sach, javax.swing.JComboBox jComboBox, javax.swing.JComboBox jComboBox1,
             javax.swing.JComboBox jComboBox2, String tenSach, String namXb, ByteArrayOutputStream img){
         try {
             Connection conn = connectionClass.getConnection();
@@ -112,13 +112,22 @@ public class xuLySach {
                     .executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '" + jComboBox1.getSelectedItem() + "'");
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
-            ps.setInt(1, ma_sach);
+            if(ma_sach == null){
+                ps.setString(1, null);
+            } else{
+                ps.setInt(1, Integer.parseInt(ma_sach));
+            }
             ps.setString(2, tenSach);
             ps.setString(3, namXb);
             ps.setInt(4, idNxb);
             ps.setInt(5, idTheLoai);
             ps.setInt(6, idTacGia);
-            ps.setBytes(7, img.toByteArray());
+            if(img != null){
+                ps.setBytes(7, img.toByteArray());
+            } else{
+                ps.setBytes(7, null);
+            }
+            
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -148,7 +157,11 @@ public class xuLySach {
             ps.setInt(4, idNxb);
             ps.setInt(5, idTheLoai);
             ps.setInt(6, idTacGia);
-            ps.setBytes(7, img.toByteArray());
+            if(img != null){
+                ps.setBytes(7, img.toByteArray());
+            } else{
+                ps.setBytes(7, null);
+            }
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());

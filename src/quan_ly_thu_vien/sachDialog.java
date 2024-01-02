@@ -340,8 +340,13 @@ public class sachDialog extends javax.swing.JDialog {
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
         // TODO add your handling code here:
+        String masach = new String();
+        if(masachTextField.getText().equals("")) {
+            masach = null;
+        }
+        
         if(editingEnabled == false) {
-            xuLySach.add(Integer.parseInt(masachTextField.getText()), tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
+            xuLySach.add(masach, tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
         } else{
             xuLySach.edit(Integer.parseInt(masachTextField.getText()), jTable, tacgiaComboBox, nxbComboBox, theloaiComboBox, tensachTextField.getText(), namxuatbanTextField.getText(), img);
         }
