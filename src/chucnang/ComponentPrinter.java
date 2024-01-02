@@ -15,7 +15,7 @@ public class ComponentPrinter implements Printable {
             return Printable.NO_SUCH_PAGE;
         }
 
-        // Set the bounds of the component to fit within the page
+        // Chinh bien cua component de vua voi trang in
         Dimension componentSize = componentToPrint.getSize();
         double pageWidth = pf.getImageableWidth();
         double pageHeight = pf.getImageableHeight();
@@ -27,7 +27,7 @@ public class ComponentPrinter implements Printable {
         g2d.translate(pf.getImageableX(), pf.getImageableY());
         g2d.scale(scaleFactor, scaleFactor);
 
-        // Print the component on the page
+        // In component ra trang in
         componentToPrint.paint(g2d);
 
         return Printable.PAGE_EXISTS;
@@ -40,7 +40,7 @@ public class ComponentPrinter implements Printable {
             try {
                 job.print();
             } catch (PrinterException ex) {
-                System.out.println("Printing failed: " + ex.getMessage());
+                System.out.println("In that bai: " + ex.getMessage());
             }
         }
     }
