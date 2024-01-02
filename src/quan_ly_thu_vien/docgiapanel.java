@@ -28,7 +28,7 @@ public class docgiapanel extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
         jTable1.getTableHeader().setForeground(new Color(125,99,87));
-   
+        jScrollPane1.getViewport().setBackground(new Color(211,193,173));
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
@@ -105,7 +105,7 @@ public class docgiapanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        timkiemTextField.setBackground(new java.awt.Color(239, 239, 239));
+        timkiemTextField.setBackground(new java.awt.Color(253, 245, 230));
         timkiemTextField.setFont(timkiemTextField.getFont().deriveFont(timkiemTextField.getFont().getSize()+2f));
         timkiemTextField.setForeground(new java.awt.Color(137, 110, 89));
         timkiemTextField.setBorder(null);
@@ -135,6 +135,8 @@ public class docgiapanel extends javax.swing.JPanel {
                 "Mã người mượn", "Tên người mượn", "Ngày sinh", "Giới tính", "Số điện thoại"
             }
         ));
+        jTable1.setOpaque(false);
+        jTable1.setRowHeight(25);
         jScrollPane1.setViewportView(jTable1);
 
         themButton.setBackground(new java.awt.Color(232, 214, 200));

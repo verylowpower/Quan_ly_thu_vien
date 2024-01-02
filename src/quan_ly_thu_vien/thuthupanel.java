@@ -32,7 +32,11 @@ public class thuthupanel extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
         jTable1.getTableHeader().setForeground(new Color(125,99,87));
-   
+        jScrollPane1.getViewport().setBackground(new Color(211,193,173));
+////        if (row % 2 == 0){
+////            .setBackground(new Color(255,242,222);
+//        }
+//        else 
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
@@ -92,7 +96,7 @@ public class thuthupanel extends javax.swing.JPanel {
             .addGap(0, 37, Short.MAX_VALUE)
         );
 
-        txtusername8.setBackground(new java.awt.Color(239, 239, 239));
+        txtusername8.setBackground(new java.awt.Color(253, 245, 230));
         txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
         txtusername8.setForeground(new java.awt.Color(137, 110, 89));
         txtusername8.setBorder(null);

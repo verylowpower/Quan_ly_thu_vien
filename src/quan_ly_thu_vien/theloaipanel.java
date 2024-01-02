@@ -24,7 +24,7 @@ public class theloaipanel extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
         jTable1.getTableHeader().setForeground(new Color(125,99,87));
-   
+        jScrollPane1.getViewport().setBackground(new Color(211,193,173));
     }
     /**
      * This method is called from within the constructor to initialize the form.

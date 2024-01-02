@@ -27,7 +27,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(253, 245, 230));
         jTable1.getTableHeader().setForeground(new Color(125,99,87));
-   
+        jScrollPane1.getViewport().setBackground(new Color(211,193,173));
     }
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
@@ -71,7 +71,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
             }
         });
 
-        timkiemNXBTextField.setBackground(new java.awt.Color(239, 239, 239));
+        timkiemNXBTextField.setBackground(new java.awt.Color(253, 245, 230));
         timkiemNXBTextField.setFont(timkiemNXBTextField.getFont().deriveFont(timkiemNXBTextField.getFont().getSize()+2f));
         timkiemNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
         timkiemNXBTextField.setBorder(null);
@@ -157,14 +157,14 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
                         .addGap(17, 17, 17))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(127, 127, 127)
+                        .addGap(178, 178, 178)
                         .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(timkiemTextField)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -176,7 +176,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(timkiemNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(timkiemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
