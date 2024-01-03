@@ -221,4 +221,16 @@ public class xuLySach {
         }
         return temp;
     }
+    public static int selectLastID(){
+        // String masach = new String();
+        int masach = 0;
+        try{
+            ResultSet rs = connectionClass.getStatement().executeQuery("Select max(ma_sach) from sach ");
+            rs.next();
+            masach = rs.getInt(1);
+        } catch (SQLException e) {
+
+        }
+        return masach;
+    }
 }

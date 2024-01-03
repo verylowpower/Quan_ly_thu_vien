@@ -32,8 +32,13 @@ public class sachDialog extends javax.swing.JDialog {
         xuLySach.getComboBoxElements(tacgiaComboBox, nxbComboBox, theloaiComboBox);
         this.editingEnabled = editingEnabled;
         this.jTable = jTable;
+        // Tinh chinh lai phan nhap ma sach khi them sach
         masachTextField.setEditable(editingEnabled);
-        if(editingEnabled) {xuLySach.select(masachTextField, tensachTextField, namxuatbanTextField, nxbComboBox,tacgiaComboBox,theloaiComboBox, jTable, pictureLabel);}
+        if(editingEnabled) {
+            xuLySach.select(masachTextField, tensachTextField, namxuatbanTextField, nxbComboBox,tacgiaComboBox,theloaiComboBox, jTable, pictureLabel);
+        } else{
+            masachTextField.setText(Integer.toString(xuLySach.selectLastID() + 1)); 
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
