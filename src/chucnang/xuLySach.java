@@ -112,12 +112,7 @@ public class xuLySach {
                     .executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '" + jComboBox1.getSelectedItem() + "'");
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
-            // Ae chu y cai nay 
-            if(ma_sach == null){ 
-                ps.setString(1, null);
-            } else{
-                ps.setInt(1, Integer.parseInt(ma_sach));
-            }
+            ps.setInt(1, Integer.parseInt(ma_sach));
             ps.setString(2, tenSach);
             ps.setString(3, namXb);
             ps.setInt(4, idNxb);
