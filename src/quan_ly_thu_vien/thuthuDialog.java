@@ -170,6 +170,8 @@ public class thuthuDialog extends javax.swing.JDialog {
             }
         });
 
+        jDateChooser1.setDateFormatString("yyyy-MMM-d");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
