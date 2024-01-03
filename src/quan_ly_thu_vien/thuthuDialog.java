@@ -174,7 +174,7 @@ public class thuthuDialog extends javax.swing.JDialog {
             }
         });
 
-        jDateChooser1.setDateFormatString("yyyy-mm-d");
+        jDateChooser1.setDateFormatString("yyyy-MM-dd");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -299,8 +299,8 @@ public class thuthuDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_luuButtonActionPerformed
 
     private void ThemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemButtonActionPerformed
-        System.out.println(((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText());
-        xuLyThuthu.add(txtusername4.getText(), jDateChooser1.getDateFormatString(), jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
+        System.out.println();
+        xuLyThuthu.add(txtusername4.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
         this.dispose();
     }//GEN-LAST:event_ThemButtonActionPerformed
 
