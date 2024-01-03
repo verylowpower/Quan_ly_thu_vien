@@ -5,6 +5,7 @@
 package quan_ly_thu_vien;
 import chucnang.xuLyDocGia;
 import chucnang.xuLyThuthu;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author lehuy
@@ -14,6 +15,7 @@ public class thuthuDialog extends javax.swing.JDialog {
     /**
      * Creates new form thuthuDialo
      */
+    SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-d");
     javax.swing.JTable jTable;
     public thuthuDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
         super(parent, modal);
@@ -170,7 +172,7 @@ public class thuthuDialog extends javax.swing.JDialog {
             }
         });
 
-        jDateChooser1.setDateFormatString("yyyy-MMM-d");
+        jDateChooser1.setDateFormatString("yyyy-mm-d");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -295,7 +297,7 @@ public class thuthuDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_luuButtonActionPerformed
 
     private void ThemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemButtonActionPerformed
-//        xuLyThuthu.add(txtusername4.getText(), jComboBox3, jComboBox2, jComboBox1, jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
+        xuLyThuthu.add(txtusername4.getText(), df.format(jDateChooser1.getDate()), jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
         this.dispose();
     }//GEN-LAST:event_ThemButtonActionPerformed
 

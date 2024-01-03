@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.regex.PatternSyntaxException;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
@@ -56,7 +57,8 @@ public class xuLyThuthu {
         }
     }
     public static void add(String tenNV, 
-            javax.swing.JComboBox JComboBox1, javax.swing.JComboBox JComboBox2, javax.swing.JComboBox JComboBox3,
+            String ngaysinh, 
+               
             javax.swing.JRadioButton JRadioButton1, javax.swing.JRadioButton JRadioButton2, 
             String diaChi, String sdt){
         try {
@@ -66,8 +68,12 @@ public class xuLyThuthu {
                             "insert into nhanvien(hoten, ngay_sinh, gioi_tinh, dia_chi, sdt)"
                                     + "values(?, ?, ?, ?, ?)");
             ps.setString(1, tenNV);
-            ps.setString(2, String.valueOf(JComboBox1.getSelectedItem().toString() + "/" + JComboBox2.getSelectedItem().toString()
-                + "/" + JComboBox3.getSelectedItem().toString()));
+//            ps.setString(2, String.valueOf(JComboBox1.getSelectedItem().toString() + "/" + JComboBox2.getSelectedItem().toString()
+//                + "/" + JComboBox3.getSelectedItem().toString()));
+//            SimpleDateFormat df = new SimpleDateFormat("yyyy-MMM-d");
+            
+            ps.setString(2,ngaysinh);
+//            String date = df.format(ngaysinh.getDate());
             if(JRadioButton1.isSelected()){
                 ps.setString(3, "Nam");
             } else if(JRadioButton2.isSelected()){ 
