@@ -133,6 +133,7 @@ public class sachpanel extends javax.swing.JPanel {
                 "Mã sách", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản ", "Năm xuất bản"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(255, 242, 222));
         jScrollPane1.setViewportView(jTable1);
 
         themButton.setBackground(new java.awt.Color(232, 214, 200));
@@ -224,11 +225,11 @@ public class sachpanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -149,6 +149,9 @@
                     <Column editable="true" title="Ng&#xe0;y tr&#x1ea3;" type="java.lang.Object"/>
                   </Table>
                 </Property>
+                <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="de" green="f2" red="ff" type="rgb"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
