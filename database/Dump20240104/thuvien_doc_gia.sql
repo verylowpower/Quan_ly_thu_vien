@@ -16,29 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `nha_xuat_ban`
+-- Table structure for table `doc_gia`
 --
 
-DROP TABLE IF EXISTS `nha_xuat_ban`;
+DROP TABLE IF EXISTS `doc_gia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `nha_xuat_ban` (
-  `ma_nxb` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `ten_nxb` varchar(255) DEFAULT NULL,
-  `diachi` varchar(255) DEFAULT NULL,
-  `sdt_nxb` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ma_nxb`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `doc_gia` (
+  `ma_doc_gia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `ngay_sinh` datetime DEFAULT NULL,
+  `hoten` varchar(255) DEFAULT NULL,
+  `dia_chi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `sdt` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ma_doc_gia`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `nha_xuat_ban`
+-- Dumping data for table `doc_gia`
 --
 
-LOCK TABLES `nha_xuat_ban` WRITE;
-/*!40000 ALTER TABLE `nha_xuat_ban` DISABLE KEYS */;
-INSERT INTO `nha_xuat_ban` VALUES (1,'valorant','dfasf','321312');
-/*!40000 ALTER TABLE `nha_xuat_ban` ENABLE KEYS */;
+LOCK TABLES `doc_gia` WRITE;
+/*!40000 ALTER TABLE `doc_gia` DISABLE KEYS */;
+INSERT INTO `doc_gia` VALUES (1,'2003-01-01 00:00:00','valorant','fdasf','fdasf'),(2,'2003-01-01 00:00:00','dfasfd','fdasf','fdsaf'),(3,'2003-01-01 00:00:00','dfasdf','fdasf','fdasf');
+/*!40000 ALTER TABLE `doc_gia` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-29  9:32:03
+-- Dump completed on 2024-01-04 21:51:28

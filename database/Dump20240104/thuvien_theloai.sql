@@ -16,29 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `doc_gia`
+-- Table structure for table `theloai`
 --
 
-DROP TABLE IF EXISTS `doc_gia`;
+DROP TABLE IF EXISTS `theloai`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `doc_gia` (
-  `ma_doc_gia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `ngay_sinh` datetime DEFAULT NULL,
-  `hoten` varchar(255) DEFAULT NULL,
-  `gioi_tinh` varchar(255) DEFAULT NULL,
-  `sdt` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ma_doc_gia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `theloai` (
+  `ma_theloai` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `tentheloai` varchar(255) DEFAULT NULL COMMENT 'Create Time',
+  PRIMARY KEY (`ma_theloai`)
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `doc_gia`
+-- Dumping data for table `theloai`
 --
 
-LOCK TABLES `doc_gia` WRITE;
-/*!40000 ALTER TABLE `doc_gia` DISABLE KEYS */;
-/*!40000 ALTER TABLE `doc_gia` ENABLE KEYS */;
+LOCK TABLES `theloai` WRITE;
+/*!40000 ALTER TABLE `theloai` DISABLE KEYS */;
+INSERT INTO `theloai` VALUES (1,'valorant'),(123,'dasd');
+/*!40000 ALTER TABLE `theloai` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-29  9:32:03
+-- Dump completed on 2024-01-04 21:51:28
