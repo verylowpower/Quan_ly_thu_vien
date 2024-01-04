@@ -102,7 +102,7 @@ public class xuLyDocGia {
                 "select  ma_doc_gia, hoten, ngay_sinh, dia_chi, sdt  from doc_gia where ma_doc_gia = '" + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             rs.next();
             tennguoimuonTextField.setText(rs.getString("hoten"));
-            gioitinhTextField.setText(rs.getString("gioi_tinh"));
+            gioitinhTextField.setText(rs.getString("dia_chi"));
             sodienthoaiTextField.setText(rs.getString("sdt"));
             
         } catch (SQLException e) {
