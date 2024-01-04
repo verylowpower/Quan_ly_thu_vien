@@ -26,8 +26,8 @@ public class phieumuonDialog extends javax.swing.JDialog {
         super(parent, modal);
         this.jTable = jTable;
         this.editingEnabled = editingEnabled;
-        xulyphieumuon.getComboBoxElements(jComboBox7, jComboBox2, jComboBox1);
         initComponents();
+        xulyphieumuon.getComboBoxElements(jComboBox7, jComboBox2, jComboBox1);
         if(editingEnabled) {
             xulyphieumuon.select( txtusername5,jComboBox7,  jComboBox2, jComboBox1, jComboBox3, jComboBox4, jComboBox5,jTable, jComboBox6 );
         } else{

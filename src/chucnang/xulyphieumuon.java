@@ -73,7 +73,7 @@ public class xulyphieumuon {
         }
     }
         // Them phan tu tu database vao comboBox cua phieumuonDialo
-    public static void getComboBoxElements( javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2) 
+    public static void getComboBoxElements( javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox2, javax.swing.JComboBox jComboBox1) 
     {
         try {
             Statement stat = connectionClass.getStatement();
@@ -81,7 +81,7 @@ public class xulyphieumuon {
             while (rs.next()) {
                 jComboBox7.addItem(rs.getString("ten_sach"));
             }
-            rs = stat.executeQuery("SELECT * FROM docgia");
+            rs = stat.executeQuery("SELECT * FROM doc_gia");
             while (rs.next()) {
                 jComboBox2.addItem(rs.getString("hoten"));
             }
