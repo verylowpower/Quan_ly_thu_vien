@@ -13,7 +13,6 @@ import javax.swing.JPanel;
  * @author vitancuc
  */
 public class nhaxuatbanpanel extends javax.swing.JPanel {
-
     /**
      * Creates new form nhaxuatbanpanel
      */
@@ -225,7 +224,6 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
     }//GEN-LAST:event_suaButtonActionPerformed
 
     private void timkiemNXBTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timkiemNXBTextFieldActionPerformed
-        // TODO add your handling code here:
         xuLyNhaXuatBan.TableFilter(timkiemNXBTextField, jTable1);
     }//GEN-LAST:event_timkiemNXBTextFieldActionPerformed
 

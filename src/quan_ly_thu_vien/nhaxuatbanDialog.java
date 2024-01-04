@@ -49,6 +49,10 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         diachiNXBTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         luuButton = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -91,12 +95,14 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(125, 99, 87));
         jLabel4.setText("Tên NXB");
 
+        tenNXBTextField.setBackground(new java.awt.Color(232, 214, 200));
         tenNXBTextField.setFont(tenNXBTextField.getFont().deriveFont(tenNXBTextField.getFont().getSize()+2f));
         tenNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
         tenNXBTextField.setBorder(null);
         tenNXBTextField.setDragEnabled(true);
         tenNXBTextField.setName(""); // NOI18N
 
+        maNXBTextField.setBackground(new java.awt.Color(232, 214, 200));
         maNXBTextField.setFont(maNXBTextField.getFont().deriveFont(maNXBTextField.getFont().getSize()+2f));
         maNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
         maNXBTextField.setBorder(null);
@@ -111,12 +117,14 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         jLabel8.setForeground(new java.awt.Color(125, 99, 87));
         jLabel8.setText("Địa chỉ");
 
+        sodienthoaiNXBTextField.setBackground(new java.awt.Color(232, 214, 200));
         sodienthoaiNXBTextField.setFont(sodienthoaiNXBTextField.getFont().deriveFont(sodienthoaiNXBTextField.getFont().getSize()+2f));
         sodienthoaiNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
         sodienthoaiNXBTextField.setBorder(null);
         sodienthoaiNXBTextField.setDragEnabled(true);
         sodienthoaiNXBTextField.setName(""); // NOI18N
 
+        diachiNXBTextField.setBackground(new java.awt.Color(232, 214, 200));
         diachiNXBTextField.setFont(diachiNXBTextField.getFont().deriveFont(diachiNXBTextField.getFont().getSize()+2f));
         diachiNXBTextField.setForeground(new java.awt.Color(137, 110, 89));
         diachiNXBTextField.setBorder(null);
@@ -145,6 +153,18 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator1.setForeground(new java.awt.Color(125, 99, 87));
+
+        jSeparator2.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator2.setForeground(new java.awt.Color(125, 99, 87));
+
+        jSeparator3.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator3.setForeground(new java.awt.Color(125, 99, 87));
+
+        jSeparator4.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator4.setForeground(new java.awt.Color(125, 99, 87));
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -158,21 +178,25 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(maNXBTextField)
-                                    .addComponent(tenNXBTextField)
-                                    .addComponent(diachiNXBTextField)
-                                    .addComponent(sodienthoaiNXBTextField)))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(maNXBTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tenNXBTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(diachiNXBTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(sodienthoaiNXBTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jSeparator1)
+                                    .addComponent(jSeparator2)
+                                    .addComponent(jSeparator3)
+                                    .addComponent(jSeparator4))))
                         .addGap(418, 418, 418)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -189,19 +213,27 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(maNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tenNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(diachiNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sodienthoaiNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(1, 1, 1)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
@@ -260,6 +292,10 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton luuButton;
     private javax.swing.JTextField maNXBTextField;
     private javax.swing.JTextField sodienthoaiNXBTextField;
