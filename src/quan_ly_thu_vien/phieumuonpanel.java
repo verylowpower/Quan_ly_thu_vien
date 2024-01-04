@@ -4,6 +4,7 @@
  */
 package quan_ly_thu_vien;
 
+import chucnang.xulyphieumuon;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JPanel;
@@ -22,6 +23,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
      */
     public phieumuonpanel() {
         initComponents();
+        xulyphieumuon.updateTable(jTable1);
         designTable();
     }
     void designTable(){
@@ -209,6 +211,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
         // TODO add your handling code here:
         new phieumuonDialog(new javax.swing.JFrame(), true).setVisible(true);
+        xulyphieumuon.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed

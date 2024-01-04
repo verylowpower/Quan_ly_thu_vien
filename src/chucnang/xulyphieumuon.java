@@ -57,11 +57,11 @@ public class xulyphieumuon {
 
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery(
-                    "select * from phieu_muon"
+                    "select ma_phieu, ngay_muon, ngay_tra, docgia.ma_doc_gia, nhanvien.ma_nv, sach.ma_sach from phieu_muon"
                             +
                             " LEFT JOIN docgia ON phieu_muon.ma_doc_gia = docgia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
                             +
-                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv=nhanvien.ma_nv"
+                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv= nhanvien.ma_nv"
                            );
             while (rs.next()) {
                 model.addRow(new Object[] {
@@ -72,73 +72,111 @@ public class xulyphieumuon {
         } catch (Exception e) {
         }
     }
-        // Them phan tu tu database vao comboBox cua sachDialog
-    public static void getComboBoxElements(javax.swing.JComboBox jComboBox4, javax.swing.JComboBox jComboBox6) {
+        // Them phan tu tu database vao comboBox cua phieumuonDialo
+    public static void getComboBoxElements( javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2) 
+    {
         try {
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery("SELECT * FROM sach");
             while (rs.next()) {
-                jComboBox4.addItem(rs.getString("ten_sach"));
+                jComboBox7.addItem(rs.getString("ten_sach"));
             }
             rs = stat.executeQuery("SELECT * FROM docgia");
             while (rs.next()) {
-                jComboBox6.addItem(rs.getString("hoten"));
-            }          
+                jComboBox2.addItem(rs.getString("hoten"));
+            }
+            rs = stat.executeQuery("SELECT * FROM nhanvien");
+            while (rs.next()) {
+                jComboBox1.addItem(rs.getString("hoten"));
+            }      
         } catch (Exception e) {
         }
     }
     
     // Chay query them vao database
-    public static void add(javax.swing.JComboBox jComboBox3, javax.swing.JComboBox jComboBox4,
-            javax.swing.JComboBox jComboBox6,javax.swing.JComboBox jComboBox5, String ma_doc_gia, String ma_sach, String ngay_tra, String ngay_muon, String ma_phieu){
+    public static void add(String ma_phieu, javax.swing.JComboBox jComboBox3, javax.swing.JComboBox jComboBox4,
+            javax.swing.JComboBox jComboBox6,javax.swing.JComboBox jComboBox5, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2,
+            javax.swing.JComboBox jComboBox7 ){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
-                            "insert into sach(ngay_muon, ngay_tra, ma_doc_gia, ma_sach)"
-                                    + "values(?, ?, ?, ?, ?)");
-            ps.setString(1, String.valueOf( jComboBox4.getSelectedItem().toString() + "/" + jComboBox3.getSelectedItem().toString()));  
-            ps.setString(2, String.valueOf( jComboBox6.getSelectedItem().toString() + "/" + jComboBox5.getSelectedItem().toString())); 
-            ps.setString(3,ma_doc_gia);
-            ps.setString(4,ma_sach);
-            
+                            "insert into sach(ma_phieu, ngay_muon, ngay_tra, ma_doc_gia, ma_sach, ma_nv)"
+                                    + "values(?, ?, ?, ?, ?, ?, ?)");
+            ResultSet rs = connectionClass.getStatement().executeQuery(
+                    "SELECT * FROM sach WHERE ten_sach = '" + jComboBox7.getSelectedItem().toString() + "'");
+            rs.next();
+            int idSach = rs.getInt("ma_sach");
+            rs = connectionClass.getStatement()
+                    .executeQuery("Select * from docgia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
+            rs.next();
+            int idDocgia = rs.getInt("ma_doc_gia");
+            rs = connectionClass.getStatement()
+                    .executeQuery("Select * from nhanvien WHERE hoten = '" + jComboBox1.getSelectedItem() + "'");
+            rs.next();
+            int idThuthu = rs.getInt("ma_nv");
+            ps.setInt(1, Integer.parseInt(ma_phieu));
+            ps.setInt(2,idSach);
+            ps.setInt(3,idDocgia);
+            ps.setInt(4,idThuthu);
+            ps.setString(5, String.valueOf( jComboBox4.getSelectedItem().toString() + "/" + jComboBox3.getSelectedItem().toString()));  
+            ps.setString(6, String.valueOf( jComboBox6.getSelectedItem().toString() + "/" + jComboBox5.getSelectedItem().toString()));                    
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
     }
 
-    public static void edit(javax.swing.JComboBox jComboBox3, javax.swing.JComboBox jComboBox4,
-            javax.swing.JComboBox jComboBox6,javax.swing.JComboBox jComboBox5, String ma_doc_gia, String ma_sach, String ma_phieu, javax.swing.JTextField txtusename5, javax.swing.JTextField txtusename4,
-            javax.swing.JTextField txtusename6) {
+    public static void edit(String ma_phieu, javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox4,
+            javax.swing.JComboBox jComboBox2,javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox3, 
+            javax.swing.JComboBox jComboBox5, javax.swing.JComboBox jComboBox6) {
         try {
+            ResultSet rs = connectionClass.getStatement().executeQuery(
+                    "SELECT * FROM sach WHERE ten_sach = '" + jComboBox7.getSelectedItem().toString() + "'");
+            rs.next();
+            int idSach = rs.getInt("ma_sach");
+            rs = connectionClass.getStatement()
+                    .executeQuery("Select * from docgia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
+            rs.next();
+            int idDocgia = rs.getInt("ma_doc_gia");
+            rs = connectionClass.getStatement()
+                    .executeQuery("Select * from nhanvien WHERE hoten = '" + jComboBox1.getSelectedItem() + "'");
+            rs.next();
+            int idThuthu = rs.getInt("ma_nv");
+             
             
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
                     "Update phieu_muon set ma_phieu = ?, ngay_muon = ?, ngay_tra = ?, ma_doc_gia = ?, ma_sach = ?, ma_nv = ? where ma_phieu = '"+ ma_phieu +"'");
-            ps.setString(1, String.valueOf( jComboBox4.getSelectedItem().toString() + "/" + jComboBox3.getSelectedItem().toString()));  
-            ps.setString(2, String.valueOf( jComboBox6.getSelectedItem().toString() + "/" + jComboBox5.getSelectedItem().toString())); 
+            ps.setInt(1, Integer.parseInt(ma_phieu));
+            ps.setInt(2,idSach);
+            ps.setInt(3,idDocgia);
+            ps.setInt(4,idThuthu);
+            ps.setString(5, String.valueOf( jComboBox4.getSelectedItem().toString() + "/" + jComboBox3.getSelectedItem().toString()));  
+            ps.setString(6, String.valueOf( jComboBox6.getSelectedItem().toString() + "/" + jComboBox5.getSelectedItem().toString())); 
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
     }
 
-    public static void select(javax.swing.JTextField txtusername5, javax.swing.JTextField txtusername4,
-            javax.swing.JTextField txtusername6,
-            javax.swing.JComboBox jComboBox3, javax.swing.JComboBox jComboBox4, javax.swing.JComboBox jComboBox5,
+    public static void select(javax.swing.JTextField txtusername5,javax.swing.JComboBox jComboBox7,
+            javax.swing.JComboBox jComboBox2, javax.swing.JComboBox jComboBox1,javax.swing.JComboBox jComboBox3, 
+            javax.swing.JComboBox jComboBox4, javax.swing.JComboBox jComboBox5,
             javax.swing.JTable jTable, javax.swing.JComboBox jComboBox6) {
         try {
             txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "select* from phieu_muon"
-                            + "LEFT JOIN docgia ON phieu_muon.ma_doc_gia = docgia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
+                    "select ma_phieu, ngay_muon, ngay_tra, docgia.ma_doc_gia, nhanvien.ma_nv, sach.ma_sach from phieu_muon"
+                            + 
+                            "LEFT JOIN docgia ON phieu_muon.ma_doc_gia = docgia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
                             +
-                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv=nhanvien.ma_nv "+ txtusername4.getText()
+                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv=nhanvien.ma_nv "+ txtusername5.getText()
                            );
             rs.next();
             txtusername5.setText(rs.getString("ma_phieu"));
-            txtusername4.setText(rs.getString("ma_sach"));
-            txtusername6.setText(rs.getString("ma_doc_gia")); 
+            jComboBox7.setSelectedItem(rs.getString("ma_sach"));
+            jComboBox2.setSelectedItem(rs.getString("ngay_doc_gia"));
+            jComboBox1.setSelectedItem(rs.getString("ngay_nv"));
             jComboBox3.setSelectedItem(rs.getString("ngay_muon"));
             jComboBox4.setSelectedItem(rs.getString("ngay_muon"));
             jComboBox5.setSelectedItem(rs.getString("ngay_tra"));
@@ -159,13 +197,19 @@ public class xulyphieumuon {
         }
     }
 
-    public static void edit(int parseInt, JTable jTable, String text, String text0, JComboBox<String> jComboBox3, JComboBox<String> jComboBox4, JComboBox<String> jComboBox5, JComboBox<String> jComboBox6) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+public static int selectLastID(){
+        // String masach = new String();
+        int ma_phieu = 0;
+        try{
+            ResultSet rs = connectionClass.getStatement().executeQuery("Select max(ma_sach) from sach ");
+            rs.next();
+            ma_phieu = rs.getInt(1);
+        } catch (SQLException e) {
 
-    public static void add(String text, String text0, JComboBox<String> jComboBox3, JComboBox<String> jComboBox4, JComboBox<String> jComboBox5, JComboBox<String> jComboBox6) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+        return ma_phieu;
     }
-
 }
+
+
 
