@@ -48,12 +48,22 @@ public class theloaipanel extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
 
-        txtusername8.setBackground(new java.awt.Color(239, 239, 239));
+        txtusername8.setBackground(new java.awt.Color(253, 245, 230));
         txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
         txtusername8.setForeground(new java.awt.Color(137, 110, 89));
         txtusername8.setBorder(null);
         txtusername8.setDragEnabled(true);
         txtusername8.setName(""); // NOI18N
+        txtusername8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtusername8MouseClicked(evt);
+            }
+        });
+        txtusername8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtusername8KeyReleased(evt);
+            }
+        });
 
         timkiemTextField.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
@@ -189,7 +199,7 @@ public class theloaipanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-        new theloaiDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        new theloaiDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
         xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
@@ -199,9 +209,17 @@ public class theloaipanel extends javax.swing.JPanel {
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
-        new theloaiDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        new theloaiDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
         xuLyTheloai.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
+
+    private void txtusername8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtusername8MouseClicked
+
+    }//GEN-LAST:event_txtusername8MouseClicked
+
+    private void txtusername8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusername8KeyReleased
+        xuLyTheloai.TableFilter(txtusername8, jTable1);
+    }//GEN-LAST:event_txtusername8KeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

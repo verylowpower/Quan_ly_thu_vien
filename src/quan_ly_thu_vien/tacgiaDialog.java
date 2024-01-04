@@ -22,11 +22,14 @@ import chucnang.xulyTacgia;
         initComponents();
         this.jTable = jTable;
         this.editingEnabled = editingEnabled;
+        txtusername5.setEditable(editingEnabled);
         if(editingEnabled) {
             xulyTacgia.select(txtusername5, txtusername4,jTable);
         }
+        else{
+            txtusername5.setText(Integer.toString(xulyTacgia.selectLastID() + 1));
+        }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,6 +47,8 @@ import chucnang.xulyTacgia;
         txtusername5 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         luuButton = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -86,12 +91,14 @@ import chucnang.xulyTacgia;
         jLabel4.setForeground(new java.awt.Color(125, 99, 87));
         jLabel4.setText("Tên tác giả");
 
+        txtusername4.setBackground(new java.awt.Color(232, 214, 200));
         txtusername4.setFont(txtusername4.getFont().deriveFont(txtusername4.getFont().getSize()+2f));
         txtusername4.setForeground(new java.awt.Color(137, 110, 89));
         txtusername4.setBorder(null);
         txtusername4.setDragEnabled(true);
         txtusername4.setName(""); // NOI18N
 
+        txtusername5.setBackground(new java.awt.Color(232, 214, 200));
         txtusername5.setFont(txtusername5.getFont().deriveFont(txtusername5.getFont().getSize()+2f));
         txtusername5.setForeground(new java.awt.Color(137, 110, 89));
         txtusername5.setBorder(null);
@@ -121,6 +128,12 @@ import chucnang.xulyTacgia;
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator1.setForeground(new java.awt.Color(125, 99, 87));
+
+        jSeparator2.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator2.setForeground(new java.awt.Color(125, 99, 87));
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -135,20 +148,24 @@ import chucnang.xulyTacgia;
                         .addGap(15, 15, 15)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel5))
-                            .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel2))
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(bgLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtusername4, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(bgLayout.createSequentialGroup()
                                         .addGap(19, 19, 19)
                                         .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jSeparator2)
+                                            .addComponent(txtusername4, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)))))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(405, 405, 405)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -165,13 +182,17 @@ import chucnang.xulyTacgia;
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -200,39 +221,33 @@ import chucnang.xulyTacgia;
     }//GEN-LAST:event_exitMouseEntered
 
     private void exitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseExited
-        // TODO add your handling code here:
-        //resetColor(exit); //reset lại màu khi chuột đi ra
+    //resetColor(exit); //reset lại màu khi chuột đi ra
     }//GEN-LAST:event_exitMouseExited
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
         this.dispose(); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
-        // TODO add your handling code here:
-        String matacgia = new String();
-        if (txtusername5.getText() == ""){
-            matacgia = null;
-        }
         if(editingEnabled == false) {
-                        xulyTacgia.add(txtusername4.getText(), matacgia);
-                    } else {
-                        xulyTacgia.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText());
-                    }
-                this.dispose();
+            xulyTacgia.add(txtusername4.getText(), txtusername5.getText());
+        } else {
+            xulyTacgia.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText());
+        }
+        this.dispose();
     }//GEN-LAST:event_luuButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JPanel exit;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton luuButton;
     private javax.swing.JTextField txtusername4;
     private javax.swing.JTextField txtusername5;

@@ -74,11 +74,7 @@ public class xuLyNhaXuatBan {
             ps.setString(1, ten_nxb);
             ps.setString(2, diachi);
             ps.setString(3, sdt_nxb);
-            if(maNXB == null){
-                ps.setString(4, maNXB);
-            } else{
-                ps.setInt(4, Integer.parseInt(maNXB));
-            }
+            ps.setInt(4, Integer.parseInt(maNXB));
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -122,5 +118,18 @@ public class xuLyNhaXuatBan {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
+    }
+    
+    public static int selectLastID(){
+        // String masach = new String();
+        int maNXB = 0;
+        try{
+            ResultSet rs = connectionClass.getStatement().executeQuery("Select max(ma_nxb) from nha_xuat_ban ");
+            rs.next();
+            maNXB = rs.getInt(1);
+        } catch (SQLException e) {
+
+        }
+        return maNXB;
     }
 }

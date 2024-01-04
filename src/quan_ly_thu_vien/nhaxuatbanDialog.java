@@ -19,8 +19,12 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         initComponents();
         this.jTable = jTable;
         this.editingEnabled = editingEnabled;
+        maNXBTextField.setEditable(editingEnabled);
         if(editingEnabled) {
             xuLyNhaXuatBan.select(maNXBTextField, tenNXBTextField, diachiNXBTextField, sodienthoaiNXBTextField, jTable);
+        }
+        else{
+            maNXBTextField.setText(Integer.toString(xuLyNhaXuatBan.selectLastID() + 1)); 
         }
     }
 
@@ -233,18 +237,12 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_exitMouseExited
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
         this.dispose(); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
-        // TODO add your handling code here:
-        String maNXB = new String();
-        if(maNXBTextField.getText().equals("")){
-            maNXB = null;
-        }
         if(editingEnabled == false) {
-            xuLyNhaXuatBan.add(maNXB, tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
+            xuLyNhaXuatBan.add(maNXBTextField.getText(), tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
         } else {
             xuLyNhaXuatBan.edit(Integer.parseInt(maNXBTextField.getText()), jTable, tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
         }

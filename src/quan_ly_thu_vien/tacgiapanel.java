@@ -68,6 +68,16 @@ public class tacgiapanel extends javax.swing.JPanel {
         txtusername8.setBorder(null);
         txtusername8.setDragEnabled(true);
         txtusername8.setName(""); // NOI18N
+        txtusername8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtusername8MouseClicked(evt);
+            }
+        });
+        txtusername8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtusername8KeyReleased(evt);
+            }
+        });
 
         timkiemTextField.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
@@ -213,6 +223,14 @@ public class tacgiapanel extends javax.swing.JPanel {
         new tacgiaDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
         xulyTacgia.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
+
+    private void txtusername8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtusername8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusername8MouseClicked
+
+    private void txtusername8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusername8KeyReleased
+        xulyTacgia.TableFilter(txtusername8, jTable1);
+    }//GEN-LAST:event_txtusername8KeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

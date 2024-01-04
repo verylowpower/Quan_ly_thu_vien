@@ -62,11 +62,7 @@ public class xulyTacgia {
                             "insert into tacgia(tentacgia, ma_tacgia)"
                                     + "values(?, ?)");
             ps.setString(1, tentacgia);
-            if(matacgia != null){
-                ps.setInt(2, Integer.parseInt(matacgia));
-            } else{
-                ps.setString(2, null);
-            }
+            ps.setInt(2, Integer.parseInt(matacgia));
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -75,7 +71,7 @@ public class xulyTacgia {
     
     public static void select(javax.swing.JTextField txtusername5, javax.swing.JTextField txtusername4,javax.swing.JTable jTable) {
         try {
-            txtusername4.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+            txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
                 "select  ma_tacgia, tentacgia from tacgia where ma_tacgia = '" + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             rs.next();
@@ -109,5 +105,18 @@ public class xulyTacgia {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
+    }
+    
+    public static int selectLastID(){
+        // String masach = new String();
+        int matacgia = 0;
+        try{
+            ResultSet rs = connectionClass.getStatement().executeQuery("Select max(ma_tacgia) from tacgia");
+            rs.next();
+            matacgia = rs.getInt(1);
+        } catch (SQLException e) {
+
+        }
+        return matacgia;
     }
 }

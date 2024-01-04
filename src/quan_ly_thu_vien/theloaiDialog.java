@@ -13,10 +13,18 @@ public class theloaiDialog extends javax.swing.JDialog {
      * Creates new form theloaiDialog
      */
     javax.swing.JTable jTable;
-    public theloaiDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
+    boolean editingEnabled;
+    public theloaiDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
+        this.editingEnabled = editingEnabled;
         this.jTable = jTable;
+        txtusername5.setEditable(editingEnabled);
+        if(editingEnabled) {
+            xuLyTheloai.select(txtusername5, txtusername4, jTable);
+        } else{
+            txtusername5.setText(Integer.toString(xuLyTheloai.selectLastID() + 1)); 
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,9 +43,11 @@ public class theloaiDialog extends javax.swing.JDialog {
         txtusername5 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         luuButton = new javax.swing.JButton();
-        luuButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -77,12 +87,14 @@ public class theloaiDialog extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(125, 99, 87));
         jLabel4.setText("Tên thể loại");
 
+        txtusername4.setBackground(new java.awt.Color(232, 214, 200));
         txtusername4.setFont(txtusername4.getFont().deriveFont(txtusername4.getFont().getSize()+2f));
         txtusername4.setForeground(new java.awt.Color(137, 110, 89));
         txtusername4.setBorder(null);
         txtusername4.setDragEnabled(true);
         txtusername4.setName(""); // NOI18N
 
+        txtusername5.setBackground(new java.awt.Color(232, 214, 200));
         txtusername5.setFont(txtusername5.getFont().deriveFont(txtusername5.getFont().getSize()+2f));
         txtusername5.setForeground(new java.awt.Color(137, 110, 89));
         txtusername5.setBorder(null);
@@ -112,35 +124,26 @@ public class theloaiDialog extends javax.swing.JDialog {
             }
         });
 
-        luuButton1.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        luuButton1.setForeground(new java.awt.Color(125, 99, 87));
-        luuButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        luuButton1.setText("sua");
-        luuButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        luuButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        luuButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        luuButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                luuButton1ActionPerformed(evt);
-            }
-        });
+        jSeparator1.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator1.setForeground(new java.awt.Color(125, 99, 87));
+
+        jSeparator2.setBackground(new java.awt.Color(125, 99, 87));
+        jSeparator2.setForeground(new java.awt.Color(125, 99, 87));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(luuButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13))
-                    .addGroup(bgLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel5))
+                        .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2))
@@ -150,7 +153,11 @@ public class theloaiDialog extends javax.swing.JDialog {
                                 .addComponent(txtusername4, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
-                                .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(405, 405, 405)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,15 +175,17 @@ public class theloaiDialog extends javax.swing.JDialog {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(luuButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -209,18 +218,17 @@ public class theloaiDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_exitMouseExited
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        System.exit(0); //nút thoát cho chữ X
+        this.dispose(); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
-        xuLyTheloai.add(Integer.parseInt(txtusername5.getText()), txtusername4.getText());
+        if(editingEnabled == false) {
+            xuLyTheloai.add(txtusername5.getText(), txtusername4.getText());
+        } else{
+            xuLyTheloai.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText());
+        }
         this.dispose();
     }//GEN-LAST:event_luuButtonActionPerformed
-
-    private void luuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButton1ActionPerformed
-        xuLyTheloai.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText());
-        this.dispose();
-    }//GEN-LAST:event_luuButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,8 +278,9 @@ public class theloaiDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton luuButton;
-    private javax.swing.JButton luuButton1;
     private javax.swing.JTextField txtusername4;
     private javax.swing.JTextField txtusername5;
     // End of variables declaration//GEN-END:variables
