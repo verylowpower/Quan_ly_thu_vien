@@ -21,7 +21,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="bg" alignment="1" pref="965" max="32767" attributes="0"/>
+          <Component id="bg" alignment="1" pref="908" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -148,6 +148,9 @@
                     <Column editable="true" title="Ng&#xe0;y m&#x1b0;&#x1ee3;n" type="java.lang.Object"/>
                     <Column editable="true" title="Ng&#xe0;y tr&#x1ea3;" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="de" green="f2" red="ff" type="rgb"/>
                 </Property>
               </Properties>
             </Component>

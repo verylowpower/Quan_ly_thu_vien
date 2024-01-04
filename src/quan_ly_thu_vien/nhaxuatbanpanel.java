@@ -99,6 +99,7 @@ public class nhaxuatbanpanel extends javax.swing.JPanel {
                 "Mã nhà xuât bản", "Tên nhà xuất bản", "Địa chỉ", "Só điện thoại"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(255, 242, 222));
         jScrollPane1.setViewportView(jTable1);
 
         themButton.setBackground(new java.awt.Color(232, 214, 200));

@@ -91,6 +91,7 @@ public class docgiapanel extends javax.swing.JPanel {
                 "Mã người mượn", "Tên người mượn", "Ngày sinh", "Giới tính", "Số điện thoại"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(255, 242, 222));
         jTable1.setOpaque(false);
         jTable1.setRowHeight(25);
         jScrollPane1.setViewportView(jTable1);
@@ -178,7 +179,7 @@ public class docgiapanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -92,6 +92,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
                 "Mã phiếu", "Tên sách", "Người mượn", "Thủ thư", "Ngày mượn", "Ngày trả"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(255, 242, 222));
         jScrollPane1.setViewportView(jTable1);
 
         themButton.setBackground(new java.awt.Color(232, 214, 200));
@@ -194,7 +195,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 908, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

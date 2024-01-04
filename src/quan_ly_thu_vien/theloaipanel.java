@@ -82,6 +82,7 @@ public class theloaipanel extends javax.swing.JPanel {
                 "Mã thể loại", "Tên thể loại"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(255, 242, 222));
         jScrollPane1.setViewportView(jTable1);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N

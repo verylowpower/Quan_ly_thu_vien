@@ -97,6 +97,7 @@ public class tacgiapanel extends javax.swing.JPanel {
             }
         ));
         jTable1.setToolTipText("");
+        jTable1.setGridColor(new java.awt.Color(255, 242, 222));
         jScrollPane1.setViewportView(jTable1);
 
         themButton.setBackground(new java.awt.Color(232, 214, 200));
