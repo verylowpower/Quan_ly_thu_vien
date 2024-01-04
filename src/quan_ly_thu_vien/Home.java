@@ -18,7 +18,6 @@ public class Home extends javax.swing.JFrame {
     tacgiapanel tacgia = null;
     phieumuonpanel phieumuon = null;
     nhaxuatbanpanel nxb = null;
-    caidatpanel caidat = null;
     theloaipanel theloai = null;
     thongkepanel thongke = null;
     /**
@@ -39,8 +38,6 @@ public class Home extends javax.swing.JFrame {
         phieumuon.setVisible(false);
         nxb.setVisible(false);
         thongke.setVisible(false);
-        caidat.setVisible(false);
-        
     }
     private void addpanel(){
         sach = new sachpanel();
@@ -66,10 +63,6 @@ public class Home extends javax.swing.JFrame {
         nxb = new nhaxuatbanpanel();
         backbonePanel.add(nxb);
         nxb.setSize(965, 657);
-        
-        caidat = new caidatpanel();
-        backbonePanel.add(caidat);
-        caidat.setSize(965, 657);
         
         thongke = new thongkepanel();
         backbonePanel.add(thongke);

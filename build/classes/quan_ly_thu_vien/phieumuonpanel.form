@@ -57,7 +57,7 @@
                           <Component id="themButton" min="-2" pref="194" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Component id="inButton" min="-2" pref="194" max="-2" attributes="0"/>
-                          <EmptySpace pref="63" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="suaButton" min="-2" pref="194" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="xoaButton" min="-2" pref="194" max="-2" attributes="0"/>
