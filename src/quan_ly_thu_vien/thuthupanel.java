@@ -79,6 +79,11 @@ public class thuthupanel extends javax.swing.JPanel {
                 txtusername8MouseClicked(evt);
             }
         });
+        txtusername8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtusername8KeyReleased(evt);
+            }
+        });
 
         timkiemTextField.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         timkiemTextField.setForeground(new java.awt.Color(125, 99, 87));
@@ -96,7 +101,7 @@ public class thuthupanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Mã thủ thư", "Tên thủ thư", "Ngày sinh", "Số điện thoại", "Giới tính", "Địa chỉ "
+                "Mã thủ thư", "Tên thủ thư", "Ngày sinh", "Giới tính", "Địa chỉ ", "Số điện thoại"
             }
         ));
         jTable1.setGridColor(new java.awt.Color(255, 242, 222));
@@ -161,26 +166,23 @@ public class thuthupanel extends javax.swing.JPanel {
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(bgLayout.createSequentialGroup()
                 .addGap(779, 939, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(15, 15, 15))
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(timkiemTextField)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtusername8)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(177, 177, 177)
-                .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(timkiemTextField)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtusername8))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(177, 177, 177)
+                        .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         bgLayout.setVerticalGroup(
@@ -199,7 +201,7 @@ public class thuthupanel extends javax.swing.JPanel {
                     .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -222,7 +224,7 @@ public class thuthupanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        new thuthuDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
         xuLyThuthu.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
@@ -232,13 +234,17 @@ public class thuthupanel extends javax.swing.JPanel {
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
-        new thuthuDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
+        new thuthuDialog(new javax.swing.JFrame(), true, jTable1,true).setVisible(true);
         xuLyThuthu.updateTable(jTable1);
     }//GEN-LAST:event_suaButtonActionPerformed
 
     private void txtusername8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtusername8MouseClicked
-        xuLySach.TableFilter(txtusername8, jTable1);
+
     }//GEN-LAST:event_txtusername8MouseClicked
+
+    private void txtusername8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusername8KeyReleased
+        xuLyThuthu.TableFilter(txtusername8, jTable1);
+    }//GEN-LAST:event_txtusername8KeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

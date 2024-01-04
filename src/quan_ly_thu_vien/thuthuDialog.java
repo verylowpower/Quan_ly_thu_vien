@@ -19,10 +19,18 @@ public class thuthuDialog extends javax.swing.JDialog {
      * Creates new form thuthuDialo
      */
     javax.swing.JTable jTable;
-    public thuthuDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
+    boolean editingEnabled;
+    public thuthuDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
         this.jTable = jTable;
+        this.editingEnabled = editingEnabled;
+        txtusername5.setEditable(editingEnabled);
+        if(editingEnabled) {
+            xuLyThuthu.select(txtusername5, txtusername4, jRadioButton1, jRadioButton2, txtusername9, txtusername7, jTable);
+        } else{
+            txtusername5.setText(Integer.toString(xuLyThuthu.selectLastID() + 1)); 
+        }
     }
 
     /**
@@ -50,7 +58,6 @@ public class thuthuDialog extends javax.swing.JDialog {
         luuButton = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        ThemButton = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -161,19 +168,6 @@ public class thuthuDialog extends javax.swing.JDialog {
 
         jRadioButton2.setText("Nữ");
 
-        ThemButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        ThemButton.setForeground(new java.awt.Color(125, 99, 87));
-        ThemButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        ThemButton.setText("Thêm");
-        ThemButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ThemButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ThemButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        ThemButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ThemButtonActionPerformed(evt);
-            }
-        });
-
         jDateChooser1.setDateFormatString("yyyy-MM-dd");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
@@ -209,11 +203,9 @@ public class thuthuDialog extends javax.swing.JDialog {
                                     .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel5))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(ThemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(418, 418, 418)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -252,9 +244,7 @@ public class thuthuDialog extends javax.swing.JDialog {
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ThemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -294,15 +284,13 @@ public class thuthuDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
-//        xuLyThuthu.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText(), jComboBox3, jComboBox2, jComboBox1, jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
+        if(editingEnabled == false) {
+            xuLyThuthu.add(txtusername5.getText(), txtusername4.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
+        } else{
+            xuLyThuthu.edit(Integer.parseInt(txtusername5.getText()), jTable, txtusername4.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
+        }
         this.dispose();
     }//GEN-LAST:event_luuButtonActionPerformed
-
-    private void ThemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemButtonActionPerformed
-        System.out.println();
-        xuLyThuthu.add(txtusername4.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), jRadioButton1, jRadioButton2, txtusername9.getText(), txtusername7.getText());
-        this.dispose();
-    }//GEN-LAST:event_ThemButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,7 +336,6 @@ public class thuthuDialog extends javax.swing.JDialog {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ThemButton;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel exit;
     private com.toedter.calendar.JDateChooser jDateChooser1;
