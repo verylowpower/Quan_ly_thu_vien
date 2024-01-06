@@ -65,8 +65,8 @@ public class xulyphieumuon {
                            );
             while (rs.next()) {
                 model.addRow(new Object[] {
-                        rs.getInt("ma_phieu"), rs.getString("ngay_muon"), rs.getString("ngay_tra"), rs.getString("hoten"),
-                        rs.getString("hoten") , rs.getString("ten_sach")  
+                        rs.getInt("ma_phieu"), rs.getString("ten_sach"), rs.getString(4), rs.getString(5),
+                        rs.getString("ngay_muon") , rs.getString("ngay_tra")  
                 });
             }
         } catch (Exception e) {
@@ -160,19 +160,15 @@ public class xulyphieumuon {
         try {
             txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "select ma_phieu, ngay_muon, ngay_tra, doc_gia.hoten, nhanvien.hoten, sach.ten_sach from phieu_muon"
+                    "select ngay_muon, ngay_tra, doc_gia.hoten, nhanvien.hoten, sach.ten_sach from phieu_muon "
                             + 
                             "LEFT JOIN doc_gia ON phieu_muon.ma_doc_gia = doc_gia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
                             +
-                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv=nhanvien.ma_nv "+ txtusername5.getText()
-                           );
+                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv=nhanvien.ma_nv WHERE ma_phieu = '"+ txtusername5.getText() + "'");
             rs.next();
-            txtusername5.setText(rs.getString("ma_phieu"));
-            jComboBox7.setSelectedItem(rs.getString("ma_sach"));
-            jComboBox2.setSelectedItem(rs.getString("ma_doc_gia"));
-            jComboBox1.setSelectedItem(rs.getString("ma_nv"));
-            
-                       
+            jComboBox7.setSelectedItem(rs.getString("ten_sach"));
+            jComboBox2.setSelectedItem(rs.getString(3));
+            jComboBox1.setSelectedItem(rs.getString(4));
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }

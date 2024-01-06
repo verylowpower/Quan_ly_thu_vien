@@ -226,7 +226,7 @@ public class phieumuonpanel extends javax.swing.JPanel {
 
     private void inButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inButtonActionPerformed
         // TODO add your handling code here:
-        new inDialog(new javax.swing.JFrame(), true).setVisible(true);
+        new inDialog(new javax.swing.JFrame(), true, jTable1).setVisible(true);
     }//GEN-LAST:event_inButtonActionPerformed
 
 
