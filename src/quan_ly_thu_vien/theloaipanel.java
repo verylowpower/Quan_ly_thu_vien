@@ -41,9 +41,9 @@ public class theloaipanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        themButton = new javax.swing.JButton();
-        xoaButton = new javax.swing.JButton();
-        suaButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));
@@ -95,45 +95,42 @@ public class theloaipanel extends javax.swing.JPanel {
             }
         });
 
-        themButton.setBackground(new java.awt.Color(232, 214, 200));
-        themButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        themButton.setForeground(new java.awt.Color(125, 99, 87));
-        themButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        themButton.setText("Thêm");
-        themButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        themButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        themButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        themButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                themButtonActionPerformed(evt);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Them.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
             }
         });
 
-        xoaButton.setBackground(new java.awt.Color(232, 214, 200));
-        xoaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        xoaButton.setForeground(new java.awt.Color(125, 99, 87));
-        xoaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        xoaButton.setText("Xóa");
-        xoaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        xoaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        xoaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        xoaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xoaButtonActionPerformed(evt);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Sua.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel3MouseExited(evt);
             }
         });
 
-        suaButton.setBackground(new java.awt.Color(232, 214, 200));
-        suaButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        suaButton.setForeground(new java.awt.Color(125, 99, 87));
-        suaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        suaButton.setText("Sửa");
-        suaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        suaButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        suaButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        suaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                suaButtonActionPerformed(evt);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel4MouseExited(evt);
             }
         });
 
@@ -156,11 +153,11 @@ public class theloaipanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtusername8))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                                .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)
+                                .addGap(184, 184, 184)
+                                .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(177, 177, 177)
-                                .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel4)))
                         .addContainerGap())))
         );
         bgLayout.setVerticalGroup(
@@ -175,11 +172,11 @@ public class theloaipanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(themButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(xoaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(suaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -199,21 +196,6 @@ public class theloaipanel extends javax.swing.JPanel {
        //this.dispose(); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel6MouseClicked
 
-    private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-        new theloaiDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
-        xuLyTheloai.updateTable(jTable1);
-    }//GEN-LAST:event_themButtonActionPerformed
-
-    private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        xuLyTheloai.delete(jTable1);
-        xuLyTheloai.updateTable(jTable1);
-    }//GEN-LAST:event_xoaButtonActionPerformed
-
-    private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
-        new theloaiDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
-        xuLyTheloai.updateTable(jTable1);
-    }//GEN-LAST:event_suaButtonActionPerformed
-
     private void txtusername8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtusername8MouseClicked
 
     }//GEN-LAST:event_txtusername8MouseClicked
@@ -222,16 +204,55 @@ public class theloaipanel extends javax.swing.JPanel {
         xuLyTheloai.TableFilter(txtusername8, jTable1);
     }//GEN-LAST:event_txtusername8KeyReleased
 
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Them1.png")));
+    }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Them.png")));
+    }//GEN-LAST:event_jLabel1MouseExited
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        new theloaiDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
+        xuLyTheloai.updateTable(jTable1);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        new theloaiDialog(new javax.swing.JFrame(), true, jTable1,true).setVisible(true);
+        xuLyTheloai.updateTable(jTable1);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Sua1.png")));
+    }//GEN-LAST:event_jLabel3MouseEntered
+
+    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Sua.png")));
+    }//GEN-LAST:event_jLabel3MouseExited
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        xuLyTheloai.delete(jTable1);
+        xuLyTheloai.updateTable(jTable1);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa1.png")));
+    }//GEN-LAST:event_jLabel4MouseEntered
+
+    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa.png")));
+    }//GEN-LAST:event_jLabel4MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton suaButton;
-    private javax.swing.JButton themButton;
     private javax.swing.JLabel timkiemTextField;
     private javax.swing.JTextField txtusername8;
-    private javax.swing.JButton xoaButton;
     // End of variables declaration//GEN-END:variables
 }
