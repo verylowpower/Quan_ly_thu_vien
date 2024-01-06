@@ -210,17 +210,18 @@ public class phieumuonpanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtusername5ActionPerformed
 
     private void themButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themButtonActionPerformed
-        // TODO add your handling code here:
-        new phieumuonDialog(new javax.swing.JFrame(), true).setVisible(true);
+        new phieumuonDialog(new javax.swing.JFrame(), true, jTable1, false).setVisible(true);
         xulyphieumuon.updateTable(jTable1);
     }//GEN-LAST:event_themButtonActionPerformed
 
     private void xoaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaButtonActionPerformed
-        // TODO add your handling code here:
+        xulyphieumuon.delete(jTable1);
+        xulyphieumuon.updateTable(jTable1);
     }//GEN-LAST:event_xoaButtonActionPerformed
 
     private void suaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suaButtonActionPerformed
-        // TODO add your handling code here:
+        new phieumuonDialog(new javax.swing.JFrame(), true, jTable1, true).setVisible(true);
+        xulyphieumuon.updateTable(jTable1);    
     }//GEN-LAST:event_suaButtonActionPerformed
 
     private void inButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inButtonActionPerformed

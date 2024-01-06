@@ -57,16 +57,16 @@ public class xulyphieumuon {
 
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery(
-                    "select ma_phieu, ngay_muon, ngay_tra, docgia.ma_doc_gia, nhanvien.ma_nv, sach.ma_sach from phieu_muon"
+                    "select ma_phieu, ngay_muon, ngay_tra, doc_gia.hoten, nhanvien.hoten, sach.ten_sach from phieu_muon"
                             +
-                            " LEFT JOIN docgia ON phieu_muon.ma_doc_gia = docgia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
+                            " LEFT JOIN doc_gia ON phieu_muon.ma_doc_gia = doc_gia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
                             +
                             " LEFT JOIN nhanvien ON phieu_muon.ma_nv= nhanvien.ma_nv"
                            );
             while (rs.next()) {
                 model.addRow(new Object[] {
-                        rs.getInt("ma_phieu"), rs.getString("ngay_muon"), rs.getString("ngay_tra"), rs.getString("ma_doc_gia"),
-                        rs.getString("ma_nv") , rs.getString("ma_sach")  
+                        rs.getInt("ma_phieu"), rs.getString("ngay_muon"), rs.getString("ngay_tra"), rs.getString("hoten"),
+                        rs.getString("hoten") , rs.getString("ten_sach")  
                 });
             }
         } catch (Exception e) {
@@ -94,21 +94,20 @@ public class xulyphieumuon {
     }
     
     // Chay query them vao database
-    public static void add(String ma_phieu, javax.swing.JComboBox jComboBox3, javax.swing.JComboBox jComboBox4,
-            javax.swing.JComboBox jComboBox6,javax.swing.JComboBox jComboBox5, javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2,
-            javax.swing.JComboBox jComboBox7 ){
+    public static void add(String ma_phieu, String ngay_muon, String ngay_tra,
+            javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2, javax.swing.JComboBox jComboBox7 ){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
-                            "insert into sach(ma_phieu, ngay_muon, ngay_tra, ma_doc_gia, ma_sach, ma_nv)"
-                                    + "values(?, ?, ?, ?, ?, ?, ?)");
+                            "insert into phieu_muon(ma_phieu, ngay_muon, ngay_tra, ma_doc_gia, ma_sach, ma_nv)"
+                                    + "values(?, ?, ?, ?, ?, ?)");
             ResultSet rs = connectionClass.getStatement().executeQuery(
                     "SELECT * FROM sach WHERE ten_sach = '" + jComboBox7.getSelectedItem().toString() + "'");
             rs.next();
             int idSach = rs.getInt("ma_sach");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from docgia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
+                    .executeQuery("Select * from doc_gia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
             rs.next();
             int idDocgia = rs.getInt("ma_doc_gia");
             rs = connectionClass.getStatement()
@@ -116,43 +115,40 @@ public class xulyphieumuon {
             rs.next();
             int idThuthu = rs.getInt("ma_nv");
             ps.setInt(1, Integer.parseInt(ma_phieu));
-            ps.setInt(2,idSach);
-            ps.setInt(3,idDocgia);
-            ps.setInt(4,idThuthu);
-            ps.setString(5, String.valueOf( jComboBox4.getSelectedItem().toString() + "/" + jComboBox3.getSelectedItem().toString()));  
-            ps.setString(6, String.valueOf( jComboBox6.getSelectedItem().toString() + "/" + jComboBox5.getSelectedItem().toString()));                    
+            ps.setString(2, ngay_muon);
+            ps.setString(3,ngay_tra);
+            ps.setInt(4,idDocgia);
+            ps.setInt(5,idSach);
+            ps.setInt(6,idThuthu);                   
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
     }
 
-    public static void edit(String ma_phieu, javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox4,
-            javax.swing.JComboBox jComboBox2,javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox3, 
-            javax.swing.JComboBox jComboBox5, javax.swing.JComboBox jComboBox6) {
+    public static void edit(int ma_phieu, String ngay_muon, String ngay_tra, 
+            javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox2,javax.swing.JComboBox jComboBox1) {
         try {
             ResultSet rs = connectionClass.getStatement().executeQuery(
                     "SELECT * FROM sach WHERE ten_sach = '" + jComboBox7.getSelectedItem().toString() + "'");
             rs.next();
             int idSach = rs.getInt("ma_sach");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from docgia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
+                    .executeQuery("Select * from doc_gia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
             rs.next();
             int idDocgia = rs.getInt("ma_doc_gia");
             rs = connectionClass.getStatement()
                     .executeQuery("Select * from nhanvien WHERE hoten = '" + jComboBox1.getSelectedItem() + "'");
             rs.next();
             int idThuthu = rs.getInt("ma_nv");
-             
-            
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
                     "Update phieu_muon set ma_phieu = ?, ngay_muon = ?, ngay_tra = ?, ma_doc_gia = ?, ma_sach = ?, ma_nv = ? where ma_phieu = '"+ ma_phieu +"'");
-            ps.setInt(1, Integer.parseInt(ma_phieu));
-            ps.setInt(2,idSach);
-            ps.setInt(3,idDocgia);
-            ps.setInt(4,idThuthu);
-            ps.setString(5, String.valueOf( jComboBox4.getSelectedItem().toString() + "/" + jComboBox3.getSelectedItem().toString()));  
-            ps.setString(6, String.valueOf( jComboBox6.getSelectedItem().toString() + "/" + jComboBox5.getSelectedItem().toString())); 
+            ps.setInt(1, ma_phieu);
+            ps.setString(2, ngay_muon);
+            ps.setString(3, ngay_tra);
+            ps.setInt(4,idDocgia);
+            ps.setInt(5,idSach);
+            ps.setInt(6,idThuthu);
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -160,27 +156,22 @@ public class xulyphieumuon {
     }
 
     public static void select(javax.swing.JTextField txtusername5,javax.swing.JComboBox jComboBox7,
-            javax.swing.JComboBox jComboBox2, javax.swing.JComboBox jComboBox1,javax.swing.JComboBox jComboBox3, 
-            javax.swing.JComboBox jComboBox4, javax.swing.JComboBox jComboBox5,
-            javax.swing.JTable jTable, javax.swing.JComboBox jComboBox6) {
+            javax.swing.JComboBox jComboBox2, javax.swing.JComboBox jComboBox1, javax.swing.JTable jTable) {
         try {
             txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "select ma_phieu, ngay_muon, ngay_tra, docgia.ma_doc_gia, nhanvien.ma_nv, sach.ma_sach from phieu_muon"
+                    "select ma_phieu, ngay_muon, ngay_tra, doc_gia.hoten, nhanvien.hoten, sach.ten_sach from phieu_muon"
                             + 
-                            "LEFT JOIN docgia ON phieu_muon.ma_doc_gia = docgia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
+                            "LEFT JOIN doc_gia ON phieu_muon.ma_doc_gia = doc_gia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
                             +
                             " LEFT JOIN nhanvien ON phieu_muon.ma_nv=nhanvien.ma_nv "+ txtusername5.getText()
                            );
             rs.next();
             txtusername5.setText(rs.getString("ma_phieu"));
             jComboBox7.setSelectedItem(rs.getString("ma_sach"));
-            jComboBox2.setSelectedItem(rs.getString("ngay_doc_gia"));
-            jComboBox1.setSelectedItem(rs.getString("ngay_nv"));
-            jComboBox3.setSelectedItem(rs.getString("ngay_muon"));
-            jComboBox4.setSelectedItem(rs.getString("ngay_muon"));
-            jComboBox5.setSelectedItem(rs.getString("ngay_tra"));
-            jComboBox6.setSelectedItem(rs.getString("ngay_tra"));
+            jComboBox2.setSelectedItem(rs.getString("ma_doc_gia"));
+            jComboBox1.setSelectedItem(rs.getString("ma_nv"));
+            
                        
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -201,7 +192,7 @@ public static int selectLastID(){
         // String masach = new String();
         int ma_phieu = 0;
         try{
-            ResultSet rs = connectionClass.getStatement().executeQuery("Select max(ma_sach) from sach ");
+            ResultSet rs = connectionClass.getStatement().executeQuery("Select max(ma_phieu) from phieu_muon ");
             rs.next();
             ma_phieu = rs.getInt(1);
         } catch (SQLException e) {
