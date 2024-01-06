@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: nhanvien2
+-- Host: localhost    Database: thuvien
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,36 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `nvchamcong`
+-- Table structure for table `theloai`
 --
 
-DROP TABLE IF EXISTS `nvchamcong`;
+DROP TABLE IF EXISTS `theloai`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `nvchamcong` (
-  `MaCC` int NOT NULL,
-  `MaNV` int DEFAULT NULL,
-  `Giobatdau` time DEFAULT NULL,
-  `Gioketthuc` time DEFAULT NULL,
-  `Ngaycham` date DEFAULT NULL,
-  `MaNVCC` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`MaNVCC`),
-  KEY `MaNV` (`MaNV`),
-  KEY `MaCC` (`MaCC`),
-  CONSTRAINT `nvchamcong_ibfk_2` FOREIGN KEY (`MaNV`) REFERENCES `chamcong` (`MaNV`),
-  CONSTRAINT `nvchamcong_ibfk_4` FOREIGN KEY (`MaCC`) REFERENCES `chamcong` (`MaCC`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `nvchamcong_ibfk_5` FOREIGN KEY (`MaCC`) REFERENCES `chamcong` (`MaCC`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `theloai` (
+  `ma_theloai` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `tentheloai` varchar(255) DEFAULT NULL COMMENT 'Create Time',
+  PRIMARY KEY (`ma_theloai`)
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `nvchamcong`
+-- Dumping data for table `theloai`
 --
 
-LOCK TABLES `nvchamcong` WRITE;
-/*!40000 ALTER TABLE `nvchamcong` DISABLE KEYS */;
-INSERT INTO `nvchamcong` VALUES (4,4,'01:01:00','01:01:00','1985-01-01',2);
-/*!40000 ALTER TABLE `nvchamcong` ENABLE KEYS */;
+LOCK TABLES `theloai` WRITE;
+/*!40000 ALTER TABLE `theloai` DISABLE KEYS */;
+INSERT INTO `theloai` VALUES (1,'valorant'),(123,'dasd');
+/*!40000 ALTER TABLE `theloai` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-06 13:38:51
+-- Dump completed on 2024-01-06 22:12:23

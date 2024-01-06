@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: nhanvien2
+-- Host: localhost    Database: thuvien
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,36 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `baocao`
+-- Table structure for table `tacgia`
 --
 
-DROP TABLE IF EXISTS `baocao`;
+DROP TABLE IF EXISTS `tacgia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `baocao` (
-  `SoHieu` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `ThoiGian` date DEFAULT NULL COMMENT 'Create Time',
-  `MaNV` int DEFAULT NULL,
-  `MaCC` int DEFAULT NULL,
-  `MaLuong` int DEFAULT NULL,
-  PRIMARY KEY (`SoHieu`),
-  KEY `MaNV` (`MaNV`),
-  KEY `MaLuong` (`MaLuong`),
-  KEY `MaCC` (`MaCC`),
-  CONSTRAINT `baocao_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`),
-  CONSTRAINT `baocao_ibfk_3` FOREIGN KEY (`MaLuong`) REFERENCES `tienluong` (`MaLuong`),
-  CONSTRAINT `baocao_ibfk_5` FOREIGN KEY (`MaCC`) REFERENCES `chamcong` (`MaCC`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tacgia` (
+  `ma_tacgia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `tentacgia` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ma_tacgia`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `baocao`
+-- Dumping data for table `tacgia`
 --
 
-LOCK TABLES `baocao` WRITE;
-/*!40000 ALTER TABLE `baocao` DISABLE KEYS */;
-INSERT INTO `baocao` VALUES (1,NULL,1,1,1);
-/*!40000 ALTER TABLE `baocao` ENABLE KEYS */;
+LOCK TABLES `tacgia` WRITE;
+/*!40000 ALTER TABLE `tacgia` DISABLE KEYS */;
+INSERT INTO `tacgia` VALUES (1,'valorant'),(2,'valroant2');
+/*!40000 ALTER TABLE `tacgia` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-06 13:38:51
+-- Dump completed on 2024-01-06 22:12:23
