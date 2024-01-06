@@ -179,8 +179,7 @@ public class thuthupanel extends javax.swing.JPanel {
                         .addGap(203, 203, 203)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(29, 29, 29)))
+                        .addComponent(jLabel4)))
                 .addContainerGap())
         );
         bgLayout.setVerticalGroup(

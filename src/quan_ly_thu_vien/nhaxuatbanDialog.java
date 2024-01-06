@@ -48,11 +48,11 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         sodienthoaiNXBTextField = new javax.swing.JTextField();
         diachiNXBTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        luuButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -140,19 +140,6 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
             }
         });
 
-        luuButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
-        luuButton.setForeground(new java.awt.Color(125, 99, 87));
-        luuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button5.png"))); // NOI18N
-        luuButton.setText("Lưu");
-        luuButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        luuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        luuButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/button7.png"))); // NOI18N
-        luuButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                luuButtonActionPerformed(evt);
-            }
-        });
-
         jSeparator1.setBackground(new java.awt.Color(125, 99, 87));
         jSeparator1.setForeground(new java.awt.Color(125, 99, 87));
 
@@ -164,6 +151,19 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
 
         jSeparator4.setBackground(new java.awt.Color(125, 99, 87));
         jSeparator4.setForeground(new java.awt.Color(125, 99, 87));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -177,11 +177,6 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
                         .addGap(772, 772, 772))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -196,7 +191,12 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
                                     .addComponent(jSeparator1)
                                     .addComponent(jSeparator2)
                                     .addComponent(jSeparator3)
-                                    .addComponent(jSeparator4))))
+                                    .addComponent(jSeparator4)))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel1))))
                         .addGap(418, 418, 418)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -233,9 +233,9 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
                     .addComponent(sodienthoaiNXBTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(luuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -272,14 +272,22 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
         this.dispose(); //nút thoát cho chữ X
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void luuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luuButtonActionPerformed
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         if(editingEnabled == false) {
             xuLyNhaXuatBan.add(maNXBTextField.getText(), tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
         } else {
             xuLyNhaXuatBan.edit(Integer.parseInt(maNXBTextField.getText()), jTable, tenNXBTextField.getText(), diachiNXBTextField.getText(), sodienthoaiNXBTextField.getText());
         }
         this.dispose();
-    }//GEN-LAST:event_luuButtonActionPerformed
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu1.png")));
+    }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu.png")));
+    }//GEN-LAST:event_jLabel1MouseExited
 
     
 
@@ -287,6 +295,7 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
     private javax.swing.JPanel bg;
     private javax.swing.JTextField diachiNXBTextField;
     private javax.swing.JPanel exit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -296,7 +305,6 @@ public class nhaxuatbanDialog extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JButton luuButton;
     private javax.swing.JTextField maNXBTextField;
     private javax.swing.JTextField sodienthoaiNXBTextField;
     private javax.swing.JTextField tenNXBTextField;
