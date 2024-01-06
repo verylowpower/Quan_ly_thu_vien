@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: thuvien
+-- Host: localhost    Database: nhanvien2
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,29 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `nha_xuat_ban`
+-- Table structure for table `chamcong`
 --
 
-DROP TABLE IF EXISTS `nha_xuat_ban`;
+DROP TABLE IF EXISTS `chamcong`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `nha_xuat_ban` (
-  `ma_nxb` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `ten_nxb` varchar(255) DEFAULT NULL,
-  `diachi` varchar(255) DEFAULT NULL,
-  `sdt_nxb` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ma_nxb`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `chamcong` (
+  `MaNV` int NOT NULL COMMENT 'Foreign Key',
+  `Ngaylamviec` date DEFAULT NULL,
+  `Lido` varchar(255) DEFAULT NULL,
+  `MaCC` int NOT NULL AUTO_INCREMENT,
+  `Songaydilam` int DEFAULT NULL,
+  `NNphep` date DEFAULT NULL,
+  PRIMARY KEY (`MaCC`),
+  KEY `MaNV` (`MaNV`),
+  CONSTRAINT `chamcong_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`),
+  CONSTRAINT `chamcong_ibfk_2` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `nha_xuat_ban`
+-- Dumping data for table `chamcong`
 --
 
-LOCK TABLES `nha_xuat_ban` WRITE;
-/*!40000 ALTER TABLE `nha_xuat_ban` DISABLE KEYS */;
-INSERT INTO `nha_xuat_ban` VALUES (1,'valorant','dfasf','321312'),(2,'Sun Microsystem','Trai Dat ','0213849');
-/*!40000 ALTER TABLE `nha_xuat_ban` ENABLE KEYS */;
+LOCK TABLES `chamcong` WRITE;
+/*!40000 ALTER TABLE `chamcong` DISABLE KEYS */;
+INSERT INTO `chamcong` VALUES (1,'1985-01-01',NULL,1,30,NULL),(2,'1985-01-01',NULL,2,23,NULL),(3,'1985-01-01',NULL,3,26,NULL),(4,'1985-01-01',NULL,4,20,NULL);
+/*!40000 ALTER TABLE `chamcong` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-04 21:51:27
+-- Dump completed on 2024-01-06 13:38:51

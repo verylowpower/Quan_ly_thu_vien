@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: thuvien
+-- Host: localhost    Database: nhanvien2
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,27 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `theloai`
+-- Table structure for table `phongban`
 --
 
-DROP TABLE IF EXISTS `theloai`;
+DROP TABLE IF EXISTS `phongban`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `theloai` (
-  `ma_theloai` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `tentheloai` varchar(255) DEFAULT NULL COMMENT 'Create Time',
-  PRIMARY KEY (`ma_theloai`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `phongban` (
+  `MaPB` int NOT NULL COMMENT 'Primary Key',
+  `TenPB` varchar(255) DEFAULT NULL,
+  `MaNV` int NOT NULL,
+  `Vitri` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`MaPB`),
+  KEY `MaNV` (`MaNV`),
+  CONSTRAINT `phongban_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `theloai`
+-- Dumping data for table `phongban`
 --
 
-LOCK TABLES `theloai` WRITE;
-/*!40000 ALTER TABLE `theloai` DISABLE KEYS */;
-INSERT INTO `theloai` VALUES (1,'valorant'),(123,'dasd');
-/*!40000 ALTER TABLE `theloai` ENABLE KEYS */;
+LOCK TABLES `phongban` WRITE;
+/*!40000 ALTER TABLE `phongban` DISABLE KEYS */;
+INSERT INTO `phongban` VALUES (1,'abc',1,'abc'),(2,'abc',2,'abc'),(3,'abc',3,'abc'),(4,'abc',4,'abc');
+/*!40000 ALTER TABLE `phongban` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-04 21:51:28
+-- Dump completed on 2024-01-06 13:38:50

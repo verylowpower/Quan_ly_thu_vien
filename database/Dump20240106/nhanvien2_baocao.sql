@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: thuvien
+-- Host: localhost    Database: nhanvien2
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,36 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `phieu_muon`
+-- Table structure for table `baocao`
 --
 
-DROP TABLE IF EXISTS `phieu_muon`;
+DROP TABLE IF EXISTS `baocao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `phieu_muon` (
-  `ma_phieu` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `ngay_muon` datetime DEFAULT NULL COMMENT 'Create Time',
-  `ngay_tra` datetime DEFAULT NULL,
-  `ma_doc_gia` int NOT NULL,
-  `ma_sach` int NOT NULL,
-  `ma_nv` int NOT NULL,
-  PRIMARY KEY (`ma_phieu`),
-  KEY `ma_doc_gia` (`ma_doc_gia`),
-  KEY `ma_sach` (`ma_sach`),
-  KEY `ma_nv` (`ma_nv`),
-  CONSTRAINT `phieu_muon_ibfk_1` FOREIGN KEY (`ma_doc_gia`) REFERENCES `doc_gia` (`ma_doc_gia`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `phieu_muon_ibfk_2` FOREIGN KEY (`ma_sach`) REFERENCES `sach` (`ma_sach`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `phieu_muon_ibfk_3` FOREIGN KEY (`ma_nv`) REFERENCES `nhanvien` (`ma_nv`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `baocao` (
+  `SoHieu` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `ThoiGian` date DEFAULT NULL COMMENT 'Create Time',
+  `MaNV` int DEFAULT NULL,
+  `MaCC` int DEFAULT NULL,
+  `MaLuong` int DEFAULT NULL,
+  PRIMARY KEY (`SoHieu`),
+  KEY `MaNV` (`MaNV`),
+  KEY `MaLuong` (`MaLuong`),
+  KEY `MaCC` (`MaCC`),
+  CONSTRAINT `baocao_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`),
+  CONSTRAINT `baocao_ibfk_3` FOREIGN KEY (`MaLuong`) REFERENCES `tienluong` (`MaLuong`),
+  CONSTRAINT `baocao_ibfk_5` FOREIGN KEY (`MaCC`) REFERENCES `chamcong` (`MaCC`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `phieu_muon`
+-- Dumping data for table `baocao`
 --
 
-LOCK TABLES `phieu_muon` WRITE;
-/*!40000 ALTER TABLE `phieu_muon` DISABLE KEYS */;
-/*!40000 ALTER TABLE `phieu_muon` ENABLE KEYS */;
+LOCK TABLES `baocao` WRITE;
+/*!40000 ALTER TABLE `baocao` DISABLE KEYS */;
+INSERT INTO `baocao` VALUES (1,NULL,1,1,1);
+/*!40000 ALTER TABLE `baocao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-04 21:51:28
+-- Dump completed on 2024-01-06 13:38:51

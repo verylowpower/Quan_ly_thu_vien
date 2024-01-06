@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: thuvien
+-- Host: localhost    Database: nhanvien2
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,27 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tacgia`
+-- Table structure for table `nvchamcong`
 --
 
-DROP TABLE IF EXISTS `tacgia`;
+DROP TABLE IF EXISTS `nvchamcong`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tacgia` (
-  `ma_tacgia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `tentacgia` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ma_tacgia`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `nvchamcong` (
+  `MaCC` int NOT NULL,
+  `MaNV` int DEFAULT NULL,
+  `Giobatdau` time DEFAULT NULL,
+  `Gioketthuc` time DEFAULT NULL,
+  `Ngaycham` date DEFAULT NULL,
+  `MaNVCC` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`MaNVCC`),
+  KEY `MaNV` (`MaNV`),
+  KEY `MaCC` (`MaCC`),
+  CONSTRAINT `nvchamcong_ibfk_2` FOREIGN KEY (`MaNV`) REFERENCES `chamcong` (`MaNV`),
+  CONSTRAINT `nvchamcong_ibfk_4` FOREIGN KEY (`MaCC`) REFERENCES `chamcong` (`MaCC`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `nvchamcong_ibfk_5` FOREIGN KEY (`MaCC`) REFERENCES `chamcong` (`MaCC`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tacgia`
+-- Dumping data for table `nvchamcong`
 --
 
-LOCK TABLES `tacgia` WRITE;
-/*!40000 ALTER TABLE `tacgia` DISABLE KEYS */;
-INSERT INTO `tacgia` VALUES (1,'valorant'),(2,'valroant2');
-/*!40000 ALTER TABLE `tacgia` ENABLE KEYS */;
+LOCK TABLES `nvchamcong` WRITE;
+/*!40000 ALTER TABLE `nvchamcong` DISABLE KEYS */;
+INSERT INTO `nvchamcong` VALUES (4,4,'01:01:00','01:01:00','1985-01-01',2);
+/*!40000 ALTER TABLE `nvchamcong` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-04 21:51:27
+-- Dump completed on 2024-01-06 13:38:51
