@@ -4,21 +4,54 @@
  */
 package quan_ly_thu_vien;
 import chucnang.ComponentPrinter;
+import chucnang.connectionClass;
+
 import java.awt.Component;
+import java.awt.Image;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 /**
  *
  * @author vitancuc
  */
 public class inDialog extends javax.swing.JDialog {
 
-    /**
+    /**jTablejTable = jTable;ble = jTable;ble = jTable;jTable;
      * Creates new form inDialog
      */
-    public inDialog(java.awt.Frame parent, boolean modal) {
+    javax.swing.JTable jTable = new javax.swing.JTable();
+    public inDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable) {
         super(parent, modal);
+        this.jTable = jTable;
         initComponents();
+        select();
     }
-
+    public void select() {
+        try {
+            txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+            ResultSet rs = connectionClass.getStatement().executeQuery(
+                    "select ngay_muon, ngay_tra, doc_gia.hoten, nhanvien.hoten, sach.ten_sach, sach.anhSach from phieu_muon "
+                            + 
+                            "LEFT JOIN doc_gia ON phieu_muon.ma_doc_gia = doc_gia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
+                            +
+                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv=nhanvien.ma_nv WHERE ma_phieu = '"+ txtusername5.getText() + "'");
+            rs.next();
+            txtusername4.setText(rs.getString("ten_sach"));
+            txtusername6.setText(rs.getString(3));
+            txtusername9.setText(rs.getString(4));
+            txtusername8.setText(rs.getString("ngay_muon"));
+            txtusername7.setText(rs.getString("ngay_tra"));
+            if(rs.getBytes("anhSach") != null){
+                ImageIcon img = new ImageIcon(new ImageIcon(rs.getBytes("anhSach")).getImage());
+                pictureLabel.setIcon(new javax.swing.ImageIcon(img.getImage().getScaledInstance(185, 242, Image.SCALE_SMOOTH)));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,9 +71,11 @@ public class inDialog extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         txtusername6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        pictureLabel = new javax.swing.JLabel();
         txtusername7 = new javax.swing.JTextField();
         txtusername8 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtusername9 = new javax.swing.JTextField();
         luuButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -61,11 +96,15 @@ public class inDialog extends javax.swing.JDialog {
         jLabel4.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel4.setText("Tên sách");
 
+        txtusername4.setEditable(false);
+        txtusername4.setBackground(new java.awt.Color(255, 255, 255));
         txtusername4.setFont(txtusername4.getFont().deriveFont(txtusername4.getFont().getSize()+2f));
         txtusername4.setBorder(null);
         txtusername4.setDragEnabled(true);
         txtusername4.setName(""); // NOI18N
 
+        txtusername5.setEditable(false);
+        txtusername5.setBackground(new java.awt.Color(255, 255, 255));
         txtusername5.setFont(txtusername5.getFont().deriveFont(txtusername5.getFont().getSize()+2f));
         txtusername5.setBorder(null);
         txtusername5.setDragEnabled(true);
@@ -74,6 +113,8 @@ public class inDialog extends javax.swing.JDialog {
         jLabel6.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel6.setText("Ngày mượn");
 
+        txtusername6.setEditable(false);
+        txtusername6.setBackground(new java.awt.Color(255, 255, 255));
         txtusername6.setFont(txtusername6.getFont().deriveFont(txtusername6.getFont().getSize()+2f));
         txtusername6.setBorder(null);
         txtusername6.setDragEnabled(true);
@@ -82,17 +123,31 @@ public class inDialog extends javax.swing.JDialog {
         jLabel8.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel8.setText("Ngày trả");
 
-        jLabel1.setText("ảnh");
+        pictureLabel.setText("ảnh");
 
+        txtusername7.setEditable(false);
+        txtusername7.setBackground(new java.awt.Color(255, 255, 255));
         txtusername7.setFont(txtusername7.getFont().deriveFont(txtusername7.getFont().getSize()+2f));
         txtusername7.setBorder(null);
         txtusername7.setDragEnabled(true);
         txtusername7.setName(""); // NOI18N
 
+        txtusername8.setEditable(false);
+        txtusername8.setBackground(new java.awt.Color(255, 255, 255));
         txtusername8.setFont(txtusername8.getFont().deriveFont(txtusername8.getFont().getSize()+2f));
         txtusername8.setBorder(null);
         txtusername8.setDragEnabled(true);
         txtusername8.setName(""); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
+        jLabel7.setText("Thủ thư");
+
+        txtusername9.setEditable(false);
+        txtusername9.setBackground(new java.awt.Color(255, 255, 255));
+        txtusername9.setFont(txtusername9.getFont().deriveFont(txtusername9.getFont().getSize()+2f));
+        txtusername9.setBorder(null);
+        txtusername9.setDragEnabled(true);
+        txtusername9.setName(""); // NOI18N
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -109,51 +164,58 @@ public class inDialog extends javax.swing.JDialog {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(txtusername6, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtusername6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtusername8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtusername9, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(59, 59, 59)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pictureLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtusername4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtusername6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(44, 44, 44)
+                .addComponent(pictureLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtusername5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtusername4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtusername6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtusername9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtusername8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtusername7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
 
         luuButton.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
@@ -264,18 +326,20 @@ public class inDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel baongoai;
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JButton luuButton;
+    private javax.swing.JLabel pictureLabel;
     private javax.swing.JTextField txtusername4;
     private javax.swing.JTextField txtusername5;
     private javax.swing.JTextField txtusername6;
     private javax.swing.JTextField txtusername7;
     private javax.swing.JTextField txtusername8;
+    private javax.swing.JTextField txtusername9;
     // End of variables declaration//GEN-END:variables
 }

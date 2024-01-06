@@ -185,7 +185,7 @@ public class xuLySach {
             theloaiComboBox.setSelectedItem(rs.getString("tentheloai"));
             if(rs.getBytes("anhSach") != null){
                 ImageIcon img = new ImageIcon(new ImageIcon(rs.getBytes("anhSach")).getImage());
-                pictureLabel.setIcon(new javax.swing.ImageIcon(img.getImage().getScaledInstance(192, 182, Image.SCALE_SMOOTH)));
+                pictureLabel.setIcon(new javax.swing.ImageIcon(img.getImage().getScaledInstance(194, 198, Image.SCALE_SMOOTH)));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
