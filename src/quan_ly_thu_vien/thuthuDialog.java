@@ -27,7 +27,7 @@ public class thuthuDialog extends javax.swing.JDialog {
         this.editingEnabled = editingEnabled;
         txtusername5.setEditable(editingEnabled);
         if(editingEnabled) {
-            xuLyThuthu.select(txtusername5, txtusername4, jRadioButton1, jRadioButton2, txtusername9, txtusername7, jTable);
+            xuLyThuthu.select(txtusername5, txtusername4, jRadioButton1, jRadioButton2, txtusername9, txtusername7, jTable,(javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent());
         } else{
             txtusername5.setText(Integer.toString(xuLyThuthu.selectLastID() + 1)); 
         }

@@ -95,16 +95,16 @@ public class xuLyDocGia {
 
     public static void select(javax.swing.JTextField manguoimuonTextField, javax.swing.JTextField tennguoimuonTextField,
             javax.swing.JTextField diachiTextField, javax.swing.JTextField sodienthoaiTextField,
-            javax.swing.JTable jTable) {
+            javax.swing.JTable jTable, javax.swing.JTextField jDateChooser1) {
         try {
             manguoimuonTextField.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                "select  ma_doc_gia, hoten, dia_chi, sdt from doc_gia where ma_doc_gia = '" + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
+                "select  ma_doc_gia, hoten, ngay_sinh, dia_chi, sdt from doc_gia where ma_doc_gia = '" + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             rs.next();
             tennguoimuonTextField.setText(rs.getString("hoten"));
             diachiTextField.setText(rs.getString("dia_chi"));
             sodienthoaiTextField.setText(rs.getString("sdt"));
-            
+            jDateChooser1.setText(rs.getString("ngay_sinh"));
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }

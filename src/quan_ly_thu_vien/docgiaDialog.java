@@ -23,7 +23,7 @@ public class docgiaDialog extends javax.swing.JDialog {
         this.editingEnabled = editingEnabled;
         manguoimuonTextField.setEditable(editingEnabled);
         if(editingEnabled) {
-            xuLyDocGia.select(manguoimuonTextField, tennguoimuonTextField, diachiTextField, sodienthoaiTextField, jTable);
+            xuLyDocGia.select(manguoimuonTextField, tennguoimuonTextField, diachiTextField, sodienthoaiTextField, jTable, (javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent());
         } else {
             manguoimuonTextField.setText(Integer.toString(xuLyDocGia.selectLastID() + 1));
         }
