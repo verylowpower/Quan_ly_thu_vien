@@ -94,7 +94,7 @@ public class xuLyThuthu {
         try {
             txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "select ma_nv, hoten, gioi_tinh, dia_chi, sdt from nhanvien");
+                    "select ma_nv, hoten, gioi_tinh, dia_chi, sdt from nhanvien where ma_nv = '" + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() + "'");
             rs.next();
             txtusername4.setText(rs.getString("hoten"));
             if (rs.getString("gioi_tinh") != null) {
@@ -116,7 +116,7 @@ public class xuLyThuthu {
             String diaChi, String sdt) {
         try {
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                "Update nhanvien set ma_nv = ?, hoten = ?, ngay_sinh = ?, gioi_tinh = ?, dia_chi = ?, sdt = ? where ma_nv = '"+ ma_nv + "'");
+                "Update nhanvien set ma_nv = ?, hoten = ?, ngay_sinh = ?, gioi_tinh = ?, dia_chi = ?, sdt = ? where ma_nv = '"+ jTable.getValueAt(jTable.getSelectedRow(), 0).toString() + "'");
             ps.setInt(1, ma_nv);
             ps.setString(2, tenNV);
             ps.setString(3, ngaysinh);
