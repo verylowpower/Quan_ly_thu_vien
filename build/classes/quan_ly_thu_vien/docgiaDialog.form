@@ -80,7 +80,7 @@
                               <Component id="tennguoimuonTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="manguoimuonTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="sodienthoaiTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="gioitinhTextField" alignment="1" max="32767" attributes="0"/>
+                              <Component id="diachiTextField" alignment="1" max="32767" attributes="0"/>
                               <Component id="jDateChooser1" alignment="1" pref="191" max="32767" attributes="0"/>
                               <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
                               <Component id="jSeparator3" max="32767" attributes="0"/>
@@ -128,7 +128,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="gioitinhTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="diachiTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -313,14 +313,14 @@
             <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="gioitinhTextField">
+        <Component class="javax.swing.JTextField" name="diachiTextField">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c8" green="d6" red="e8" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
               <FontInfo relative="true">
-                <Font component="gioitinhTextField" property="font" relativeSize="true" size="2"/>
+                <Font component="diachiTextField" property="font" relativeSize="true" size="2"/>
               </FontInfo>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

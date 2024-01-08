@@ -142,14 +142,14 @@ public class docgiapanel extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(timkiemTextField))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(162, 162, 162)
                         .addComponent(jLabel5)))
@@ -221,11 +221,11 @@ public class docgiapanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa1.png")));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa1.png")));
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa.png")));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa.png")));
     }//GEN-LAST:event_jLabel5MouseExited
 
 

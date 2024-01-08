@@ -21,8 +21,11 @@ public class docgiaDialog extends javax.swing.JDialog {
         initComponents();
         this.jTable = jTable;
         this.editingEnabled = editingEnabled;
+        manguoimuonTextField.setEditable(editingEnabled);
         if(editingEnabled) {
-            xuLyDocGia.select(manguoimuonTextField, tennguoimuonTextField, gioitinhTextField, sodienthoaiTextField, jTable);
+            xuLyDocGia.select(manguoimuonTextField, tennguoimuonTextField, diachiTextField, sodienthoaiTextField, jTable);
+        } else {
+            manguoimuonTextField.setText(Integer.toString(xuLyDocGia.selectLastID() + 1));
         }
     }
 
@@ -46,7 +49,7 @@ public class docgiaDialog extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        gioitinhTextField = new javax.swing.JTextField();
+        diachiTextField = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -144,12 +147,12 @@ public class docgiaDialog extends javax.swing.JDialog {
         jLabel7.setForeground(new java.awt.Color(125, 99, 87));
         jLabel7.setText("Địa chỉ");
 
-        gioitinhTextField.setBackground(new java.awt.Color(232, 214, 200));
-        gioitinhTextField.setFont(gioitinhTextField.getFont().deriveFont(gioitinhTextField.getFont().getSize()+2f));
-        gioitinhTextField.setForeground(new java.awt.Color(137, 110, 89));
-        gioitinhTextField.setBorder(null);
-        gioitinhTextField.setDragEnabled(true);
-        gioitinhTextField.setName(""); // NOI18N
+        diachiTextField.setBackground(new java.awt.Color(232, 214, 200));
+        diachiTextField.setFont(diachiTextField.getFont().deriveFont(diachiTextField.getFont().getSize()+2f));
+        diachiTextField.setForeground(new java.awt.Color(137, 110, 89));
+        diachiTextField.setBorder(null);
+        diachiTextField.setDragEnabled(true);
+        diachiTextField.setName(""); // NOI18N
 
         jDateChooser1.setBackground(new java.awt.Color(232, 214, 200));
         jDateChooser1.setDateFormatString("yyyy-MM-dd");
@@ -211,7 +214,7 @@ public class docgiaDialog extends javax.swing.JDialog {
                             .addComponent(tennguoimuonTextField)
                             .addComponent(manguoimuonTextField)
                             .addComponent(sodienthoaiTextField)
-                            .addComponent(gioitinhTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(diachiTextField, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                             .addComponent(jSeparator2)
                             .addComponent(jSeparator3)
@@ -249,7 +252,7 @@ public class docgiaDialog extends javax.swing.JDialog {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(gioitinhTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diachiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,7 +275,7 @@ public class docgiaDialog extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 350, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(389, 321));
@@ -305,9 +308,9 @@ public class docgiaDialog extends javax.swing.JDialog {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         if(editingEnabled == false) {
-            xuLyDocGia.add(tennguoimuonTextField.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), gioitinhTextField.getText(), sodienthoaiTextField.getText());
+            xuLyDocGia.add(tennguoimuonTextField.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), diachiTextField.getText(), sodienthoaiTextField.getText());
         } else {
-            xuLyDocGia.edit(Integer.parseInt(manguoimuonTextField.getText()), jTable, tennguoimuonTextField.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), gioitinhTextField.getText(), sodienthoaiTextField.getText());
+            xuLyDocGia.edit(Integer.parseInt(manguoimuonTextField.getText()), jTable, tennguoimuonTextField.getText(), ((javax.swing.JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText().toString(), diachiTextField.getText(), sodienthoaiTextField.getText());
         }
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
@@ -326,8 +329,8 @@ public class docgiaDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JTextField diachiTextField;
     private javax.swing.JPanel exit;
-    private javax.swing.JTextField gioitinhTextField;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
