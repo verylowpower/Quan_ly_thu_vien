@@ -221,11 +221,11 @@ public class docgiapanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa1.png")));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa1.png")));
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa.png")));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Xoa.png")));
     }//GEN-LAST:event_jLabel5MouseExited
 
 
