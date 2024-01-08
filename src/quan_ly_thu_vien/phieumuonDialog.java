@@ -239,11 +239,11 @@ public class phieumuonDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu1.png")));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu1.png")));
     }//GEN-LAST:event_jLabel7MouseEntered
 
     private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu.png")));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu.png")));
     }//GEN-LAST:event_jLabel7MouseExited
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel5MouseClicked
