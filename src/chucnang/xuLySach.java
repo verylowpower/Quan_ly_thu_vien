@@ -147,7 +147,7 @@ public class xuLySach {
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ?, anhSach = ? where ma_sach = '"+ maSach +"'");
+                    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ?, anhSach = ? where ma_sach = '"+ jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             ps.setInt(1, maSach);
             ps.setString(2, tenSach);
             ps.setString(3, namXb);

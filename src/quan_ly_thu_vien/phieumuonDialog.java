@@ -232,7 +232,7 @@ public class phieumuonDialog extends javax.swing.JDialog {
             xulyphieumuon.edit(Integer.parseInt(txtusername5.getText()),
                     ((javax.swing.JTextField) jDateChooser1.getDateEditor().getUiComponent()).getText().toString(),
                     ((javax.swing.JTextField) jDateChooser2.getDateEditor().getUiComponent()).getText().toString(),
-                    jComboBox7, jComboBox2, jComboBox1);
+                    jComboBox7, jComboBox2, jComboBox1, jTable);
             
         } // GEN-LAST:event_luuButtonActionPerformed
         this.dispose();
@@ -262,7 +262,7 @@ public class phieumuonDialog extends javax.swing.JDialog {
             xulyphieumuon.edit(Integer.parseInt(txtusername5.getText()),
                     ((javax.swing.JTextField) jDateChooser1.getDateEditor().getUiComponent()).getText().toString(),
                     ((javax.swing.JTextField) jDateChooser2.getDateEditor().getUiComponent()).getText().toString(),
-                    jComboBox7, jComboBox2, jComboBox1);
+                    jComboBox7, jComboBox2, jComboBox1, jTable);
             
         } // GEN-LAST:event_luuButtonActionPerformed
         this.dispose();

@@ -82,7 +82,7 @@ public class xuLyTheloai {
     public static void edit(int ma_theloai, javax.swing.JTable jTable,String tentheloai) {
         try {
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update theloai set ma_theloai = ?, tentheloai = ? where ma_theloai = '"+ ma_theloai +"'");
+                    "Update theloai set ma_theloai = ?, tentheloai = ? where ma_theloai = '"+ jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             ps.setInt(1, ma_theloai);
             ps.setString(2, tentheloai);
             ps.executeUpdate();

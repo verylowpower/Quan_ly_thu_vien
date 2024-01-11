@@ -127,7 +127,7 @@ public class xulyphieumuon {
     }
 
     public static void edit(int ma_phieu, String ngay_muon, String ngay_tra, 
-            javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox2,javax.swing.JComboBox jComboBox1) {
+            javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox2,javax.swing.JComboBox jComboBox1, javax.swing.JTable jTable) {
         try {
             ResultSet rs = connectionClass.getStatement().executeQuery(
                     "SELECT * FROM sach WHERE ten_sach = '" + jComboBox7.getSelectedItem().toString() + "'");
@@ -142,7 +142,7 @@ public class xulyphieumuon {
             rs.next();
             int idThuthu = rs.getInt("ma_nv");
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update phieu_muon set ma_phieu = ?, ngay_muon = ?, ngay_tra = ?, ma_doc_gia = ?, ma_sach = ?, ma_nv = ? where ma_phieu = '"+ ma_phieu +"'");
+                    "Update phieu_muon set ma_phieu = ?, ngay_muon = ?, ngay_tra = ?, ma_doc_gia = ?, ma_sach = ?, ma_nv = ? where ma_phieu = '"+ jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             ps.setInt(1, ma_phieu);
             ps.setString(2, ngay_muon);
             ps.setString(3, ngay_tra);
