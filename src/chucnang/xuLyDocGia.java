@@ -81,7 +81,8 @@ public class xuLyDocGia {
     public static void edit(int ma_doc_gia, javax.swing.JTable jTable, String hoten, String ngay_sinh, String dia_chi, String sdt) {
         try {
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update doc_gia set ma_doc_gia = ?, hoten = ?, ngay_sinh = ?, dia_chi = ?, sdt = ? where ma_doc_gia = '"+ jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
+                    "Update doc_gia set ma_doc_gia = ?, hoten = ?, ngay_sinh = ?, dia_chi = ?, sdt = ? where ma_doc_gia = '"
+                            + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             ps.setInt(1, ma_doc_gia);
             ps.setString(2, hoten);
             ps.setString(3, ngay_sinh);
@@ -99,7 +100,8 @@ public class xuLyDocGia {
         try {
             manguoimuonTextField.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                "select  ma_doc_gia, hoten, ngay_sinh, dia_chi, sdt from doc_gia where ma_doc_gia = '" + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
+                "select  ma_doc_gia, hoten, ngay_sinh, dia_chi, sdt from doc_gia where ma_doc_gia = '" 
+                        + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             rs.next();
             tennguoimuonTextField.setText(rs.getString("hoten"));
             diachiTextField.setText(rs.getString("dia_chi"));

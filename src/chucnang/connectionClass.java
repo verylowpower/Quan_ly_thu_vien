@@ -9,7 +9,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author quann
@@ -17,7 +16,7 @@ import javax.swing.JOptionPane;
 public class connectionClass {
     static String URL = "jdbc:mysql://localhost:3306/thuvien";
     static String USER_NAME = "root";
-    static String PASSWORD = "123456";
+    static String PASSWORD = "12345678";
     static Connection connection = null;
     static Statement statement = null;
     public static void ConnectDB(){

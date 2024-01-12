@@ -55,15 +55,15 @@ public class xuLySach {
 
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery(
-                    "select  ma_sach, ten_sach, nam_xb ,tacgia.tentacgia, nha_xuat_ban.ten_nxb, theloai.tentheloai  from sach"
-                            +
-                            " LEFT JOIN tacgia ON sach.ma_tacgia = tacgia.ma_tacgia LEFT JOIN nha_xuat_ban ON sach.ma_nxb = nha_xuat_ban.ma_nxb"
-                            +
-                            " LEFT JOIN theloai ON sach.ma_theloai = theloai.ma_theloai");
+                "select  ma_sach, ten_sach, nam_xb ,tacgia.tentacgia, nha_xuat_ban.ten_nxb, theloai.tentheloai  from sach"
+                +
+                " LEFT JOIN tacgia ON sach.ma_tacgia = tacgia.ma_tacgia LEFT JOIN nha_xuat_ban ON sach.ma_nxb = nha_xuat_ban.ma_nxb"
+                +
+                " LEFT JOIN theloai ON sach.ma_theloai = theloai.ma_theloai");
             while (rs.next()) {
                 model.addRow(new Object[] {
-                        rs.getInt("ma_sach"), rs.getString("ten_sach"), rs.getString("tentheloai"), rs.getString("tentacgia"),
-                        rs.getString("ten_nxb"), rs.getString("nam_xb")
+                    rs.getInt("ma_sach"), rs.getString("ten_sach"), rs.getString("tentheloai"), rs.getString("tentacgia"),
+                    rs.getString("ten_nxb"), rs.getString("nam_xb")
                 });
             }
         } catch (Exception e) {
@@ -97,19 +97,19 @@ public class xuLySach {
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
-                    .prepareStatement(
-                            "insert into sach(ma_sach, ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia, anhSach)"
-                                    + "values(?, ?, ?, ?, ?, ?, ?)");
+                .prepareStatement(
+                    "insert into sach(ma_sach, ten_sach, nam_xb, ma_nxb, ma_theloai, ma_tacgia, anhSach)"
+                    + "values(?, ?, ?, ?, ?, ?, ?)");
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "SELECT * FROM tacgia WHERE tentacgia = '" + jComboBox.getSelectedItem().toString() + "'");
+                "SELECT * FROM tacgia WHERE tentacgia = '" + jComboBox.getSelectedItem().toString() + "'");
             rs.next();
             int idTacGia = rs.getInt("ma_tacgia");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from theloai WHERE tentheloai = '" + jComboBox2.getSelectedItem() + "'");
+                .executeQuery("Select * from theloai WHERE tentheloai = '" + jComboBox2.getSelectedItem() + "'");
             rs.next();
             int idTheLoai = rs.getInt("ma_theloai");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '" + jComboBox1.getSelectedItem() + "'");
+                .executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '" + jComboBox1.getSelectedItem() + "'");
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
             ps.setInt(1, Integer.parseInt(ma_sach));
@@ -123,8 +123,7 @@ public class xuLySach {
                 ps.setBytes(7, img.toByteArray());
             } else{
                 ps.setBytes(7, null);
-            }
-            
+            }   
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -147,7 +146,8 @@ public class xuLySach {
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ?, anhSach = ? where ma_sach = '"+ jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
+                    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ?, anhSach = ? where ma_sach = '"
+                    + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             ps.setInt(1, maSach);
             ps.setString(2, tenSach);
             ps.setString(3, namXb);
@@ -210,7 +210,8 @@ public class xuLySach {
             BufferedImage im = ImageIO.read(fileChooser.getSelectedFile());
             temp = new ByteArrayOutputStream();
             ImageIO.write(im, "png", temp);
-            pictureLabel.setIcon(new javax.swing.ImageIcon(im.getScaledInstance(pictureLabel.getWidth(), pictureLabel.getHeight(), java.awt.Image.SCALE_SMOOTH)));
+            pictureLabel.setIcon(new javax.swing.ImageIcon(im.getScaledInstance
+            (pictureLabel.getWidth(), pictureLabel.getHeight(), java.awt.Image.SCALE_SMOOTH)));
         } catch (IOException ex) {
             javax.swing.JOptionPane.showMessageDialog(null, "No File Selected");
         }

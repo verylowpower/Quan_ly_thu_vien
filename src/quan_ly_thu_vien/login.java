@@ -16,18 +16,12 @@ import chucnang.connectionClass;
  * @author vitancuc
  */
 public class login extends javax.swing.JFrame {
-
-    /**
-     * Creates new form login
-     */
     public login() {
         initComponents();
     }
-    
     void setColor(JPanel panel) {  //đổi màu
         panel.setBackground(new Color(255,223,198));
-    }
-     
+    } 
     void resetColor(JPanel panel) { //reset về màu background
         panel.setBackground(new Color(232,214,200));
     }
@@ -39,7 +33,7 @@ public class login extends javax.swing.JFrame {
                 String username = rs.getString(8);
                 String password = rs.getString(9);
                 if (username.equals(txtusername.getText())
-                        && password.equals(String.valueOf(txtpassword.getPassword()))) {
+                        && password.equals(String.valueOf(txtpassword.getPassword()))){
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
                             new Home().setVisible(true);
@@ -48,9 +42,7 @@ public class login extends javax.swing.JFrame {
                     this.dispose();
                 } 
             }
-        } catch (SQLException e) {
-
-        }
+        } catch (SQLException e) {}
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -259,7 +251,6 @@ public class login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         // TODO add your handling code here:\
         System.exit(0); //nút thoát
@@ -281,7 +272,6 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         Login();
     }//GEN-LAST:event_jButton1ActionPerformed
 
