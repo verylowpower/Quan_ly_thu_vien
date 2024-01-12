@@ -29,16 +29,16 @@ public class taikhoanDialog extends javax.swing.JDialog {
     public taikhoanDialog(java.awt.Frame parent, boolean modal, javax.swing.JTable jTable, boolean editingEnabled) {
         super(parent, modal);
         initComponents();
-        xuLySach.getComboBoxElements(tacgiaComboBox, thuthuComboBox, theloaiComboBox);
-        this.editingEnabled = editingEnabled;
-        this.jTable = jTable;
-        // Tinh chinh lai phan nhap ma sach khi them sach
-        matkhauTextField.setEditable(editingEnabled);
-        if(editingEnabled) {
-            xuLySach.select(matkhauTextField, taikhoanTextField, namxuatbanTextField, thuthuComboBox,tacgiaComboBox,theloaiComboBox, jTable, pictureLabel);
-        } else{
-            matkhauTextField.setText(Integer.toString(xuLySach.selectLastID() + 1)); 
-        }
+        // xuLySach.getComboBoxElements(tacgiaComboBox, thuthuComboBox, theloaiComboBox);
+        // this.editingEnabled = editingEnabled;
+        // this.jTable = jTable;
+        // // Tinh chinh lai phan nhap ma sach khi them sach
+        // matkhauTextField.setEditable(editingEnabled);
+        // if(editingEnabled) {
+        //     xuLySach.select(matkhauTextField, taikhoanTextField, namxuatbanTextField, thuthuComboBox,tacgiaComboBox,theloaiComboBox, jTable, pictureLabel);
+        // } else{
+        //     matkhauTextField.setText(Integer.toString(xuLySach.selectLastID() + 1)); 
+        // }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -249,12 +249,12 @@ public class taikhoanDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel1MouseEntered
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        if(editingEnabled == false) {
-            xuLySach.add(matkhauTextField.getText(), tacgiaComboBox, thuthuComboBox, theloaiComboBox, taikhoanTextField.getText(), namxuatbanTextField.getText(), img);
-        } else{
-            xuLySach.edit(Integer.parseInt(matkhauTextField.getText()), jTable, tacgiaComboBox, thuthuComboBox, theloaiComboBox, taikhoanTextField.getText(), namxuatbanTextField.getText(), img);
-        }
-        this.dispose();
+        // if(editingEnabled == false) {
+        //     xuLySach.add(matkhauTextField.getText(), tacgiaComboBox, thuthuComboBox, theloaiComboBox, taikhoanTextField.getText(), namxuatbanTextField.getText(), img);
+        // } else{
+        //     xuLySach.edit(Integer.parseInt(matkhauTextField.getText()), jTable, tacgiaComboBox, thuthuComboBox, theloaiComboBox, taikhoanTextField.getText(), namxuatbanTextField.getText(), img);
+        // }
+        // this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
