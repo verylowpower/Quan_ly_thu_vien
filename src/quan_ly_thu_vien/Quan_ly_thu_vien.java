@@ -28,7 +28,7 @@ public class Quan_ly_thu_vien {
     public static void main(String[] args) {
         connectionClass.ConnectDB();
 
-        // new Home().setVisible(true);
+         new Home().setVisible(true);
 
         // test mail
         String host = "smtp.gmail.com";

@@ -66,6 +66,7 @@ public class login extends javax.swing.JFrame {
         txtusername = new javax.swing.JTextField();
         txtpassword = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -168,6 +169,13 @@ public class login extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Quên mật khẩu ?");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout Login_bgLayout = new javax.swing.GroupLayout(Login_bg);
         Login_bg.setLayout(Login_bgLayout);
         Login_bgLayout.setHorizontalGroup(
@@ -182,10 +190,13 @@ public class login extends javax.swing.JFrame {
                     .addGroup(Login_bgLayout.createSequentialGroup()
                         .addGroup(Login_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Login_bgLayout.createSequentialGroup()
-                                .addGroup(Login_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(Login_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel8)
                                     .addGroup(Login_bgLayout.createSequentialGroup()
-                                        .addGap(64, 64, 64)
+                                        .addGap(151, 151, 151)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(Login_bgLayout.createSequentialGroup()
+                                        .addGap(75, 75, 75)
                                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(157, 157, 157)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -229,6 +240,8 @@ public class login extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Login_bgLayout.createSequentialGroup()
                         .addComponent(jLabel8)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel7)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(129, Short.MAX_VALUE))
@@ -275,6 +288,10 @@ public class login extends javax.swing.JFrame {
         Login();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        new emaildoimk(new javax.swing.JFrame(), true).setVisible(true);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
 
     
     
@@ -296,6 +313,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel logo;
     private javax.swing.JPasswordField txtpassword;
