@@ -13,9 +13,14 @@ public class doimk extends javax.swing.JDialog {
     /**
      * Creates new form doimk
      */
-    public doimk(java.awt.Frame parent, boolean modal) {
+    public doimk(java.awt.Frame parent, boolean modal, boolean oldPasswordEnabled) {
         super(parent, modal);
         initComponents();
+        if(oldPasswordEnabled) {
+            jLabel4.setVisible(oldPasswordEnabled);
+            taikhoanTextField.setEnabled(oldPasswordEnabled);
+            jSeparator1.setEnabled(oldPasswordEnabled);
+        }
     }
 
     /**

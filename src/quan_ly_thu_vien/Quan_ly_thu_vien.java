@@ -7,7 +7,6 @@ package quan_ly_thu_vien;
 import java.net.PasswordAuthentication;
 import java.util.Properties;
 
-import com.mysql.cj.protocol.Message;
 
 import chucnang.connectionClass;
 import chucnang.xulyEmail;
