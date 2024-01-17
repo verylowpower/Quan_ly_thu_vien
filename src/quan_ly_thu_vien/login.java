@@ -33,15 +33,11 @@ public class login extends javax.swing.JFrame {
                 String username = rs.getString(8);
                 String password = rs.getString(9);
                 if (username.equals(txtusername.getText())
-                        && password.equals(String.valueOf(txtpassword.getPassword()))){
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() {
-                            new Home().setVisible(true);
-                        }
-                    });
-                    this.dispose();
-                } 
-            }
+                    && password.equals(String.valueOf(txtpassword.getPassword()))){
+                        new Home().setVisible(true);
+                }
+            };
+            this.dispose();
         } catch (SQLException e) {}
     }
     /**
