@@ -34,10 +34,10 @@ public class login extends javax.swing.JFrame {
                 String password = rs.getString(9);
                 if (username.equals(txtusername.getText())
                     && password.equals(String.valueOf(txtpassword.getPassword()))){
+                        this.dispose();
                         new Home().setVisible(true);
                 }
             };
-            this.dispose();
         } catch (SQLException e) {}
     }
     /**

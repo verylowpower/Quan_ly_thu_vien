@@ -115,7 +115,7 @@ public class taikhoanPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        
+        new taikhoanDialog(new javax.swing.JFrame(), true, false).setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
@@ -127,9 +127,9 @@ public class taikhoanPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel1MouseExited
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        
+        new taikhoanDialog(new javax.swing.JFrame(), true, true).setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
-
+        
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Sua1.png")));
     }//GEN-LAST:event_jLabel3MouseEntered
