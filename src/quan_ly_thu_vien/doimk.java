@@ -51,6 +51,7 @@ public class doimk extends javax.swing.JDialog {
         txtpassword1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(232, 214, 200));
         bg.setPreferredSize(new java.awt.Dimension(843, 627));

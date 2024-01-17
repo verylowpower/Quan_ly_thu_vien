@@ -62,13 +62,13 @@ public class xuLyThuthu {
 
     public static void add(String maNV, String tenNV, String ngaysinh,
             javax.swing.JRadioButton JRadioButton1, javax.swing.JRadioButton JRadioButton2,
-            String diaChi, String sdt) {
+            String diaChi, String sdt, String email) {
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
                     .prepareStatement(
-                            "insert into nhanvien(ma_nv, hoten, ngay_sinh, gioi_tinh, dia_chi, sdt)"
-                                    + "values(?, ?, ?, ?, ?, ?)");
+                            "insert into nhanvien(ma_nv, hoten, ngay_sinh, gioi_tinh, dia_chi, sdt, email)"
+                                    + "values(?, ?, ?, ?, ?, ?, ?)");
             ps.setInt(1, Integer.parseInt(maNV));
             ps.setString(2, tenNV);
             // ps.setString(2, String.valueOf(JComboBox1.getSelectedItem().toString() + "/"
@@ -82,6 +82,7 @@ public class xuLyThuthu {
             }
             ps.setString(5, diaChi);
             ps.setString(6, sdt);
+            ps.setString(7, email);
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
@@ -91,11 +92,11 @@ public class xuLyThuthu {
     public static void select(javax.swing.JTextField txtusername5, javax.swing.JTextField txtusername4,
         javax.swing.JRadioButton JRadioButton1, javax.swing.JRadioButton JRadioButton2,
         javax.swing.JTextField txtusername9, javax.swing.JTextField txtusername7, 
-        javax.swing.JTable jTable, javax.swing.JTextField jDateChooser1) {
+        javax.swing.JTable jTable, javax.swing.JTextField jDateChooser1, javax.swing.JTextField txtusername8) {
         try {
             txtusername5.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "select ma_nv, hoten, gioi_tinh, ngay_sinh, dia_chi, sdt from nhanvien where ma_nv = '" 
+                    "select ma_nv, hoten, gioi_tinh, ngay_sinh, dia_chi, sdt, email from nhanvien where ma_nv = '" 
                             + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() + "'");
             rs.next();
             txtusername4.setText(rs.getString("hoten"));
@@ -109,6 +110,7 @@ public class xuLyThuthu {
             jDateChooser1.setText(rs.getString("ngay_sinh"));
             txtusername9.setText(rs.getString("dia_chi"));
             txtusername7.setText(rs.getString("sdt"));
+            txtusername8.setText(rs.getString("email"));  
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
         }
@@ -116,10 +118,10 @@ public class xuLyThuthu {
 
     public static void edit(int ma_nv, javax.swing.JTable jTable, String tenNV, String ngaysinh,
             javax.swing.JRadioButton JRadioButton1, javax.swing.JRadioButton JRadioButton2,
-            String diaChi, String sdt) {
+            String diaChi, String sdt, String email) {
         try {
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                "Update nhanvien set ma_nv = ?, hoten = ?, ngay_sinh = ?, gioi_tinh = ?, dia_chi = ?, sdt = ? where ma_nv = '"
+                "Update nhanvien set ma_nv = ?, hoten = ?, ngay_sinh = ?, gioi_tinh = ?, dia_chi = ?, sdt = ? , email = ? where ma_nv = '"
                         + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() + "'");
             ps.setInt(1, ma_nv);
             ps.setString(2, tenNV);
@@ -131,6 +133,7 @@ public class xuLyThuthu {
             }
             ps.setString(5, diaChi);
             ps.setString(6, sdt);
+            ps.setString(7, email);
             ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed " + e.getMessage());
