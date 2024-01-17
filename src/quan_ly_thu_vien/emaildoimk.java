@@ -244,7 +244,7 @@ public class emaildoimk extends javax.swing.JDialog {
         if(maSetVisibility) {
             if (taikhoanTextField1.getText().equals(randNum)){
                 this.dispose();
-                new doimk(new javax.swing.JFrame(), true, false).setVisible(true);
+                new doimk(new javax.swing.JFrame(), true, false, taikhoanTextField.getText()).setVisible(true);
             }
         } else{
             try{

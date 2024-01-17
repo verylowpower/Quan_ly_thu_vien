@@ -2,7 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
+
 package quan_ly_thu_vien;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import chucnang.connectionClass;
 
 /**
  *
@@ -13,14 +21,13 @@ public class doimk extends javax.swing.JDialog {
     /**
      * Creates new form doimk
      */
-    public doimk(java.awt.Frame parent, boolean modal, boolean oldPasswordEnabled) {
+    boolean oldPasswordEnabled;
+    String email;
+    public doimk(java.awt.Frame parent, boolean modal, boolean oldPasswordEnabled, String email) {
         super(parent, modal);
+        this.oldPasswordEnabled = oldPasswordEnabled;
+        this.email = email;
         initComponents();
-        if(oldPasswordEnabled) {
-            jLabel4.setVisible(oldPasswordEnabled);
-            taikhoanTextField.setEnabled(oldPasswordEnabled);
-            jSeparator1.setEnabled(oldPasswordEnabled);
-        }
     }
 
     /**
@@ -35,13 +42,13 @@ public class doimk extends javax.swing.JDialog {
         bg = new javax.swing.JPanel();
         exit = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        taikhoanTextField = new javax.swing.JTextField();
-        matkhauTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
+        txtpassword = new javax.swing.JPasswordField();
+        txtpassword1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -77,32 +84,11 @@ public class doimk extends javax.swing.JDialog {
 
         jLabel4.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(125, 99, 87));
-        jLabel4.setText("Mật khẩu cũ");
-
-        taikhoanTextField.setBackground(new java.awt.Color(232, 214, 200));
-        taikhoanTextField.setFont(taikhoanTextField.getFont().deriveFont(taikhoanTextField.getFont().getSize()+2f));
-        taikhoanTextField.setForeground(new java.awt.Color(137, 110, 89));
-        taikhoanTextField.setBorder(null);
-        taikhoanTextField.setDragEnabled(true);
-        taikhoanTextField.setName(""); // NOI18N
-        taikhoanTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                taikhoanTextFieldActionPerformed(evt);
-            }
-        });
-
-        matkhauTextField.setEditable(false);
-        matkhauTextField.setBackground(new java.awt.Color(232, 214, 200));
-        matkhauTextField.setFont(matkhauTextField.getFont().deriveFont(matkhauTextField.getFont().getSize()+2f));
-        matkhauTextField.setForeground(new java.awt.Color(137, 110, 89));
-        matkhauTextField.setBorder(null);
-        matkhauTextField.setDragEnabled(true);
-        matkhauTextField.setName(""); // NOI18N
-        matkhauTextField.setOpaque(true);
+        jLabel4.setText("Mật khẩu mới");
 
         jLabel6.setFont(new java.awt.Font("UTM BryantLG", 0, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(125, 99, 87));
-        jLabel6.setText("Mật khẩu mới");
+        jLabel6.setText("Xác nhân mật khẩu");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(132, 98, 83));
@@ -133,6 +119,22 @@ public class doimk extends javax.swing.JDialog {
             }
         });
 
+        txtpassword.setBackground(new java.awt.Color(232, 214, 200));
+        txtpassword.setFont(txtpassword.getFont().deriveFont(txtpassword.getFont().getSize()+2f));
+        txtpassword.setForeground(new java.awt.Color(132, 98, 83));
+        txtpassword.setBorder(null);
+        txtpassword.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtpassword.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtpassword.setOpaque(true);
+
+        txtpassword1.setBackground(new java.awt.Color(232, 214, 200));
+        txtpassword1.setFont(txtpassword1.getFont().deriveFont(txtpassword1.getFont().getSize()+2f));
+        txtpassword1.setForeground(new java.awt.Color(132, 98, 83));
+        txtpassword1.setBorder(null);
+        txtpassword1.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtpassword1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtpassword1.setOpaque(true);
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -144,25 +146,22 @@ public class doimk extends javax.swing.JDialog {
                         .addComponent(jLabel1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(jLabel5))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel4)
-                                .addGap(14, 14, 14))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel6)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(matkhauTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(taikhoanTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(txtpassword)
+                    .addComponent(txtpassword1))
+                .addGap(94, 94, 94))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,23 +169,21 @@ public class doimk extends javax.swing.JDialog {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(47, 47, 47)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(taikhoanTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(matkhauTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtpassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,12 +223,20 @@ public class doimk extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // if(editingEnabled == false) {
-            //     xuLySach.add(matkhauTextField.getText(), tacgiaComboBox, thuthuComboBox, theloaiComboBox, taikhoanTextField.getText(), namxuatbanTextField.getText(), img);
-            // } else{
-            //     xuLySach.edit(Integer.parseInt(matkhauTextField.getText()), jTable, tacgiaComboBox, thuthuComboBox, theloaiComboBox, taikhoanTextField.getText(), namxuatbanTextField.getText(), img);
-            // }
-        // this.dispose();
+        if(String.valueOf(txtpassword.getPassword()).equals(String.valueOf(txtpassword1.getPassword()))){
+            try {
+                PreparedStatement ps = connectionClass.getConnection().prepareStatement("Update nhanvien set password = ? where email = ?");
+                ps.setString(1, String.valueOf(txtpassword.getPassword())); 
+                ps.setString(2, email);
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                JOptionPane.showMessageDialog(null, e.getMessage());
+            }
+            this.dispose();
+        } else{
+            JOptionPane.showMessageDialog(null, "Vui lòng xác nhận lại mật khẩu"); 
+        }
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
@@ -241,10 +246,6 @@ public class doimk extends javax.swing.JDialog {
     private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home form/Luu.png")));
     }//GEN-LAST:event_jLabel1MouseExited
-
-    private void taikhoanTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taikhoanTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_taikhoanTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,7 +261,7 @@ public class doimk extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField matkhauTextField;
-    private javax.swing.JTextField taikhoanTextField;
+    private javax.swing.JPasswordField txtpassword;
+    private javax.swing.JPasswordField txtpassword1;
     // End of variables declaration//GEN-END:variables
 }
