@@ -9,9 +9,10 @@ public class xulyTaiKhoan {
         try {
             ResultSet rs = connectionClass.getStatement()
                     .executeQuery("SELECT COUNT(username) FROM nhanvien where username = '" + username + "'");
+                    rs.next();
             if (rs.getInt("COUNT(username)") == 0) {
                 PreparedStatement ps = connectionClass.getConnection()
-                        .prepareStatement("UPDATE nhanvien set username = '?', password = '?'' WHERE hoten = '?'");
+                        .prepareStatement("UPDATE nhanvien set username = ?, password = ? WHERE hoten = ?");
                 ps.setString(1, username);
                 ps.setString(2, password);
                 ps.setString(3, nhanvien);
@@ -21,10 +22,21 @@ public class xulyTaiKhoan {
             }
         } catch (SQLException e) {
             // TODO: handle exception
+            e.printStackTrace();
         }
-
     }
-
+    public static void editPassword(String username, String password, String nhanvien) {
+        try {
+                PreparedStatement ps = connectionClass.getConnection()
+                        .prepareStatement("UPDATE nhanvien set username = ?, password = ? WHERE hoten = '"+ nhanvien+"'");
+                ps.setString(1, username);
+                ps.setString(2, password);
+                ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+    }
     public static void getComboBoxElements(javax.swing.JComboBox jComboBox) {
         try {
             Statement stat = connectionClass.getStatement();

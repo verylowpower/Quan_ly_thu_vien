@@ -277,8 +277,12 @@ public class taikhoanDialog extends javax.swing.JDialog {
     }// GEN-LAST:event_jLabel1MouseEntered
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel1MouseClicked
-        xulyTaiKhoan.addPassword(taikhoanTextField.getText(), String.valueOf(txtpassword.getPassword()),
+        if(editingEnabled) {
+            xulyTaiKhoan.editPassword(taikhoanTextField.getText(), String.valueOf(txtpassword.getPassword()), thuthuComboBox.getSelectedItem().toString());
+        }else{
+            xulyTaiKhoan.addPassword(taikhoanTextField.getText(), String.valueOf(txtpassword.getPassword()),
                 thuthuComboBox.getSelectedItem().toString());
+        }
         this.dispose();
     }// GEN-LAST:event_jLabel1MouseClicked
 
