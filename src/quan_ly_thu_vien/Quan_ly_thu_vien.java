@@ -23,6 +23,6 @@ public class Quan_ly_thu_vien {
      */
     public static void main(String[] args) {
         connectionClass.ConnectDB();
-        new login().setVisible(true);
+        new Home().setVisible(true);
     }
 }

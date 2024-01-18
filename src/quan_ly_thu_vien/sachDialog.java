@@ -220,7 +220,7 @@ public class sachDialog extends javax.swing.JDialog {
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/button (3).png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/button3.png"))); // NOI18N
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -412,7 +412,7 @@ public class sachDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel9MouseEntered
 
     private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/button (3).png")));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/button3.png")));
     }//GEN-LAST:event_jLabel9MouseExited
 
     /**
