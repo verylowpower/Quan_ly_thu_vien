@@ -128,23 +128,24 @@ public class xuLySach {
     }
 
     public static void edit(int maSach, javax.swing.JTable jTable, javax.swing.JComboBox tacgiaComboBox,
-            javax.swing.JComboBox nxbComboBox, javax.swing.JComboBox theloaiComboBox, String tenSach, String namXb, ByteArrayOutputStream img) {
+            javax.swing.JComboBox nxbComboBox, javax.swing.JComboBox theloaiComboBox, String tenSach, 
+            String namXb, ByteArrayOutputStream img) {
         try {
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "SELECT * FROM tacgia WHERE tentacgia = '" + tacgiaComboBox.getSelectedItem().toString() + "'");
+                "SELECT * FROM tacgia WHERE tentacgia = '" + tacgiaComboBox.getSelectedItem().toString() + "'");
             rs.next();
             int idTacGia = rs.getInt("ma_tacgia");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from theloai WHERE tentheloai = '" + theloaiComboBox.getSelectedItem() + "'");
+                .executeQuery("Select * from theloai WHERE tentheloai = '" + theloaiComboBox.getSelectedItem() + "'");
             rs.next();
             int idTheLoai = rs.getInt("ma_theloai");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '" + nxbComboBox.getSelectedItem() + "'");
+                .executeQuery("Select * from nha_xuat_ban WHERE ten_nxb = '" + nxbComboBox.getSelectedItem() + "'");
             rs.next();
             int idNxb = rs.getInt("ma_nxb");
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ?, anhSach = ? where ma_sach = '"
-                    + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
+    "Update sach set ma_sach = ?, ten_sach = ?, nam_xb = ?, ma_nxb = ?, ma_theloai = ?, ma_tacgia = ?, anhSach = ? where ma_sach = '"
+                + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             ps.setInt(1, maSach);
             ps.setString(2, tenSach);
             ps.setString(3, namXb);
@@ -169,11 +170,11 @@ public class xuLySach {
         try {
             masachTextField.setText(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "select  ma_sach, ten_sach, nam_xb, anhSach, tacgia.tentacgia, nha_xuat_ban.ten_nxb, theloai.tentheloai  from sach"
-                            +
-                            " LEFT JOIN tacgia ON sach.ma_tacgia = tacgia.ma_tacgia LEFT JOIN nha_xuat_ban ON sach.ma_nxb = nha_xuat_ban.ma_nxb"
-                            +
-                            " LEFT JOIN theloai ON sach.ma_theloai = theloai.ma_theloai where sach.ma_sach = " +masachTextField.getText());
+            "select  ma_sach, ten_sach, nam_xb, anhSach, tacgia.tentacgia, nha_xuat_ban.ten_nxb, theloai.tentheloai  from sach"
+            +
+            " LEFT JOIN tacgia ON sach.ma_tacgia = tacgia.ma_tacgia LEFT JOIN nha_xuat_ban ON sach.ma_nxb = nha_xuat_ban.ma_nxb"
+            +
+            " LEFT JOIN theloai ON sach.ma_theloai = theloai.ma_theloai where sach.ma_sach = " +masachTextField.getText());
             rs.next();
             tensachTextField.setText(rs.getString("ten_sach"));
             namTextField.setText(rs.getString("nam_xb"));

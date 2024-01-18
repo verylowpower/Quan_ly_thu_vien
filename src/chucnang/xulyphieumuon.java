@@ -54,23 +54,21 @@ public class xulyphieumuon {
             DefaultTableModel model = new DefaultTableModel();
             model = (DefaultTableModel) jTable1.getModel();
             model.setRowCount(0);
-
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery(
-                    "select ma_phieu, ngay_muon, ngay_tra, doc_gia.hoten, nhanvien.hoten, sach.ten_sach from phieu_muon"
-                            +
-                            " LEFT JOIN doc_gia ON phieu_muon.ma_doc_gia = doc_gia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
-                            +
-                            " LEFT JOIN nhanvien ON phieu_muon.ma_nv= nhanvien.ma_nv"
-                           );
+            "select ma_phieu, ngay_muon, ngay_tra, doc_gia.hoten, nhanvien.hoten, sach.ten_sach from phieu_muon"
+            +
+            " LEFT JOIN doc_gia ON phieu_muon.ma_doc_gia = doc_gia.ma_doc_gia LEFT JOIN sach ON phieu_muon.ma_sach=sach.ma_sach"
+            +
+            " LEFT JOIN nhanvien ON phieu_muon.ma_nv= nhanvien.ma_nv"
+            );
             while (rs.next()) {
                 model.addRow(new Object[] {
                         rs.getInt("ma_phieu"), rs.getString("ten_sach"), rs.getString(4), rs.getString(5),
                         rs.getString("ngay_muon") , rs.getString("ngay_tra")  
                 });
             }
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}
     }
         // Them phan tu tu database vao comboBox cua phieumuonDialo
     public static void getComboBoxElements( javax.swing.JComboBox jComboBox7, javax.swing.JComboBox jComboBox2, javax.swing.JComboBox jComboBox1) 
@@ -95,23 +93,24 @@ public class xulyphieumuon {
     
     // Chay query them vao database
     public static void add(String ma_phieu, String ngay_muon, String ngay_tra,
-            javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2, javax.swing.JComboBox jComboBox7 ){
+        javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2, 
+        javax.swing.JComboBox jComboBox7 ){
         try {
             Connection conn = connectionClass.getConnection();
             final PreparedStatement ps = conn
-                    .prepareStatement(
-                            "insert into phieu_muon(ma_phieu, ngay_muon, ngay_tra, ma_doc_gia, ma_sach, ma_nv)"
-                                    + "values(?, ?, ?, ?, ?, ?)");
+                .prepareStatement(
+                "insert into phieu_muon(ma_phieu, ngay_muon, ngay_tra, ma_doc_gia, ma_sach, ma_nv)"
+                + "values(?, ?, ?, ?, ?, ?)");
             ResultSet rs = connectionClass.getStatement().executeQuery(
-                    "SELECT * FROM sach WHERE ten_sach = '" + jComboBox7.getSelectedItem().toString() + "'");
+                "SELECT * FROM sach WHERE ten_sach = '" + jComboBox7.getSelectedItem().toString() + "'");
             rs.next();
             int idSach = rs.getInt("ma_sach");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from doc_gia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
+                .executeQuery("Select * from doc_gia WHERE hoten = '" + jComboBox2.getSelectedItem() + "'");
             rs.next();
             int idDocgia = rs.getInt("ma_doc_gia");
             rs = connectionClass.getStatement()
-                    .executeQuery("Select * from nhanvien WHERE hoten = '" + jComboBox1.getSelectedItem() + "'");
+                .executeQuery("Select * from nhanvien WHERE hoten = '" + jComboBox1.getSelectedItem() + "'");
             rs.next();
             int idThuthu = rs.getInt("ma_nv");
             ps.setInt(1, Integer.parseInt(ma_phieu));

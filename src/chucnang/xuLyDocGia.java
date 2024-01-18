@@ -43,18 +43,16 @@ public class xuLyDocGia {
             DefaultTableModel model = new DefaultTableModel();
             model = (DefaultTableModel) jTable1.getModel();
             model.setRowCount(0);
-
             Statement stat = connectionClass.getStatement();
             ResultSet rs = stat.executeQuery(
-                    "select  * from doc_gia");
+                "select  * from doc_gia");
             while (rs.next()) {
                 model.addRow(new Object[] {
-                        rs.getInt("ma_doc_gia"), rs.getString("hoten"), rs.getString("ngay_sinh"), rs.getString("dia_chi"),
-                        rs.getString("sdt")
+                rs.getInt("ma_doc_gia"), rs.getString("hoten"), rs.getString("ngay_sinh"), 
+                rs.getString("dia_chi"), rs.getString("sdt")
                 });
             }
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}
     }
 
     
