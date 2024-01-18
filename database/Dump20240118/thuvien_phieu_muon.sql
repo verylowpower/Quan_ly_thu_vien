@@ -16,34 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `nhanvien`
+-- Table structure for table `phieu_muon`
 --
 
-DROP TABLE IF EXISTS `nhanvien`;
+DROP TABLE IF EXISTS `phieu_muon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `nhanvien` (
-  `ma_nv` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `hoten` varchar(255) DEFAULT NULL,
-  `ngay_sinh` date DEFAULT NULL,
-  `gioi_tinh` varchar(255) DEFAULT NULL,
-  `dia_chi` varchar(255) DEFAULT NULL,
-  `sdt` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ma_nv`)
+CREATE TABLE `phieu_muon` (
+  `ma_phieu` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `ngay_muon` date DEFAULT NULL COMMENT 'Create Time',
+  `ngay_tra` date DEFAULT NULL,
+  `ma_doc_gia` int NOT NULL,
+  `ma_sach` int NOT NULL,
+  `ma_nv` int NOT NULL,
+  PRIMARY KEY (`ma_phieu`),
+  KEY `ma_doc_gia` (`ma_doc_gia`),
+  KEY `ma_sach` (`ma_sach`),
+  KEY `ma_nv` (`ma_nv`),
+  CONSTRAINT `phieu_muon_ibfk_1` FOREIGN KEY (`ma_doc_gia`) REFERENCES `doc_gia` (`ma_doc_gia`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `phieu_muon_ibfk_2` FOREIGN KEY (`ma_sach`) REFERENCES `sach` (`ma_sach`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `phieu_muon_ibfk_3` FOREIGN KEY (`ma_nv`) REFERENCES `nhanvien` (`ma_nv`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `nhanvien`
+-- Dumping data for table `phieu_muon`
 --
 
-LOCK TABLES `nhanvien` WRITE;
-/*!40000 ALTER TABLE `nhanvien` DISABLE KEYS */;
-INSERT INTO `nhanvien` VALUES (1,'valorant','1985-01-01','valorant','valorant','23213','fdasfdsa','admin','123456'),(2,'abc','2023-02-01','Nam','siuuuuu','013215346',NULL,NULL,NULL),(3,'fdasf','2024-01-11','Nam','fdasf','fdasf',NULL,NULL,NULL);
-/*!40000 ALTER TABLE `nhanvien` ENABLE KEYS */;
+LOCK TABLES `phieu_muon` WRITE;
+/*!40000 ALTER TABLE `phieu_muon` DISABLE KEYS */;
+INSERT INTO `phieu_muon` VALUES (1,'2024-01-01','2024-01-31',1,1,1);
+/*!40000 ALTER TABLE `phieu_muon` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-06 22:12:23
+-- Dump completed on 2024-01-18 15:28:39

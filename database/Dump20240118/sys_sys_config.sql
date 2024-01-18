@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: thuvien
+-- Host: localhost    Database: sys
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,27 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tacgia`
+-- Table structure for table `sys_config`
 --
 
-DROP TABLE IF EXISTS `tacgia`;
+DROP TABLE IF EXISTS `sys_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tacgia` (
-  `ma_tacgia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `tentacgia` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ma_tacgia`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `sys_config` (
+  `variable` varchar(128) NOT NULL,
+  `value` varchar(128) DEFAULT NULL,
+  `set_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `set_by` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`variable`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tacgia`
+-- Dumping data for table `sys_config`
 --
 
-LOCK TABLES `tacgia` WRITE;
-/*!40000 ALTER TABLE `tacgia` DISABLE KEYS */;
-INSERT INTO `tacgia` VALUES (1,'valorant'),(2,'valroant2');
-/*!40000 ALTER TABLE `tacgia` ENABLE KEYS */;
+LOCK TABLES `sys_config` WRITE;
+/*!40000 ALTER TABLE `sys_config` DISABLE KEYS */;
+INSERT INTO `sys_config` VALUES ('diagnostics.allow_i_s_tables','OFF','2023-09-25 00:18:30',NULL),('diagnostics.include_raw','OFF','2023-09-25 00:18:30',NULL),('ps_thread_trx_info.max_length','65535','2023-09-25 00:18:30',NULL),('statement_performance_analyzer.limit','100','2023-09-25 00:18:30',NULL),('statement_performance_analyzer.view',NULL,'2023-09-25 00:18:30',NULL),('statement_truncate_len','64','2023-09-25 00:18:30',NULL);
+/*!40000 ALTER TABLE `sys_config` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-06 22:12:23
+-- Dump completed on 2024-01-18 15:28:37

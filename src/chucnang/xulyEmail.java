@@ -37,7 +37,7 @@ public class xulyEmail {
 
             Transport.send(message);
 
-            JOptionPane.showMessageDialog(null, "Mã đổi mật khẩu đã được gửi vào email xin vui lòng kiểm tra! ");
+            JOptionPane.showMessageDialog(null, "Ma đoi mat khau đa đuoc gui vao email xin vui lòng kiểm tra! ");
         } catch (MessagingException e) {
             e.printStackTrace();
         }

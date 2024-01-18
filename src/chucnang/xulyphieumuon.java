@@ -141,8 +141,8 @@ public class xulyphieumuon {
             rs.next();
             int idThuthu = rs.getInt("ma_nv");
             PreparedStatement ps = connectionClass.getConnection().prepareStatement(
-                    "Update phieu_muon set ma_phieu = ?, ngay_muon = ?, ngay_tra = ?, ma_doc_gia = ?, ma_sach = ?, ma_nv = ? where ma_phieu = '"
-                            + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
+    "Update phieu_muon set ma_phieu = ?, ngay_muon = ?, ngay_tra = ?, ma_doc_gia = ?, ma_sach = ?, ma_nv = ? where ma_phieu = '"
+                + jTable.getValueAt(jTable.getSelectedRow(), 0).toString() +"'");
             ps.setInt(1, ma_phieu);
             ps.setString(2, ngay_muon);
             ps.setString(3, ngay_tra);

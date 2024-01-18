@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `theloai`
+-- Table structure for table `tacgia`
 --
 
-DROP TABLE IF EXISTS `theloai`;
+DROP TABLE IF EXISTS `tacgia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `theloai` (
-  `ma_theloai` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `tentheloai` varchar(255) DEFAULT NULL COMMENT 'Create Time',
-  PRIMARY KEY (`ma_theloai`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tacgia` (
+  `ma_tacgia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `tentacgia` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ma_tacgia`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `theloai`
+-- Dumping data for table `tacgia`
 --
 
-LOCK TABLES `theloai` WRITE;
-/*!40000 ALTER TABLE `theloai` DISABLE KEYS */;
-INSERT INTO `theloai` VALUES (1,'valorant'),(123,'dasd');
-/*!40000 ALTER TABLE `theloai` ENABLE KEYS */;
+LOCK TABLES `tacgia` WRITE;
+/*!40000 ALTER TABLE `tacgia` DISABLE KEYS */;
+INSERT INTO `tacgia` VALUES (1,'Tô Hoài'),(2,'Aoyama Gōshō'),(3,'Dale Carnegie');
+/*!40000 ALTER TABLE `tacgia` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-06 22:12:23
+-- Dump completed on 2024-01-18 15:28:39

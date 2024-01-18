@@ -16,30 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `doc_gia`
+-- Table structure for table `nhanvien`
 --
 
-DROP TABLE IF EXISTS `doc_gia`;
+DROP TABLE IF EXISTS `nhanvien`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `doc_gia` (
-  `ma_doc_gia` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `ngay_sinh` date DEFAULT NULL,
+CREATE TABLE `nhanvien` (
+  `ma_nv` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `hoten` varchar(255) DEFAULT NULL,
-  `dia_chi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `ngay_sinh` date DEFAULT NULL,
+  `gioi_tinh` varchar(255) DEFAULT NULL,
+  `dia_chi` varchar(255) DEFAULT NULL,
   `sdt` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ma_doc_gia`)
+  `email` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ma_nv`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `doc_gia`
+-- Dumping data for table `nhanvien`
 --
 
-LOCK TABLES `doc_gia` WRITE;
-/*!40000 ALTER TABLE `doc_gia` DISABLE KEYS */;
-INSERT INTO `doc_gia` VALUES (1,'2003-01-01','valorant','fdasf','fdasf'),(2,'2003-01-01','dfasfd','fdasf','fdsaf'),(3,'2003-01-01','dfasdf','fdasf','fdasf');
-/*!40000 ALTER TABLE `doc_gia` ENABLE KEYS */;
+LOCK TABLES `nhanvien` WRITE;
+/*!40000 ALTER TABLE `nhanvien` DISABLE KEYS */;
+INSERT INTO `nhanvien` VALUES (1,'huy','2003-03-01','Nam','abc','0961819203','lehuy010303@gmail.com','admin','1234567'),(2,'Quân ngu','2024-01-01','Nam','abc','01234567','','quangu','1234567');
+/*!40000 ALTER TABLE `nhanvien` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-06 22:12:23
+-- Dump completed on 2024-01-18 15:28:38
